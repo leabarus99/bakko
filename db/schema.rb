@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_13_140612) do
+ActiveRecord::Schema.define(version: 2022_06_13_144542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.integer "category_key"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "budgets", force: :cascade do |t|
     t.integer "price"
@@ -22,6 +29,35 @@ ActiveRecord::Schema.define(version: 2022_06_13_140612) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["trip_id"], name: "index_budgets_on_trip_id"
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.string "name"
+    t.string "details"
+    t.string "benefits"
+    t.integer "price_estimation"
+    t.string "product_img"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "guides", force: :cascade do |t|
+    t.string "content"
+    t.string "title"
+    t.string "author"
+    t.string "category"
+    t.integer "difficulty"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "guide_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["guide_id"], name: "index_likes_on_guide_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "stories", force: :cascade do |t|
@@ -60,6 +96,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_140612) do
   end
 
   add_foreign_key "budgets", "trips"
+  add_foreign_key "likes", "guides"
+  add_foreign_key "likes", "users"
   add_foreign_key "stories", "trips"
   add_foreign_key "trips", "users"
 end
