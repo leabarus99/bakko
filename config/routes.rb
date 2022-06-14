@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get "profil", to: 'pages#profil'
+  get "journal", to: 'pages#journal'
+
   resources :devise
 
   resources :trips do

@@ -1,10 +1,53 @@
-<%# <% if user_signed_in? %>
-  <%# <% if @user.photo.attached? %>
-  <%# <%= cl_image_tag @user.photo.key %>
-  <%# <% end %>
-<%# <% end %>
 
-<div>
-  <%= link_to "Edit", edit_user_registration_path %></p>
-  <%= image_tag 'bakko-logo.svg'%>
+<div class="container-profil" >
+
+  <%# <% if user_signed_in? %>
+    <%# <% if @user.photo.attached? %>
+    <%# <%= cl_image_tag @user.photo.key %>
+    <%# <% end %>
+  <%# <% end %>
+
+  <div class= 'en-tête-profil'>
+    <%= image_tag 'bakko-logo.svg'%>
+    <%= link_to "Edit", edit_user_registration_path %></p>
+  </div>
+
+ <div class="lien-back"> <%= link_to "< Back", profil_path %></div>
+
+  <div class="pdp"><%= image_tag('default.jpg') %></div>
+
+  <h2><%= @user.first_name %></h2>
+  <h2> User Name</h2>
+
+  <div class= 'line'></div>
+
+  <div class= "infos-follow d-flex justify-content-center align-items-center">
+    <div class="d-flex">
+
+      <div class= "d-flex flex-column justify-content-center align-items-center mx-2">
+        <p>34</p>
+        <p>Followers</p>
+      </div>
+      <div class= "d-flex flex-column justify-content-center align-items-center mx-2">
+        <p>88</p>
+        <p>Following</p>
+      </div>
+      <div class= "d-flex flex-column justify-content-center align-items-center mx-2">
+        <p>4</p>
+        <p>Trips</p>
+      </div>
+
+    </div>
 </div>
+
+  <div class = "lien-infos-profil">
+    <%= link_to "Setting", profil_path , class:"btn btn-flat font-white" %>
+    <%= link_to "Information", profil_path , class:"btn btn-flat" %>
+    <%= link_to "Account", profil_path , class:"btn btn-flat" %>
+
+    <div class= 'line'></div>
+
+    <%= link_to "Confidentiality", profil_path , class:"btn btn-flat" %>
+    <%= link_to "Aide", profil_path , class:"btn btn-flat" %>
+    <%= link_to "À propos", profil_path , class:"btn btn-flat" %>
+  </div>
