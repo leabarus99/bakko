@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get "profil", to: 'pages#profil'
+
+  resources :devise
   resources :budgets
   resources :equipments
   resources :stories

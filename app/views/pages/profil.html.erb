@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  <% if @user.photo.attached? %>
+  <%= cl_image_tag @user.photo.key %>
+  <% end %>
+<% end %>
+
+
+<%= link_to "Edit", edit_user_registration_path %></p>
