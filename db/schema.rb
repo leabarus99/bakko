@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_14_100058) do
+ActiveRecord::Schema.define(version: 2022_06_14_120111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,16 +29,6 @@ ActiveRecord::Schema.define(version: 2022_06_14_100058) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["trip_id"], name: "index_budgets_on_trip_id"
-  end
-
-  create_table "equipment", force: :cascade do |t|
-    t.string "name"
-    t.string "details"
-    t.string "benefits"
-    t.integer "price_estimation"
-    t.string "product_img"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "guides", force: :cascade do |t|

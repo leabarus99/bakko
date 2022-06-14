@@ -27,6 +27,7 @@
                         input_html: { autocomplete: "new-last_name" } %>
             <%= f.input :phone_number,
                         required: true,
+                        required: true,
                         input_html: { autocomplete: "new-phone_number" } %>
             <%= f.input :username,
                         required: true,
@@ -38,7 +39,6 @@
           </div>
         <% end %>
 
-        <%= render "devise/shared/links" %>
 
     </div>
   </div>

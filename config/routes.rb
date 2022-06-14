@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   resources :devise
 
   resources :trips do
-    resources :equipments
     resources :stories
     resources :survival_articles
     resources :activities
   end
+  
+  resources :equipments
   resources :budgets
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
