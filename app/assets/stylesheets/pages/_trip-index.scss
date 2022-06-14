@@ -1,1 +1,31 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: $body-font;
+}
 
+h1 {
+  font-family: $headers-font;
+  margin: 20px;
+  text-align: center;
+  font-family: $headers-font;
+}
+
+p {
+  margin: 20px;
+  text-align: center;
+}
+
+.trip-index-image {
+  display: block;
+  height: 520px;
+  object-fit: cover;
+  width: 100%;
+  z-index: 1;
+}
+
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
