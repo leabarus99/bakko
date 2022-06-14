@@ -27,13 +27,11 @@
                         input_html: { autocomplete: "new-last_name" } %>
             <%= f.input :phone_number,
                         required: true,
+                        required: true,
                         input_html: { autocomplete: "new-phone_number" } %>
             <%= f.input :username,
                         required: true,
                         input_html: { autocomplete: "new-username" } %>
-            <%= f.input :photo,
-                        required: true,
-                        input_html: { autocomplete: "new-photo" } %>
           </div>
 
           <div class="form-actions">
@@ -41,7 +39,6 @@
           </div>
         <% end %>
 
-        <%= render "devise/shared/links" %>
 
     </div>
   </div>
