@@ -1,0 +1,24 @@
+body{
+  background-color: black;
+}
+
+.en-tête-profil {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pdp img {
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-top: 8px;
+  margin-right: 28px;
+  margin-bottom: 40px;
+}
+
+.my-journal a{
+  display:flex;
+  justify-content: space-between;
+}

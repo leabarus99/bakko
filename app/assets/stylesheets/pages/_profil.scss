@@ -1,0 +1,77 @@
+body{
+     background-color: black;
+}
+
+.en-tête-profil {
+  display: flex;
+  justify-content: space-between;
+}
+
+.en-tête-profil img{
+  height: 77px;
+  width: 101px;
+  margin: 15px;
+}
+
+.en-tête-profil a{
+  margin-right: -192px;
+}
+
+.lien-back a{
+text-decoration: none;
+color: white;
+font-size: 21px;
+/* left: 16px; */
+margin-left: 16px;
+}
+
+.pdp img {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  margin-left: 35%;
+  margin-top: 30px;
+}
+
+h2 {
+  color: white;
+  font-size: Open sans serif;
+  font-family: Open sans-serif;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.line {
+  border: 1px solid #dadada6c;
+  width: 85%;
+  margin: 32px auto;
+  margin-bottom: 6px;
+}
+
+.infos-follow {
+  color: white;
+  margin-top: 12px;
+}
+
+.lien-infos-profil{
+  background-color: #585858d9;
+  margin-top: 24px;
+  height: 418px;
+  border-radius: 16px;
+  padding-top: 33px;
+}
+
+.lien-infos-profil a{
+  display: block;
+  margin-bottom: 14px;
+  color: white;
+  font-family: open sans-serif;
+  font-size: 20px;
+  text-align: left;
+  margin-left: 16px;
+}
+
+.lien-infos-profil .line{
+  margin-bottom: 10px;
+}
