@@ -1,0 +1,52 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.bakko-container {
+  margin: 20px;
+}
+
+.equipment-title {
+  margin: 20px 0px;
+  letter-spacing: 1px;
+}
+
+.equipment-paragraph {
+  margin-bottom: 40px;
+  margin-top: 30px 0px;
+}
+
+
+.card-activity {
+  padding: 15px 0px;
+  border-radius: 20px;
+
+}
+
+.activity-img {
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+
+}
+
+.card-activity-infos {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-activity-infos h2 {
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.card-activity-infos p {
+  margin-bottom: 0px;
+}
+
+.card-activity-infos ion-icon {
+  font-size: 32px;
+}
