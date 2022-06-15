@@ -1,3 +1,7 @@
 class Activity < ApplicationRecord
   ACTIVITIES = %w[hiking climbing surf scuba-diving sightseeing biking]
+
+  has_many :trip_activities
+  has_many :trips, through: :trip_activities
+
 end
