@@ -5,4 +5,10 @@ class PagesController < ApplicationController
   def profil
     @user = current_user
   end
+
+  def yourbudget
+    Budget.by_category([Activity.last, Activity.first], params[:budget])
+
+
+  end
 end

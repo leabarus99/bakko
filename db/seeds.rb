@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 require 'open-uri'
 
 puts "Destroy Everything"
@@ -48,6 +49,7 @@ file6 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655297187/
 story3.photo.attach(io: file6, filename: 'article2', content_type: 'image/jpg')
 
 puts "SEED ACTIVITIES"
+
 Activity::ACTIVITIES.each do |name|
   Activity.create!(name: name)
 end
