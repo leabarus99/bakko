@@ -7,10 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
+puts "Destroy Everything"
+
 Story.destroy_all
 User.destroy_all
 Trip.destroy_all
-# SEED USER
+
+puts "SEED USER"
 
 user1= User.create!(first_name: 'Luke', last_name: 'Dumont', username: 'Lulu Dumont', email: 'Luke@gmail.com', password: 'lololo', password_confirmation: 'lololo', phone_number: '0678682514', followers: '37', following: '63')
 file1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655298538/uc11vcwn5bwl2eqylvn4.png")
@@ -24,14 +27,13 @@ user3= User.create!(first_name: 'Clemence', last_name: 'Dubois', username: 'Clem
 file3 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655299155/fvrwakhcwiwduapy0oix.jpg")
 user3.photo.attach(io: file3, filename: 'pdp3', content_type: 'image/jpg')
 
-
-# SEED TRIP
+puts "SEED TRIPS"
 
 trip1= Trip.create!(destination: 'Islande', start_date: '20/06/21', end_date: '20/08/21', budget: 200000 , user: user1)
 trip2= Trip.create!(destination: 'Thailande', start_date: '20/08/21', end_date: '20/09/21', budget: 100000, user: user2)
 trip3= Trip.create!(destination: 'Sri Lanka', start_date: '20/12/21', end_date: '20/05/22', budget: 90000, user: user3)
 
-# SEED STORY
+puts "SEED STORIES"
 
 story1= Story.create!(title: "titre de l'article", content: 'kjnnjknjhb jbhhjlb bhjhjb bhl', location: 'Islande', trip: trip1)
 file4 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655297219/uiokgauctwmwggjgzamq.jpg")
@@ -45,6 +47,7 @@ story3= Story.create!(title: "titre de l'article", content: 'kjnnjknjhb jbhhjlb 
 file6 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655297187/cedns8sfu3xqtup7utpr.jpg")
 story3.photo.attach(io: file6, filename: 'article2', content_type: 'image/jpg')
 
+puts "SEED ACTIVITIES"
 Activity::ACTIVITIES.each do |name|
   Activity.create!(name: name)
 end

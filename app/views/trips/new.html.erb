@@ -12,6 +12,7 @@
   <%= f.input :destination %>
   <%= f.input :start_date, as: :date, html5: true %>
   <%= f.input :end_date, as: :date, html5: true %>
+   <%= f.association :activities, as: :check_boxes %>
   <%= f.submit %>
 <% end %>
 
