@@ -1,0 +1,48 @@
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 421px;
+}
+
+.carousel-item {
+  height: 421px;
+}
+
+.carousel-img{
+  height: 70%;
+  object-fit: cover;
+  object-position: center;
+  margin-top: 20px;
+  opacity: 0.7;
+}
+
+.carousel-caption {
+  margin-bottom: 126px;
+}
+
+.btn-read a{
+    margin-botom: 34px;
+    background-color: #141313cc;
+    padding: 8px;
+    border-radius: 8px;
+
+}
+
+.new-article{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -42px;
+}
+
+
+.new-article p{
+  margin: 20px;
+  padding: -9px;
+  margin-top: 0px;
+}
+
+.description-article{
+  margin-top: 42px;
+  text-align: left;
+}
