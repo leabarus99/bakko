@@ -1,3 +1,15 @@
+.btn {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+}
+
+.btn:focus {
+background-color: #7a7a7a;
+}
+
 .btn-flat {
   color: white;
   padding: 8px 24px;
@@ -15,11 +27,14 @@
   }
 }
 
-.btn-new {
-  background-color: #7a7a7a;
-  border-right: none;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+.btn-secondary {
+color: white;
+background-color: #7a7a7a;
+width: 120px;
+border-radius: 20px;
+margin-top: 20px;
+padding: 11px;
+margin-left: 112px;
 }
 
 .btn-repeat {
