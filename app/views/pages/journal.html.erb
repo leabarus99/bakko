@@ -1,13 +1,8 @@
 <div class="container-profil" >
 
-  <div class= 'en-tête-profil'>
-    <%= image_tag 'bakko-logo.svg'%>
-    <div class="pdp"><%= image_tag('default.jpg') %></div>
-  </div>
-
   <div class= "my-journal">
-   <div class= "title-myjournal"> <%= link_to "Your journal", journal_path %></div>
-   <div class= "button-see-all">  <%= link_to "See all >", journal_path %></p></div>
+   <div class= "title-myjournal"> <%= link_to "Your journal", journal_path, class: "journal-titles" %></div>
+   <div class= "button-see-all">  <%= link_to "See all >", journal_path, class: "journal-titles" %></p></div>
   </div>
 
   <div class="container">
@@ -50,7 +45,7 @@
     </div>
   </div>
 
- <div class= "title-myjournal"> <%= link_to "News", journal_path %> </div>
+ <div class= "title-myjournal"> <%= link_to "News", journal_path, class: "journal-titles" %> </div>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
@@ -68,7 +63,7 @@
                 <h5>Amazonie</h5>
                 <p>@user1</p>
               </div>
-            <div class= "btn-read"><%= link_to "Read", journal_path %></div>
+            <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
           </div>
           <div class= "description-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
       </div>
@@ -87,7 +82,7 @@
               <h5>Amazonie</h5>
               <p>@user2</p>
             </div>
-            <div class= "btn-read"><%= link_to "Read", journal_path %></div>
+            <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
             </div>
             <div class= "description-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
           </div>
@@ -102,7 +97,7 @@
                 <h5>Amazonie</h5>
                 <p>@user3</p>
               </div>
-              <div class= "btn-read"><%= link_to "Read", journal_path %></div>
+              <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
             </div>
             <div class= "description-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
           </div>
@@ -117,7 +112,7 @@
                 <h5>Amazonie</h5>
                 <p>@user4</p>
               </div>
-              <div class= "btn-read"><%= link_to "Read", journal_path %></div>
+              <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
             </div>
             <div class= "description-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
           </div>
@@ -132,7 +127,7 @@
                 <h5>Amazonie</h5>
                 <p>@user5</p>
               </div>
-              <div class= "btn-read"><%= link_to "Read", journal_path %></div>
+              <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
             </div>
             <div class= "description-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
           </div>

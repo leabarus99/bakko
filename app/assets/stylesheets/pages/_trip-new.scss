@@ -4,17 +4,18 @@ body {
   font-family: $body-font;
 }
 
-h1 {
+.welcome-title h1 {
   font-family: $headers-font;
   margin: 20px;
   text-align: center;
   font-family: $headers-font;
 }
 
-p {
+.welcome-paragraph p {
   margin: 20px;
   text-align: center;
 }
+
 
 .icon {
   text-align: center;
