@@ -6,7 +6,6 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-<<<<<<< HEAD
   def journal
     @stories = Story.all
   end
@@ -15,11 +14,9 @@ class PagesController < ApplicationController
     @story = Story.create
   end
 
-=======
   def yourbudget
     Budget.by_category([Activity.last, Activity.first], params[:budget])
 
 
   end
->>>>>>> 5cb0629ebb140cf3e156568ca1b1b4979f0331bd
 end
