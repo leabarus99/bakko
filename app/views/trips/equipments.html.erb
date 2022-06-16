@@ -1,0 +1,6 @@
+
+<% @activities.each do |activity| %>
+  <% activity.equipments.each do |equipment| %>
+    <%= equipment.name %>
+    <% end %>
+<% end %>

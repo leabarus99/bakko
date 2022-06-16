@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :stories
     resources :survival_articles
     resources :activities
+    member do
+      get :equipments
+    end
   end
 
   resources :equipments
