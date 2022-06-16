@@ -8,12 +8,11 @@
 
   <p class="welcome-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-<div class="container-b">
-  <div class="group">
-    <%= link_to "New trip", new_trip_path, class: "btn one" %>
-    <a href="#" class="btn two">Repeat</a>
-    <div class="background"></div>
-  </div>
-</div>
+
+      <div class="wrapper d-flex justify-content-center">
+        <span><%= link_to "New trip", new_trip_path %></span>
+        <span><%= link_to "Repeat Trip", new_trip_path %></span>
+      </div>
+
 
 </div>

@@ -9,6 +9,7 @@ require 'open-uri'
 
 puts "Destroy Everything"
 
+# ¡ pregunte a su vecina !
 Story.destroy_all
 Material.destroy_all
 Equipment.destroy_all
