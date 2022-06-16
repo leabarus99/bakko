@@ -13,4 +13,5 @@ class PagesController < ApplicationController
   def story
     @story = Story.create
   end
+
 end
