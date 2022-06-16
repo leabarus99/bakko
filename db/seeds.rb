@@ -30,9 +30,18 @@ user3.photo.attach(io: file3, filename: 'pdp3', content_type: 'image/jpg')
 
 puts "SEED TRIPS"
 
+Activity::ACTIVITIES.each do |name|
+  Activity.create!(name: name)
+end
+
 trip1= Trip.create!(destination: 'Islande', start_date: '20/06/21', end_date: '20/08/21', budget: 200000 , user: user1)
 trip2= Trip.create!(destination: 'Thailande', start_date: '20/08/21', end_date: '20/09/21', budget: 100000, user: user2)
 trip3= Trip.create!(destination: 'Sri Lanka', start_date: '20/12/21', end_date: '20/05/22', budget: 90000, user: user3)
+
+# puts "TRIP ACTIVITIES"
+
+# tripact1= TripActivity.create!(trip_id: trip1[:id], activity_id: Activity.first[:id])
+# tripact2= TripActivity.create!(trip_id: trip3[:id], activity_id: Activity.last[:id])
 
 puts "SEED STORIES"
 
@@ -49,7 +58,3 @@ file6 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655297187/
 story3.photo.attach(io: file6, filename: 'article2', content_type: 'image/jpg')
 
 puts "SEED ACTIVITIES"
-
-Activity::ACTIVITIES.each do |name|
-  Activity.create!(name: name)
-end

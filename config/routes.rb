@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   get "profil", to: 'pages#profil'
   get "journal", to: 'pages#journal'
-  get "yourbudget", to: 'pages#yourbudget'
 
   resources :devise
 
@@ -12,10 +11,10 @@ Rails.application.routes.draw do
     resources :stories
     resources :survival_articles
     resources :activities
+    resources :budgets, only: [:new, :create, :show]
   end
 
   resources :equipments
-  resources :budgets
   resources :devise
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
