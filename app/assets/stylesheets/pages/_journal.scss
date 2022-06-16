@@ -2,13 +2,6 @@ body{
   background-color: black;
 }
 
-.journal-titles {
-  color: white;
-  text-decoration: none;
-  margin-left: 44px;
-}
-
-
 .my-journal {
   display: flex;
   justify-content: space-between;
@@ -17,11 +10,18 @@ body{
 .title-myjournal {
   font-size: 29px;
   font-size: 31px;
+  text-decoration: none;
+  margin-left: 44px;
   font-family: open sans-serif;
   font-weight: bolder;
   line-break: anywhere;
   margin-top: -18px;
 }
+
+.title-myjournal a {
+  color: white;
+}
+
 
 .button-see-all a{
   color: #ffffffb5;
