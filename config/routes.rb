@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :survival_articles
     resources :activities
     resources :budgets, only: [:new, :create, :show]
+    member do
+      get :equipments
+    end
   end
 
   resources :equipments

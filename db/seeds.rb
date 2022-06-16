@@ -31,6 +31,7 @@ user3= User.create!(first_name: 'Clemence', last_name: 'Dubois', username: 'Clem
 file3 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655299155/fvrwakhcwiwduapy0oix.jpg")
 user3.photo.attach(io: file3, filename: 'pdp3', content_type: 'image/jpg')
 
+
 puts "SEED TRIPS"
 trip1= Trip.create!(destination: 'Islande', start_date: '20/06/21', end_date: '20/08/21', budget: 200000 , user: user1)
 trip2= Trip.create!(destination: 'Thailande', start_date: '20/08/21', end_date: '20/09/21', budget: 100000, user: user2)
@@ -70,7 +71,7 @@ story2.photo.attach(io: file5, filename: 'article2', content_type: 'image/jpg')
 story3= Story.create!(title: "titre de l'article", content: 'kjnnjknjhb jbhhjlb bhjhjb bhl', location: 'Amazonie', trip: trip3)
 file6 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655297187/cedns8sfu3xqtup7utpr.jpg")
 story3.photo.attach(io: file6, filename: 'article2', content_type: 'image/jpg')
-# puts "SEED ACTIVITIES"
+
 # Activity::ACTIVITIES.each do |name|
 #   Activity.create!(name: name)
 # end
