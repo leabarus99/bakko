@@ -1,10 +1,8 @@
 <div class="container-profil" >
-
   <div class= "my-journal">
    <div class= "title-myjournal"> <%= link_to "Your journal", journal_path, class: "journal-titles" %></div>
    <div class= "button-see-all">  <%= link_to "See all >", journal_path, class: "journal-titles" %></p></div>
   </div>
-
   <div class="container">
     <div class="glide">
       <div class="glide__track" data-glide-el="track">
@@ -44,27 +42,21 @@
        <div class="glide__arrows" data-glide-el="controls"></div>
     </div>
   </div>
-
   <div class= "my-journal">
     <div class= "title-myjournal"> <%= link_to "News", journal_path %> </div>
     <div class= "button-see-all">  <%= link_to "See all >", journal_path %></p></div>
   </div>
-
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-
  <% @stories.each_with_index do |story, index| %>
-
       <div class="carousel-item <%= index == 0 ? 'active' : ''  %>">
-
         <% if story.photo.attached? %>
           <%= cl_image_tag story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
         <% end %>
-
         <div class="carousel-caption  d-md-block">
           <div class= "new-article">
             <div>
@@ -89,7 +81,6 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"> </script>
   <script>
     const config = {
@@ -98,5 +89,4 @@
     };
       new Glide('.glide', config).mount()
   </script>
-
 </div>
