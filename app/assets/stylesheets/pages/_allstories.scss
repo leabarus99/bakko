@@ -1,0 +1,55 @@
+.line {
+  border: 1px solid #8aa8a16c;
+  width: 85%;
+  margin: 20px auto;
+}
+
+.card-article{
+  display: flex;
+  margin-right: 29px;
+  margin-left: 29px;
+
+}
+
+.img-article img{
+  width: 150px;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.content-article h5{
+  font-size: 15px;
+  margin-right: 19px;
+  color: #adb4b4;
+}
+
+.search{
+  background-color: grey;
+  height: 29px;
+  width: 80%;
+  margin-top: -29px;
+  border-radius: 12px;
+  margin-left: 42px;
+  margin-bottom: 38px;
+  display: flex;
+  color: #ffffff91;;
+}
+
+.search ion-icon{
+  padding-left: 14px;
+  margin-top: 6px;
+}
+
+.search p {
+  padding-left: 8px;
+  margin-top: 2px;
+}
+
+.button-read {
+  background-color: #161616;
+  text-decoration: none;
+  color: #ffffffab;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #312f2f;
+}

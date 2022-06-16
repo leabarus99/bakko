@@ -1,0 +1,12 @@
+<% if @story.photo.attached? %>
+  <div class= "img-bg"><%= cl_image_tag @story.photo.key %></div>
+<% end %>
+
+<div class= "popup">
+  <h1 class= "title-story"><%= @story.title %></h1>
+  <div class= "intro-story"><%= @story.introduction %></div>
+  <% if @story.photo.attached? %>
+    <div class= "img-story"><%= cl_image_tag @story.photo.key %></div>
+  <% end %>
+  <div class= "description-story"><%= @story.description %></div>
+</div>
