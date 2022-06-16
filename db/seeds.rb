@@ -33,15 +33,15 @@ trip3= Trip.create!(destination: 'Sri Lanka', start_date: '20/12/21', end_date: 
 
 # SEED STORY
 
-story1= Story.create!(title: "titre de l'article", content: 'kjnnjknjhb jbhhjlb bhjhjb bhl', location: 'Islande', trip: trip1)
+story1= Story.create!(title: "titre de l'article", content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...', location: 'Islande', trip: trip1)
 file4 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655297219/uiokgauctwmwggjgzamq.jpg")
 story1.photo.attach(io: file4, filename: 'article1', content_type: 'image/jpg')
 
-story2= Story.create!(title: "titre de l'article", content: 'kjnnjknjhb jbhhjlb bhjhjb bhl', location: 'Afrique', trip: trip2)
+story2= Story.create!(title: "titre de l'article", content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...', location: 'Afrique', trip: trip2)
 file5 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655297237/n4dusqkef2van8janfzr.jpg")
 story2.photo.attach(io: file5, filename: 'article2', content_type: 'image/jpg')
 
-story3= Story.create!(title: "titre de l'article", content: 'kjnnjknjhb jbhhjlb bhjhjb bhl', location: 'Amazonie', trip: trip3)
+story3= Story.create!(title: "titre de l'article", content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...', location: 'Amazonie', trip: trip3)
 file6 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655297187/cedns8sfu3xqtup7utpr.jpg")
 story3.photo.attach(io: file6, filename: 'article2', content_type: 'image/jpg')
 

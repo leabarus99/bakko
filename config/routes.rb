@@ -12,8 +12,9 @@ Rails.application.routes.draw do
     resources :survival_articles
     resources :activities
   end
-  
+
   resources :equipments
   resources :budgets
+  resources :devise
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
