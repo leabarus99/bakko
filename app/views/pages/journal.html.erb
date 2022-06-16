@@ -1,8 +1,8 @@
 <div class="container-profil" >
 
   <div class= "my-journal">
-   <div class= "title-myjournal"> <%= link_to "Your journal", journal_path %></div>
-   <div class= "button-see-all">  <%= link_to "See all >", journal_path %></p></div>
+   <div class= "title-myjournal"> <%= link_to "Your journal", journal_path, class: "journal-titles" %></div>
+   <div class= "button-see-all">  <%= link_to "See all >", journal_path, class: "journal-titles" %></p></div>
   </div>
 
   <div class="container">
@@ -45,10 +45,14 @@
     </div>
   </div>
 
+<<<<<<< HEAD
   <div class= "my-journal">
     <div class= "title-myjournal"> <%= link_to "News", journal_path %> </div>
     <div class= "button-see-all">  <%= link_to "See all >", journal_path %></p></div>
   </div>
+=======
+ <div class= "title-myjournal"> <%= link_to "News", journal_path, class: "journal-titles" %> </div>
+>>>>>>> 5cb0629ebb140cf3e156568ca1b1b4979f0331bd
 
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
@@ -56,6 +60,24 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+<<<<<<< HEAD
+=======
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+       <%= image_tag('images1.jpeg', class: "carousel-img d-block w-100") %>
+        <%# <%= cl_image_tag @story.photo.key, , class: "carousel-img d-block w-100", crop: :fill %>
+       <div class="carousel-caption  d-md-block">
+          <div class= "new-article">
+           <div>
+                <h5>Amazonie</h5>
+                <p>@user1</p>
+              </div>
+            <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
+          </div>
+          <div class= "description-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
+      </div>
+      </div>
+>>>>>>> 5cb0629ebb140cf3e156568ca1b1b4979f0331bd
 
  <% @stories.each_with_index do |story, index| %>
 
@@ -71,14 +93,61 @@
               <h5><%= story.location %></h5>
               <p>User 1</p>
             </div>
-            <div class= "btn-read"><%= link_to "Read", journal_path %></div>
+            <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
             </div>
             <div class= "description-article"><%= story.content %></div>
           </div>
       </div>
 
+<<<<<<< HEAD
 <% end %>
 
+=======
+      <div class="carousel-item">
+        <%= image_tag('images3.jpeg', class: "carousel-img d-block w-100") %>
+         <%# <%= cl_image_tag @story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
+          <div class="carousel-caption  d-md-block">
+            <div class= "new-article">
+              <div>
+                <h5>Amazonie</h5>
+                <p>@user3</p>
+              </div>
+              <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
+            </div>
+            <div class= "description-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
+          </div>
+      </div>
+
+      <div class="carousel-item">
+         <%= image_tag('images4.jpeg', class: "carousel-img d-block w-100") %>
+         <%# <%= cl_image_tag @story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
+          <div class="carousel-caption  d-md-block">
+            <div class= "new-article">
+              <div>
+                <h5>Amazonie</h5>
+                <p>@user4</p>
+              </div>
+              <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
+            </div>
+            <div class= "description-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
+          </div>
+      </div>
+
+      <div class="carousel-item">
+         <%= image_tag('images5.jpeg', class: "carousel-img d-block w-100") %>
+         <%# <%= cl_image_tag @story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
+          <div class="carousel-caption  d-md-block">
+            <div class= "new-article">
+              <div>
+                <h5>Amazonie</h5>
+                <p>@user5</p>
+              </div>
+              <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
+            </div>
+            <div class= "description-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
+          </div>
+      </div>
+>>>>>>> 5cb0629ebb140cf3e156568ca1b1b4979f0331bd
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

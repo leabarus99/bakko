@@ -2,27 +2,12 @@ body{
   background-color: black;
 }
 
-a {
+.journal-titles {
   color: white;
   text-decoration: none;
   margin-left: 44px;
 }
 
-.en-tête-profil {
-  display: flex;
-  justify-content: space-between;
-}
-
-.pdp img {
-  border-radius: 50%;
-  height: 90px;
-  width: 90px;
-  -o-object-fit: cover;
-  object-fit: cover;
-  margin-top: -41px;
-  margin-right: 91px;
-  margin-bottom: 40px;
-}
 
 .my-journal {
   display: flex;
@@ -30,7 +15,7 @@ a {
 }
 
 .title-myjournal {
-  text-size: 29px;
+  font-size: 29px;
   font-size: 31px;
   font-family: open sans-serif;
   font-weight: bolder;
@@ -55,3 +40,10 @@ a {
   position: relative;
 }
 
+<<<<<<< HEAD
+=======
+// img{
+//   vertical-align: middle;
+//   height: 65px;
+// }
+>>>>>>> 5cb0629ebb140cf3e156568ca1b1b4979f0331bd

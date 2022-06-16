@@ -1,12 +1,40 @@
 <div class="new-container">
 
-<script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
-<lord-icon
-    src="https://cdn.lordicon.com/gqzfzudq.json"
-    trigger="loop"
-    style="width:250px;height:250px">
-</lord-icon>
+  <div class="icon">
+    <img src="https://ian.macky.net/pat/map/globes/earth-landmask-256-fast.gif" alt="" style= "width: 88px;">
+  </div>
 
-<h1>Keep the world in your hand!</h1>
+    <h1 class="welcome-title">Keep the world in your hand!</h1>
+
+    <p class="welcome-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <%= simple_form_for(@trip) do |f| %>
+  <%= f.input :destination %>
+  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.input :end_date, as: :date, html5: true %>
+   <%= f.association :activities, as: :check_boxes %>
+  <%= f.submit %>
+<% end %>
+
+  <div class="form-buttons">
+    <form>
+      <label for="ftrip"></label><br>
+      <input type="text" id="ftrip" name="flocation" placeholder="Destination"><br>
+      <label for="lperiod"></label><br>
+      <input type="text" id="lperiod" name="ldate" placeholder="Period">
+    </form>
+  </div>
+
+    <div class="group-button">
+        <button class="btn btn-flat">Hiking</button>
+        <button class="btn btn-flat" style= "margin-left: 12px; margin-right: 12px ">Climbing</button>
+        <button class="btn btn-flat">Surf</button>
+        <button class="btn btn-flat" style= "margin-right: 23px" >Scuba Diving</button>
+        <button class="btn btn-flat">Culture</button>
+        <button class="btn btn-flat" style= "margin-right: 25px">Sightseeing</button>
+        <button class="btn btn-flat">Biking</button>
+    </div>
+
+    <%= link_to "Start", new_trip_path, class: "btn btn-secondary" %>
 
 </div>

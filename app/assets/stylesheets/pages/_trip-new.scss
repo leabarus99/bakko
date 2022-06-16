@@ -1,0 +1,57 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: $body-font;
+}
+
+.welcome-title h1 {
+  font-family: $headers-font;
+  margin: 20px;
+  text-align: center;
+  font-family: $headers-font;
+}
+
+.welcome-paragraph p {
+  margin: 20px;
+  text-align: center;
+}
+
+
+.icon {
+  text-align: center;
+}
+
+.new-container {
+  padding: 30px;
+}
+
+.form-buttons {
+  margin: auto;
+  text-align: center;
+  margin-top: -9px;
+}
+
+#ftrip {
+border-radius: 10px;
+padding: 13px;
+background-color: #282828;
+border-color: white;
+width: 270px;
+border-width: thin;
+}
+
+#lperiod {
+  border-radius: 10px;
+  padding: 13px;
+  background-color: #282828;
+  border-color: white;
+  width: 270px;
+  border-width: thin;
+}
+
+.group-button {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-left: 19px;
+}

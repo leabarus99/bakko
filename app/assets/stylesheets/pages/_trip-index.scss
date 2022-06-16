@@ -4,28 +4,63 @@ body {
   font-family: $body-font;
 }
 
-h1 {
+.welcome-title {
   font-family: $headers-font;
   margin: 20px;
   text-align: center;
   font-family: $headers-font;
 }
 
-p {
+.welcome-paragraph {
   margin: 20px;
   text-align: center;
 }
 
 .trip-index-image {
   display: block;
-  height: 520px;
+  height: 490px;
   object-fit: cover;
   width: 100%;
   z-index: 1;
+  background-repeat: no-repeat;
 }
 
-.start {
+
+a {
+  text-decoration: none;
+}
+
+.container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin-top: 100px;
+}
+
+.group {
+  display: flex;
+  position: relative;
+  border: 1px solid #919191;
+  background-color: #4a4a4a;
+}
+
+.one {
+  color: white;
+}
+
+.two {
+  color: black;
+}
+
+.background {
+  background-color: #919191;
+  height: 100%;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform ease 1.0s;
+}
+
+.two:hover + .background {
+  transform: translate(200px);
 }

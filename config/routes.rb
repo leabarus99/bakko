@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get "profil", to: 'pages#profil'
   get "journal", to: 'pages#journal'
+  get "yourbudget", to: 'pages#yourbudget'
 
   resources :devise
 
