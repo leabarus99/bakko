@@ -39,28 +39,4 @@ a {
 .group {
   display: flex;
   position: relative;
-  border: 1px solid #919191;
-  background-color: #4a4a4a;
-}
-
-.one {
-  color: white;
-}
-
-.two {
-  color: black;
-}
-
-.background {
-  background-color: #919191;
-  height: 100%;
-  width: 200px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform ease 1.0s;
-}
-
-.two:hover + .background {
-  transform: translate(200px);
 }

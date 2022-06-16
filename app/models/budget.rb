@@ -27,13 +27,19 @@ class Budget < ApplicationRecord
 
   def self.coeffs(activities)
     CATEGORIES.map do |category|
-      coeff(category, activities)
+      {
+        category: category,
+        coeff: coeff(category, activities)
+      }
     end
   end
 
-  def self.by_category(activities, newbudget)
-    coeffs(activities).map do |coeff|
-      newbudget.to_i * coeff / 1000
+  def self.by_category(activities, budget)
+    coeffs(activities).map do |category_coeff|
+      {
+        category: category_coeff[:category],
+        price: budget.to_i * category_coeff[:coeff] / 1000
+      }
     end
   end
 

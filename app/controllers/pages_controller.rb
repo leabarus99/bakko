@@ -10,9 +10,8 @@ class PagesController < ApplicationController
     @stories = Story.all
   end
 
-
-  def yourbudget
-    Budget.by_category([Activity.last, Activity.first], params[:budget])
+  def story
+    @story = Story.create
   end
 
 end

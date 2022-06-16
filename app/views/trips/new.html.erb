@@ -1,6 +1,6 @@
 <div class="new-container">
 
-  <div class="icon">
+  <div class="icon-world">
     <img src="https://ian.macky.net/pat/map/globes/earth-landmask-256-fast.gif" alt="" style= "width: 88px;">
   </div>
 
@@ -9,12 +9,12 @@
     <p class="welcome-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
     <%= simple_form_for(@trip) do |f| %>
-  <%= f.input :destination %>
-  <%= f.input :start_date, as: :date, html5: true %>
-  <%= f.input :end_date, as: :date, html5: true %>
-   <%= f.association :activities, as: :check_boxes %>
-  <%= f.submit %>
-<% end %>
+      <%= f.input :destination %>
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date, as: :date, html5: true %>
+      <%= f.association :activities, as: :check_boxes, include_hidden: false %>
+      <%= f.submit %>
+    <% end %>
 
   <div class="form-buttons">
     <form>

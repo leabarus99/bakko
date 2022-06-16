@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2022_06_16_141046) do
+
+ActiveRecord::Schema.define(version: 2022_06_16_102423) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +63,15 @@ ActiveRecord::Schema.define(version: 2022_06_16_141046) do
     t.index ["trip_id"], name: "index_budgets_on_trip_id"
   end
 
+  create_table "equipment", force: :cascade do |t|
+    t.string "name"
+    t.string "details"
+    t.string "benefits"
+    t.float "price_estimation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "guides", force: :cascade do |t|
     t.string "content"
     t.string "title"
@@ -76,6 +89,15 @@ ActiveRecord::Schema.define(version: 2022_06_16_141046) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["guide_id"], name: "index_likes_on_guide_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.bigint "equipment_id", null: false
+    t.bigint "activity_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_id"], name: "index_materials_on_activity_id"
+    t.index ["equipment_id"], name: "index_materials_on_equipment_id"
   end
 
   create_table "stories", force: :cascade do |t|
@@ -138,6 +160,8 @@ ActiveRecord::Schema.define(version: 2022_06_16_141046) do
   add_foreign_key "budgets", "trips"
   add_foreign_key "likes", "guides"
   add_foreign_key "likes", "users"
+  add_foreign_key "materials", "activities"
+  add_foreign_key "materials", "equipment"
   add_foreign_key "stories", "trips"
   add_foreign_key "trip_activities", "activities"
   add_foreign_key "trip_activities", "trips"

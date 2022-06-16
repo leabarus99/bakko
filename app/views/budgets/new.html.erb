@@ -7,11 +7,14 @@
   </div>
 
   <div class="budget-input">
-    <input type="integer" id="newbudget" name="newbudget" value="Enter your budget..." required>
 
-
+    <%= simple_form_for([@trip, @budget]) do |f| %>
+      <%= f.input :price %>
+      <%= f.submit %>
+    <% end %>
 
 
   </div>
+
 
 </div>
