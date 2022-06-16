@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @trips = Trip.all
   end
@@ -13,16 +14,24 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
+    @activities = Activity.where(id: params[:trip][:activity_ids])
+    @trip.activities = @activities
+    @trip.user = current_user
     if @trip.save
-      redirect_to trip_path(@trip)
+      redirect_to equipments_trip_path(@trip)
     else
       render :new
     end
   end
 
+  def equipments
+    @trip = Trip.find(params[:id])
+    @activities = @trip.activities
+  end
+
   private
 
   def trip_params
-    params.require(:trip).permit(:destination, :start_date, :user, :end_date, :budget)
+    params.require(:trip).permit(:destination, :start_date, :user, :end_date)
   end
 end
