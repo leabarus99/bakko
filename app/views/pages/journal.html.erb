@@ -10,31 +10,31 @@
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           <li class="glide__slide">
-            <div class= 'glides-date'>
+            <div class= 'glides-infos'>
               <p>Yesterday, 11:08pm</p>
               <%= image_tag('images1.jpeg') %>
             </div>
           </li>
           <li class="glide__slide">
-            <div class= 'glides-date'>
+            <div class= 'glides-infos'>
               <p>Yesterday, 11:08pm</p>
               <%= image_tag('images2.jpeg') %>
             </div>
           </li>
           <li class="glide__slide">
-            <div class= 'glides-date'>
+            <div class= 'glides-infos'>
               <p>Yesterday, 11:08pm</p>
               <%= image_tag('images3.jpeg') %>
             </div>
           </li>
           <li class="glide__slide">
-            <div class= 'glides-date'>
+            <div class= 'glides-infos'>
               <p>Yesterday, 11:08pm</p>
               <%= image_tag('images4.jpeg') %>
             </div>
           </li>
           <li class="glide__slide">
-            <div class= 'glides-date'>
+            <div class= 'glides-infos'>
               <p>Yesterday, 11:08pm</p>
               <%= image_tag('images5.jpeg') %>
             </div>
@@ -45,7 +45,12 @@
     </div>
   </div>
 
- <div class= "title-myjournal"> <%= link_to "News", journal_path, class: "journal-titles" %> </div>
+
+  <div class= "my-journal">
+    <div class= "title-myjournal"> <%= link_to "News", journal_path, class: "journal-titles" %> </div>
+    <div class= "button-see-all">  <%= link_to "See all >", journal_path, class: "journal-titles" %></p></div>
+  </div>
+
 
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
@@ -53,6 +58,7 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+
     <div class="carousel-inner">
       <div class="carousel-item active">
        <%= image_tag('images1.jpeg', class: "carousel-img d-block w-100") %>
@@ -69,24 +75,27 @@
       </div>
       </div>
 
-      <div class="carousel-item">
-        <%= image_tag('images2.jpeg', class: "carousel-img d-block w-100") %>
+ <% @stories.each_with_index do |story, index| %>
 
-        <%# <% if @story.photo.attached? %>
-          <%# <%= cl_image_tag @story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
-        <%# <% end %> %>
+      <div class="carousel-item <%= index == 0 ? 'active' : ''  %>">
+
+        <% if story.photo.attached? %>
+          <%= cl_image_tag story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
+        <% end %>
 
         <div class="carousel-caption  d-md-block">
           <div class= "new-article">
             <div>
-              <h5>Amazonie</h5>
-              <p>@user2</p>
+              <h5><%= story.location %></h5>
+              <p>User 1</p>
             </div>
             <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
             </div>
-            <div class= "description-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</div>
+            <div class= "description-article"><%= story.content %></div>
           </div>
       </div>
+
+<% end %>
 
       <div class="carousel-item">
         <%= image_tag('images3.jpeg', class: "carousel-img d-block w-100") %>

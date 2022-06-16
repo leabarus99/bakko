@@ -10,10 +10,12 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
+    @stories = Story.all
   end
 
   def create
     @story = Story.new(story_params)
+    @stories = Story.all
     if @story.save
       redirect_to story_path(@story)
     else
