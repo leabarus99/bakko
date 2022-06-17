@@ -1,12 +1,12 @@
- <%= simple_form_for([@trip, @story]) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :trip %>
-    <%= f.input :location %>
-    <%= f.input :content%>
-    <%= f.input :photo%>
-    <%= f.input :photo, as: :file, label: "Add a picture" %>
-    <%= f.input :video, as: :file, label: "Add a video"  %>
-    <%= f.submit :class => "create-article" %>
+ <%= simple_form_for([@trip, @story]) do |f|%>
+    <%= f.input :title,:input_html =>{:class => "input"} %>
+    <%= f.input :trip,:input_html =>{:class => "input"} %>
+    <%= f.input :location,:input_html =>{:class => "input"} %>
+    <%= f.input :content,:input_html =>{:class => "input"}%>
+    <%= f.input :photo,:input_html =>{:class => "input"}%>
+    <%= f.input :photo, as: :file, label: "Add a picture",:input_html =>{:class => "input"} %>
+    <%= f.input :video, as: :file, label: "Add a video",:input_html =>{:class => "input"}  %>
+    <%= f.submit :class => "input" %>
 <% end %>
 
-  <%= link_to "Back journal", journal_path %>
+  <div class= "lien-backk"><%= link_to "Back journal", journal_path %></div>

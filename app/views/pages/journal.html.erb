@@ -1,4 +1,7 @@
 <div class="container-profil" >
+
+  <div class= 'line'></div>
+
   <div class= "my-journal">
    <div class= "title-myjournal"> <%= link_to "Your journal", journal_path, class: "journal-titles" %></div>
    <div class= "button-see-all2">  <%= link_to "See all...", journal_path, class: "journal-titles" %></p></div>
@@ -17,25 +20,25 @@
           </li>
           <li class="glide__slide">
             <div class= 'glides-infos'>
-              <p>Yesterday, 11:08pm</p>
+
               <%= image_tag('images2.jpg') %>
             </div>
           </li>
           <li class="glide__slide">
             <div class= 'glides-infos'>
-              <p>Yesterday, 11:08pm</p>
+
               <%= image_tag('images3.jpg') %>
             </div>
           </li>
           <li class="glide__slide">
             <div class= 'glides-infos'>
-              <p>Yesterday, 11:08pm</p>
+
               <%= image_tag('images4.jpg') %>
             </div>
           </li>
           <li class="glide__slide">
             <div class= 'glides-infos'>
-              <p>Yesterday, 11:08pm</p>
+
               <%= image_tag('images5.jpg') %>
             </div>
           </li>
@@ -44,7 +47,10 @@
        <div class="glide__arrows" data-glide-el="controls"></div>
     </div>
   </div>
-  <div class= "my-journal">
+
+  <div class= 'line2'></div>
+
+  <div class= "my-journal2">
     <div class= "title-myjournal2"> <%= link_to "News", journal_path %> </div>
     <div class= "button-see-all">  <%= link_to "See all...", all_stories_path %> </div>
   </div>
@@ -54,6 +60,7 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+
 
 <%# <%= link_to "New story", new_trip_story_path(@story.trip) %>
 
