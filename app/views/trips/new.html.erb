@@ -1,7 +1,3 @@
-<body class="background">
-
-
-
 <div class="new-container">
 
   <div class="icon-world">
@@ -10,37 +6,26 @@
 
     <h1 class="welcome-title">Keep the world in your hand!</h1>
 
-    <p class="welcome-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-    <%= simple_form_for(@trip) do |f| %>
-      <%= f.input :destination %>
-      <%= f.input :start_date, as: :date, html5: true %>
-      <%= f.input :end_date, as: :date, html5: true %>
-      <%= f.association :activities, as: :check_boxes, include_hidden: false %>
-      <%= f.submit %>
-    <% end %>
+    <p class="welcome-paragraph">Pick your destination as well as the duration of your stay</p>
 
   <div class="form-buttons">
-    <form>
-      <label for="ftrip"></label><br>
-      <input type="text" id="ftrip" name="flocation" placeholder="Destination"><br>
-      <label for="lperiod"></label><br>
-      <input type="text" id="lperiod" name="ldate" placeholder="Period">
-    </form>
-  </div>
+    <%= simple_form_for(@trip) do |f| %>
 
-    <div class="group-button">
-        <button class="btn btn-flat">Hiking</button>
-        <button class="btn btn-flat" style= "margin-left: 12px; margin-right: 12px ">Climbing</button>
-        <button class="btn btn-flat">Surf</button>
-        <button class="btn btn-flat" style= "margin-right: 23px" >Scuba Diving</button>
-        <button class="btn btn-flat">Culture</button>
-        <button class="btn btn-flat" style= "margin-right: 25px">Sightseeing</button>
-        <button class="btn btn-flat">Biking</button>
+    <div class= "d-flex justify-content-center">
+      <%= f.input :destination, placeholder: "Destination", label: false %>
     </div>
-
-    <%= link_to "Start", new_trip_path, class: "btn btn-secondary" %>
+    <div class= "d-flex justify-content-center">
+      <%= f.input :start_date, as: :date, html5: true, value: "Start date", label: false %>
+    </div>
+    <div class= "d-flex justify-content-center">
+      <%= f.input :end_date, as: :date, html5: true, placeholder: "End date", label: false %>
+    </div>
+      <%= f.association :activities, as: :check_boxes, include_hidden: false, input_html: { class: "tag-selector" },
+        item_wrapper_class: 'tag-item', label: "" %>
+      <div class="d-flex justify-content-center">
+      <%= f.submit id: "btn-secondary"%>
+      </div>
+    <% end %>
+ </div>
 
 </div>
-
-</body>
