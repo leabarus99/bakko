@@ -1,15 +1,22 @@
 <div class="bakko-container">
 
   <h1 class="title-askbudget">TRAVEL MORE, SPEND LESS</h1>
-  <p class="askbudget-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <p class="askbudget-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
 
-  <div class="budget-line">
+
+  <div class="slide-budget">
+    <div class="price-range">
+      <p>$0</p>
+      <p>$5000</p>
+    </div>
+    <div class="budget-line">
+    </div>
   </div>
 
   <div class="budget-input">
 
     <%= simple_form_for([@trip, @budget]) do |f| %>
-      <%= f.input :price %>
+      <%= f.input :price, placeholder: "Enter your budget", hint: "Ex: 1250" %>
       <%= f.submit %>
     <% end %>
 
