@@ -2,6 +2,10 @@
   <div class="topbar-content">
     <div id="bakko-logo"><%= image_tag asset_path("bakko-white-logo.png") %></div>
 
+    <div class="logout">
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
+
     <div class="avatar-img">
       <%# <% if current_user.photo.attached? %>
       <%# <%= cl_image_tag @user.photo.key %>
