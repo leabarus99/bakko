@@ -27,6 +27,7 @@ background-color: #7a7a7a;
   }
 }
 
+
 .btn-secondary {
 color: white;
 background-color: #7a7a7a;
@@ -37,12 +38,30 @@ padding: 11px;
 margin-left: 112px;
 }
 
+#btn-secondary {
+  color: white;
+  background-color: #7a7a7a;
+  width: 120px;
+  border-radius: 20px;
+  padding: 7px;
+  }
+
 .btn-repeat {
   background-color: #282828;
   border-left: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+.btn-start {
+  color: white;
+  background-color: #7a7a7a;
+  width: 120px;
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 11px;
+  margin-left: 112px;
+  }
 
 //bouton index spécial
 
@@ -80,12 +99,12 @@ margin-left: 112px;
   left: 0;
   width: 0;
   height: 100%;
-  background: #78392785;
+  background: rgba(255, 255, 255, 0.642);
   transition: all .12s;
 }
 
 .wrapper a:focus{
-  border: #78392785 ;
+  border-color: rgba(255, 255, 255, 0.642) ;
 }
 
 .wrapper a:hover{
