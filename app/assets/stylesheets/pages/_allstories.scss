@@ -14,25 +14,33 @@
 .img-article img{
   width: 150px;
   height: 100%;
-  border-radius: 4px;
+  padding-right: 20px;
 }
 
 .content-article h5{
   font-size: 15px;
   margin-right: 19px;
   color: #adb4b4;
+  width: 206px;
 }
 
+.title-article h5{
+  width: 206px;
+  color: white;
+}
+
+
 .search{
-  background-color: grey;
+  background-color: #80808082;
   height: 29px;
   width: 80%;
   margin-top: -29px;
   border-radius: 12px;
   margin-left: 42px;
-  margin-bottom: 38px;
+  margin-bottom: 35px;
   display: flex;
   color: #ffffff91;;
+  margin-top: 32px;
 }
 
 .search ion-icon{
@@ -52,4 +60,22 @@
   margin-top: 10px;
   border-radius: 4px;
   background-color: #312f2f;
+}
+
+.back-lien{
+  margin-top: 21px;
+  padding: 8px 19px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.back-lien a{
+  background-color: #80808082;
+  padding: 8px 19px;
+  margin-top: 21px;
+  padding: 8px 19px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
 }

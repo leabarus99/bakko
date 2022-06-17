@@ -1,18 +1,22 @@
+
+  <div class = "back-lien"><%= link_to "Back", journal_path %></div>
   <div class="search"> <ion-icon name="search-outline"> </ion-icon><p>Search</p></div>
 
+
  <% @stories.each do |story| %>
-  <div class= "card-article">
-    <div class= "infos-article">
-      <div class= "title-article"> <h5><%= story.title %></h5> </div>
-      <div class= "content-article"> <h5><%= story.content %></h5> </div>
-     <%= link_to "Read",trip_story_path(story.trip, story), class:"button-read" %>
+ <%= link_to trip_story_path(story.trip, story) do %>
+    <div class= "card-article">
+      <div class= "infos-article">
+        <div class= "title-article"> <h5><%= story.title %></h5> </div>
+        <div class= "content-article"> <h5><%= story.content %></h5> </div>
+      </div>
+      <div class= "img-article">
+        <% if story.photo.attached? %>
+          <%= cl_image_tag story.photo.key %>
+        <% end %>
+      </div>
     </div>
-    <div class= "img-article">
-      <% if story.photo.attached? %>
-        <%= cl_image_tag story.photo.key %>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 
     <div class= 'line'></div>
 
