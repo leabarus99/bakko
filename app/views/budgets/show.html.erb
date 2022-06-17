@@ -16,6 +16,9 @@
         <div class="budget-distribution">
         <h2 class="budget-category"><%= budget_by_category[:category].capitalize %></h2>
         <p>$<%= budget_by_category[:price] %></p>
+        <div class="detailed-budget">
+          <ion-icon name="information-outline"></ion-icon>
+        </div>
         </div>
       </div>
     <% end %>
