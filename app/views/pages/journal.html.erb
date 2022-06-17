@@ -1,7 +1,7 @@
 <div class="container-profil" >
   <div class= "my-journal">
    <div class= "title-myjournal"> <%= link_to "Your journal", journal_path, class: "journal-titles" %></div>
-   <div class= "button-see-all">  <%= link_to "See all >", journal_path, class: "journal-titles" %></p></div>
+   <div class= "button-see-all">  <%= link_to "See all...", journal_path, class: "journal-titles" %></p></div>
   </div>
   <div class="container">
     <div class="glide">
@@ -44,7 +44,7 @@
   </div>
   <div class= "my-journal">
     <div class= "title-myjournal"> <%= link_to "News", journal_path %> </div>
-    <div class= "button-see-all">  <%= link_to "See all >", all_stories_path %> </div>
+    <div class= "button-see-all">  <%= link_to "See all...", all_stories_path %> </div>
   </div>
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
@@ -52,23 +52,26 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+
+<%# <%= link_to "New story", new_trip_story_path(@story.trip) %> 
+
  <% @stories.each_with_index do |story, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : ''  %>">
         <% if story.photo.attached? %>
           <%= cl_image_tag story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
         <% end %>
         <div class="carousel-caption  d-md-block">
+         <div class= "btn-read"><%= link_to "Read", trip_story_path(story.trip, story), class: "journal-titles" %></div>
           <div class= "new-article">
             <div>
               <h5><%= story.location %></h5>
-              <p>User 1</p>
+              <h5>@<%= @user.first_name %></h5>
             </div>
-            <div class= "btn-read"><%= link_to "Read", journal_path, class: "journal-titles" %></div>
-            </div>
-            <div class= "description-article"><%= story.content %></div>
+          </div>
+          <div class= "description-article"><%= story.content %></div>
           </div>
       </div>
-<% end %>
+  <% end %>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

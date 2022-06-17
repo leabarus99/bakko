@@ -8,10 +8,15 @@ class PagesController < ApplicationController
 
   def journal
     @stories = Story.all
+    @story = Story.new
+    @users = User.all
+    @user = current_user
   end
 
   def story
     @story = Story.create
   end
+
+
 
 end

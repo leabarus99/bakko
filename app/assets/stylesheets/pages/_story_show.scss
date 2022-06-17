@@ -1,20 +1,21 @@
 .img-bg img{
   width: 100%;
   margin-top: -66px;
-  height: 390px;
+  height: 328px;
 }
 
 .popup {
-  background-color: black;
+  background-color: #000000c9;
   position: absolute;
   height: 845px;
   width: 100%;
-  margin-top: -161px;
+  margin-top: -100px;
   border-radius: 24px;
 }
 
 .title-story{
   margin: 24px;
+  text-align: center;
 }
 
 .intro-story{
@@ -25,8 +26,22 @@
   margin: 24px;
 }
 
-.img-story{
-  height: 185px;
+.img-story img {=
+  height: 160px;
   margin: 0 auto;
   display: block;
+  margin: 0px auto;
+  border-radius: 4px;
+}
+
+.lien-back a {
+  background-color: #80808082;
+  padding: 8px 19px;
+  margin-top: 21px;
+  padding: 8px 19px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  position: absolute;
 }

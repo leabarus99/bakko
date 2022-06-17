@@ -7,7 +7,7 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find(params[:id])
     @user = @story.trip.user
-    @user_name = @user.first_name + " " +@user.last_name
+    @pseudo = @user.first_name + " " +@user.last_name
   end
 
   def new
