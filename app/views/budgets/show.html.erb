@@ -1,10 +1,23 @@
 <div class="bakko-container">
-  <h1>$<%= @budget.price %></h1>
 
-  <% @budget_by_category.each do |budget_by_category| %>
-    <div class="budget-distribution">
-    <%= budget_by_category[:category].capitalize %>
-    $<%= budget_by_category[:price] %><br>
+  <div class="budget-show">
+    <div class="budget-bubble">
     </div>
-  <% end %>
+    <div class="remaining-budget">
+      <ion-icon name="card-outline"></ion-icon>
+      <p>Remainging</p>
+      <h1>$<%= @budget.price %></h1>
+    </div>
+  </div>
+
+  <div class="budget-cards">
+    <% @budget_by_category.each do |budget_by_category| %>
+      <div class="bud-card">
+        <div class="budget-distribution">
+        <h2 class="budget-category"><%= budget_by_category[:category].capitalize %></h2>
+        <p>$<%= budget_by_category[:price] %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -6,3 +6,80 @@
 //   height: 150px;
 //   width: 150px;
 // }
+
+.budget-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.budget-bubble {
+  height: 300px;
+  width: 300px;
+  background: rgb(86,110,61);
+  filter: blur(8px);
+  background: linear-gradient(90deg, rgba(86,110,61,1) 1%, rgba(185,164,76,1) 50%, rgba(254,153,32,1) 70%, rgba(250,121,33,1) 95%);
+  border-radius: 200px;
+  text-align: center;
+  margin: 0px auto;
+
+  // backdrop-filter: blur(5px);
+}
+
+.remaining-budget {
+  position: absolute;
+}
+
+.remaining-budget ion-icon {
+  font-size: 28px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.budget-cards {
+  margin: 40px 0px;
+}
+
+.bud-card {
+  margin: 40px 0px;
+  border-radius: 16px;
+  height: 100px;
+  // background-color: white;
+}
+
+.budget-distribution {
+  padding: 30px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  height: 100px;
+  width: 100%;
+  // color: black;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+.budget-distribution p {
+  margin: 0px;
+}
+
+.budget-distribution h2 {
+  margin: 0px;
+}
+
+.budget-category {
+  font-size: 24px;
+}
