@@ -14,7 +14,7 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    @activities = Activity.where(id: params[:trip][:activity_ids])
+    @activities = Activity.where(name: params[:trip][:activities])
     @trip.activities = @activities
     @trip.user = current_user
     if @trip.save
