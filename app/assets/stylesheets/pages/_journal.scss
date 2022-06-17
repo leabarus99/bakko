@@ -5,7 +5,7 @@ body{
 .my-journal {
   display: flex;
   justify-content: space-between;
-  margin-top: 7px;
+  margin-top: 40px;
 }
 
 .title-myjournal {
@@ -19,12 +19,39 @@ body{
   margin-top: -18px;
 }
 
+.title-myjournal2 {
+  font-size: 29px;
+  font-size: 31px;
+  text-decoration: none;
+  margin-left: 44px;
+  font-family: open sans-serif;
+  font-weight: bolder;
+  line-break: anywhere;
+  margin-top: 8px;
+}
+
 .title-myjournal a {
   color: white;
 }
 
+.title-myjournal2 a {
+  color: white;
+}
+
+.button-see-all {
+  margin-top: 24px;
+}
+.button-see-all2 {
+  margin-top: 0px;
+}
 
 .button-see-all a{
+  color: #ffffffb5;
+  margin-right: 64px;
+  text-decoration: underline;
+}
+
+.button-see-all2 a{
   color: #ffffffb5;
   margin-right: 64px;
   text-decoration: underline;
@@ -68,5 +95,5 @@ body{
 }
 
 .container-profil {
-  margin-top: 32px;
+  margin-top: -20px;
 }
