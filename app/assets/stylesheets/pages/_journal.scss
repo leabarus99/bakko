@@ -5,6 +5,7 @@ body{
 .my-journal {
   display: flex;
   justify-content: space-between;
+  margin-top: 40px;
 }
 
 .title-myjournal {
@@ -18,12 +19,39 @@ body{
   margin-top: -18px;
 }
 
+.title-myjournal2 {
+  font-size: 29px;
+  font-size: 31px;
+  text-decoration: none;
+  margin-left: 44px;
+  font-family: open sans-serif;
+  font-weight: bolder;
+  line-break: anywhere;
+  margin-top: 8px;
+}
+
 .title-myjournal a {
   color: white;
 }
 
+.title-myjournal2 a {
+  color: white;
+}
+
+.button-see-all {
+  margin-top: 24px;
+}
+.button-see-all2 {
+  margin-top: 0px;
+}
 
 .button-see-all a{
+  color: #ffffffb5;
+  margin-right: 64px;
+  text-decoration: underline;
+}
+
+.button-see-all2 a{
   color: #ffffffb5;
   margin-right: 64px;
   text-decoration: underline;
@@ -41,16 +69,31 @@ body{
   position: relative;
 }
 
-.container-profil{
-  margin-top: 81px;
-}
-
 .btn-read a {
-  background-color: #141313cc;
+  background-color: #55555591;
   padding: 16px;
   border-radius: 8px;
   position: absolute;
   margin: -77px 86px;
   color: white;
   font-weight: 700;
+}
+
+.new-article h5{
+  margin-bottom: 12px;
+}
+
+.add-story a {
+  position: absolute;
+  margin-top: 172px;
+  color: white;
+  background-color: #80808052;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-weight: 500;
+  margin-left: 136px;
+}
+
+.container-profil {
+  margin-top: -20px;
 }
