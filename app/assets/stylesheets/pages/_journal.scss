@@ -1,11 +1,24 @@
 body{
   background-color: black;
 }
+.line2{
+  border: 1px solid #8aa8a16c;
+  width: 85%;
+  margin: 32px auto;
+  margin-bottom: 6px;
+  margin-top: 64px;
+}
 
 .my-journal {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 28px;
+}
+
+.my-journal2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
 }
 
 .title-myjournal {
@@ -27,7 +40,6 @@ body{
   font-family: open sans-serif;
   font-weight: bolder;
   line-break: anywhere;
-  margin-top: 8px;
 }
 
 .title-myjournal a {
@@ -94,6 +106,3 @@ body{
   margin-left: 136px;
 }
 
-.container-profil {
-  margin-top: -20px;
-}
