@@ -20,12 +20,25 @@
   width: 90%;
   padding: 15px;
   padding-left: 30px;
+  margin: 0px auto;
+}
+
+
+.slide-budget {
+  margin: 100px auto;
 }
 
 .budget-line {
   border: 1.5px solid gray;
-  margin: 100px auto;
+  margin: 0px auto;
   width: 90%;
+}
+
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: 0px 10px;
 }
 
 .submit-button {
@@ -36,7 +49,6 @@
   width: 40%;
   background-color: rgb(176, 176, 176);
   color: rgb(0, 0, 0);
-
 }
 
 .submit-button a {

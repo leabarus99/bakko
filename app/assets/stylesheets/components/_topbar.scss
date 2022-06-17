@@ -1,12 +1,17 @@
 #bakko-logo img {
-  height: 100px;
-  margin: 20px;
+  height: 90px;
 }
 
 .avatar-img img {
   border-radius: 50%;
-  height: 120px;
-  width: 120px;
+  height: 80px;
+  width: 80px;
   object-fit: cover;
   // margin: 80px 20px;
+}
+
+.topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
