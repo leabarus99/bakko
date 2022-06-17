@@ -1,4 +1,4 @@
-body {
+.background {
   background-color: black;
   color: white;
   font-family: $body-font;
@@ -9,6 +9,7 @@ body {
   margin: 20px;
   text-align: center;
   font-family: $headers-font;
+  margin-top: 40px
 }
 
 .welcome-paragraph {
@@ -39,4 +40,9 @@ a {
 .group {
   display: flex;
   position: relative;
+}
+
+.world {
+  text-align: center;
+  margin-top: 52px;
 }

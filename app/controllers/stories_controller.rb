@@ -6,6 +6,8 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
+    @user = @story.trip.user
+    @user_name = @user.first_name + " " +@user.last_name
   end
 
   def new
@@ -22,6 +24,10 @@ class StoriesController < ApplicationController
       render :new
     end
     authorize @story
+  end
+
+  def all
+    @stories = Story.all
   end
 
   private

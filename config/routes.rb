@@ -4,8 +4,7 @@ Rails.application.routes.draw do
 
   get "profil", to: 'pages#profil'
   get "journal", to: 'pages#journal'
-
-  resources :devise
+  get "all_stories", to: 'stories#all'
 
   resources :trips do
     resources :stories
