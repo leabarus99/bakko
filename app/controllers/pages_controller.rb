@@ -17,6 +17,4 @@ class PagesController < ApplicationController
     @story = Story.create
   end
 
-
-
 end

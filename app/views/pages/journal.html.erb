@@ -4,36 +4,32 @@
    <div class= "button-see-all">  <%= link_to "See all...", journal_path, class: "journal-titles" %></p></div>
   </div>
   <div class="container">
+  <div class = "add-story"><%= link_to "New Story", new_trip_story_path(current_user.trips) %></div>
     <div class="glide">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           <li class="glide__slide">
             <div class= 'glides-infos'>
-              <p>Yesterday, 11:08pm</p>
               <%= image_tag('images1.jpeg') %>
             </div>
           </li>
           <li class="glide__slide">
             <div class= 'glides-infos'>
-              <p>Yesterday, 11:08pm</p>
               <%= image_tag('images2.jpeg') %>
             </div>
           </li>
           <li class="glide__slide">
             <div class= 'glides-infos'>
-              <p>Yesterday, 11:08pm</p>
               <%= image_tag('images3.jpeg') %>
             </div>
           </li>
           <li class="glide__slide">
             <div class= 'glides-infos'>
-              <p>Yesterday, 11:08pm</p>
               <%= image_tag('images4.jpeg') %>
             </div>
           </li>
           <li class="glide__slide">
             <div class= 'glides-infos'>
-              <p>Yesterday, 11:08pm</p>
               <%= image_tag('images5.jpeg') %>
             </div>
           </li>
@@ -53,7 +49,7 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
 
-<%# <%= link_to "New story", new_trip_story_path(@story.trip) %> 
+<%# <%= link_to "New story", new_trip_story_path(@story.trip) %>
 
  <% @stories.each_with_index do |story, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : ''  %>">
@@ -86,7 +82,7 @@
   <script>
     const config = {
       type: "carousel",
-      perView: 1.5
+      perView: 2.3
     };
       new Glide('.glide', config).mount()
   </script>

@@ -12,7 +12,7 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
-    @stories = Story.all
+    @trip = @story.trip
   end
 
   def create

@@ -5,6 +5,7 @@ body{
 .my-journal {
   display: flex;
   justify-content: space-between;
+  margin-top: 7px;
 }
 
 .title-myjournal {
@@ -41,16 +42,31 @@ body{
   position: relative;
 }
 
-.container-profil{
-  margin-top: 81px;
-}
-
 .btn-read a {
-  background-color: #141313cc;
+  background-color: #55555591;
   padding: 16px;
   border-radius: 8px;
   position: absolute;
   margin: -77px 86px;
   color: white;
   font-weight: 700;
+}
+
+.new-article h5{
+  margin-bottom: 12px;
+}
+
+.add-story a {
+  position: absolute;
+  margin-top: 172px;
+  color: white;
+  background-color: #80808052;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-weight: 500;
+  margin-left: 136px;
+}
+
+.container-profil {
+  margin-top: 32px;
 }
