@@ -46,26 +46,21 @@ Activity::ACTIVITIES.each do |name|
   Activity.create!(name: name)
 end
 
-activity1 = Activity.create!(name: "hiking")
-activity2 = Activity.create!(name: "climbing")
-activity3 = Activity.create!(name: "surf")
-activity4 = Activity.create!(name: "scuba diving")
-activity5 = Activity.create!(name: "sightseeing")
-activity6 = Activity.create!(name: "biking")
-
 puts "SEED TRIP ACTIVITIES"
-tripact1= TripActivity.create!(trip: trip1, activity: activity2)
-tripact2= TripActivity.create!(trip: trip3, activity: activity4)
+Trip.all.each do |t|
+  TripActivity.create!(trip: t, activity: Activity.all.sample)
+end
 
 puts "SEED EQUIPMENTS"
 equipment1 = Equipment.create!(name: "Tools", details: "jdaojdoqror", benefits: "Survival", price_estimation: 50)
 equipment2 = Equipment.create!(name: "Shoes & Bags", details: "jrorjowlldj", benefits: "Walking", price_estimation: 100)
 equipment3 = Equipment.create!(name: "Night", details: "hdksdhkwksdh", benefits: "Sleeping", price_estimation: 200)
 
+
 puts "SEED MATERIALS"
-material1 = Material.create!(activity: activity1, equipment: equipment1)
-material2 = Material.create!(activity: activity2, equipment: equipment2)
-material3 = Material.create!(activity: activity3, equipment: equipment3)
+Activity.all.each do |a|
+  Material.create!(activity: a, equipment: Equipment.all.sample)
+end
 
 story1= Story.create!(title: "The best of Island ", content: "The discovery of the western fjords as well as the caldera of Aska...", location: 'Islande', trip: trip1, introduction: "Un voyage en Islande, terre des extrêmes et des contrastes, à la limite du cercle polaire, voilà l’occasion d’une fabuleuse leçon de géologie.", description:"Sa nature sauvage, ses phénomènes volcaniques, ses chutes d’eau indomptables et ses paysages sans bornes sont sa meilleure publicité. À l’extrémité de l’Europe, l’Islande est un fantasme pour amateurs de grands espaces. On y respire un air frais et volontiers humide qui renvoie à l’origine d’un monde plus propre, puissant et prenant.
   Sous les abords austères de ses immenses champs de lave et ses déserts de pierre intérieurs, l’Islande empile les sites remarquables : fjords grandioses, glaciers colossaux, piscines thermales naturelles délicieuses, falaises piquetées de macareux, fulmars et guillemots… sans oublier tous ces lieux qui renvoient à la colonisation viking, avec leurs murs de tourbe et leurs maisonnettes aux toits nappés d’herbe.
