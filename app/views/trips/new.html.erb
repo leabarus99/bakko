@@ -1,5 +1,6 @@
 <div class="new-container">
 
+
   <div class="icon-world">
     <img src="https://ian.macky.net/pat/map/globes/earth-landmask-256-fast.gif" alt="" style= "width: 88px;">
   </div>
@@ -20,7 +21,7 @@
     <div class= "d-flex justify-content-center">
       <%= f.input :end_date, as: :date, html5: true, placeholder: "End date", label: false %>
     </div>
-      <%= f.association :activities, as: :check_boxes, include_hidden: false, input_html: { class: "tag-selector" },
+    <%= f.input :activities, collection: Activity::ACTIVITIES, as: :check_boxes, include_hidden: false, input_html: { class: "tag-selector" },
         item_wrapper_class: 'tag-item', label: "" %>
       <div class="d-flex justify-content-center">
       <%= f.submit id: "btn-secondary"%>
