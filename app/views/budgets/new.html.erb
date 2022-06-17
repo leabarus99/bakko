@@ -17,7 +17,9 @@
 
     <%= simple_form_for([@trip, @budget]) do |f| %>
       <%= f.input :price, placeholder: "Enter your budget", hint: "Ex: 1250" %>
-      <%= f.submit %>
+      <div id="submit-budget">
+        <%= f.submit %>
+      </div>
     <% end %>
 
 

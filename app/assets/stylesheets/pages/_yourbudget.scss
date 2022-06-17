@@ -41,16 +41,26 @@
   margin: 0px 10px;
 }
 
-.submit-button {
+// .submit-button {
+//   padding: 15px;
+//   border-radius: 20px;
+//   text-align: center;
+//   margin: 40px auto;
+//   width: 40%;
+//   background-color: rgb(176, 176, 176);
+//   color: rgb(0, 0, 0);
+// }
+
+// .submit-button a {
+//   color: white;
+// }
+
+#submit-budget input {
   padding: 15px;
   border-radius: 20px;
   text-align: center;
-  margin: 40px auto;
+  margin: 20px auto;
   width: 40%;
   background-color: rgb(176, 176, 176);
   color: rgb(0, 0, 0);
-}
-
-.submit-button a {
-  color: white;
 }
