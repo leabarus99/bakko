@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get "all_stories", to: 'stories#all'
 
   resources :trips do
-    resources :stories
+    resources :stories do
+      resources :liikes
+    end
     resources :survival_articles
     resources :activities
     resources :budgets, only: [:new, :create, :show]
