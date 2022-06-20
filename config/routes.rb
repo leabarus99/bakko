@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :activities
     resources :budgets, only: [:new, :create, :show]
     member do
+      get "detailedbudget", to: 'pages#detailedbudget'
+    end
+    member do
       get :equipments
     end
   end

@@ -52,10 +52,11 @@ Trip.all.each do |t|
 end
 
 puts "SEED EQUIPMENTS"
-equipment1 = Equipment.create!(name: "Tools", details: "jdaojdoqror", benefits: "Survival", price_estimation: 50)
-equipment2 = Equipment.create!(name: "Shoes & Bags", details: "jrorjowlldj", benefits: "Walking", price_estimation: 100)
-equipment3 = Equipment.create!(name: "Night", details: "hdksdhkwksdh", benefits: "Sleeping", price_estimation: 200)
-
+equipment1 = Equipment.create!(name: "Tools", details: "Compas", benefits: "Precise direction", price_estimation: 35)
+equipment2 = Equipment.create!(name: "Shoes", details: "Hiking shoes", benefits: "Stamina", price_estimation: 109)
+equipment3 = Equipment.create!(name: "Night", details: "Tent", benefits: "Solid", price_estimation: 82)
+equipment3 = Equipment.create!(name: "Bags", details: "Backpack", benefits: "Organisation", price_estimation: 230)
+equipment3 = Equipment.create!(name: "Clothes", details: "Lycra", benefits: "Water resistant", price_estimation: 45)
 
 puts "SEED MATERIALS"
 Activity.all.each do |a|
