@@ -29,7 +29,7 @@ class BudgetsController < ApplicationController
 
   private
 
-  def budget_params
+  def story_params
     params.require(:budget).permit(:price, :category, :trip)
   end
 end

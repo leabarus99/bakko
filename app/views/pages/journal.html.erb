@@ -10,6 +10,7 @@
   <div class="container">
   <div class = "add-story">
   </div>
+
     <div class="glide">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
@@ -66,7 +67,13 @@
           <%= cl_image_tag story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
         <% end %>
         <div class="carousel-caption  d-md-block">
-         <div class= "btn-read"><%= link_to "Read", trip_story_path(story.trip, story), class: "journal-titles" %></div>
+
+      <%= link_to trip_story_path(story.trip, story), method: :delete, data: { confirm: "Delete #{story.title}?" } do %>
+        Delete
+      <% end %>
+
+
+        <button class="modal-btn-read modal-trigger">Read</button>
           <div class= "new-article">
             <div>
               <h5><%= story.location %></h5>
@@ -76,6 +83,43 @@
           <div class= "description-article"><%= story.content %></div>
           </div>
       </div>
+
+
+<div class="modal-container">
+        <div class="overlayy modal-trigger"></div>
+        <div class="modall">
+          <button class="close-modal modal-trigger">X</button>
+
+            <h1 class= "title-story"><%= story.title %></h1>
+            <div class= "intro-story"><%= story.introduction %></div>
+            <% if story.photo.attached? %>
+              <div class= "img-story"><%= cl_image_tag story.photo.key %></div>
+            <% end %>
+            <div class= "description-story"><%= story.description %></div>
+
+      <%= @story.liikes.count %> Likes
+
+      <% liike = current_user.liikes.find_by(story: @story).nil? %>
+      <% if liike.nil? %>
+       <%# <%= button_to "Like", liikes_path(liike), params: { liike: {story_id: @story.id }}, method: :post %>
+      <form action="/liikes" method="post">
+        <input type="hidden" name="authenticity_token" value =" <%= form_authenticity_token%> ">
+        <input type="hidden" name="liike[story_id]" value = " <%= @story.id %> ">
+        <input type="submit" value="Liike">
+      </form>
+      <% else %>
+      <%# <%= button_to "Unlike", liikes_path(liike), method: :delete  %>
+        <form action="<%= liikes_path(liike) %> " method="post">
+        <input type="hidden" name="authenticity_token" value =" <%= form_authenticity_token %> ">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Unlike">
+      </form>
+      <% end%>
+        </div>
+      </div>
+
+
+
   <% end %>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -95,4 +139,8 @@
     };
       new Glide('.glide', config).mount()
   </script>
-</div>
+
+ <%# <% @stories.each_with_index do |story, index| %>
+
+<%# <% end %>
+<%# </div> %>

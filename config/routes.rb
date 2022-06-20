@@ -5,9 +5,15 @@ Rails.application.routes.draw do
   get "profil", to: 'pages#profil'
   get "journal", to: 'pages#journal'
   get "all_stories", to: 'stories#all'
+  get "journal", to: 'pages#destroy'
+  get "journal", to: 'pages#destroyy'
+  get "journal", to: 'pages#create'
+  delete "liikes", to: "liikes#destroy"
 
   resources :trips do
-    resources :stories
+    resources :stories do
+
+    end
     resources :survival_articles
     resources :activities
     resources :budgets, only: [:new, :create, :show]
@@ -16,6 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :liikes, only: [:create, :destroy]
   resources :equipments
   resources :devise
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
