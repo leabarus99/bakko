@@ -10,6 +10,7 @@ body {
 .equipment-title {
   margin: 20px 0px;
   letter-spacing: 1px;
+
 }
 
 .equipment-paragraph {
@@ -50,4 +51,11 @@ body {
 
 .card-activity-infos ion-icon {
   font-size: 32px;
+}
+
+.pass-link a {
+  color: white;
+  float: right;
+  margin: 20px 10px;
+  text-decoration: underline;
 }

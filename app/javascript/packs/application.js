@@ -16,6 +16,13 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 
+
+import { moveIndicatorPrice } from "../plugins/listener"
+
+document.addEventListener("turbolinks:load", event => {
+  moveIndicatorPrice();
+})
+
 const modalContainer = document.querySelector(".modal-container");
 const modalTriggers = document.querySelectorAll(".modal-trigger");
 

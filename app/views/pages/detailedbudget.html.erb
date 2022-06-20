@@ -1,0 +1,17 @@
+<div class="bakko-containter">
+
+  <h1>Detailed budget</h1>
+
+
+
+
+
+  <%= @budget_by_category %>
+
+
+  <%= @budget_by_category.each do |budgetcategory| %>
+
+    <h2 class="budget-category"><%= budgetcategory[:category].capitalize %></h2>
+    <p class="budgetcategory-price">$<%= budgetcategory[:price] %></p>
+  <% end %>
+</div>

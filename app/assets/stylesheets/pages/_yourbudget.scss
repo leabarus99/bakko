@@ -28,10 +28,22 @@
   margin: 80px auto;
 }
 
+// .drag-price {
+//   display: block;
+//   align-items: center;
+// }
+
 .budget-line {
   border: 1.5px solid gray;
   margin: 0px auto;
   width: 90%;
+}
+
+#price-indicator {
+  background-color: $dark-orange;
+  height: 30px;
+  width: 15px;
+  border-radius: 20px;
 }
 
 .price-range {

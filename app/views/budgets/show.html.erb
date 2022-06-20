@@ -15,9 +15,11 @@
       <div class="bud-card">
         <div class="budget-distribution">
         <h2 class="budget-category"><%= budget_by_category[:category].capitalize %></h2>
-        <p>$<%= budget_by_category[:price] %></p>
+        <p class="budgetcategory-price">$<%= budget_by_category[:price] %></p>
         <div class="detailed-budget">
-          <ion-icon name="information-outline"></ion-icon>
+          <%= link_to detailedbudget_trip_path(@budget) do %>
+            <ion-icon name="information-outline"></ion-icon>
+          <% end %>
         </div>
         </div>
       </div>

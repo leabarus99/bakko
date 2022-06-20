@@ -12,7 +12,7 @@
         <li class="list" id="second">
           <%# <a href="/trips/:id/budgets/new"> %>
           <% if user_signed_in? && !current_user.trips.blank? %>
-            <%= link_to new_trip_budget_path(current_user.trips.first) do %>
+            <%= link_to new_trip_budget_path(current_user.trips.last) do %>
               <span class="icon">
                 <ion-icon name="cash-outline"></ion-icon>
               </span>
