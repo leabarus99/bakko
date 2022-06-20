@@ -5,18 +5,22 @@
     <img src="https://ian.macky.net/pat/map/globes/earth-landmask-256-fast.gif" alt="" style= "width: 88px;">
   </div>
 
-    <h1 class="welcome-title">Keep the world in your hand!</h1>
+    <h1 class="welcome-t">Keep the world in your hand!</h1>
 
     <p class="welcome-paragraph">Pick your destination as well as the duration of your stay</p>
 
   <div class="form-buttons">
     <%= simple_form_for(@trip) do |f| %>
 
-    <div class= "d-flex justify-content-center">
-      <%= f.input :destination, placeholder: "Destination", label: false %>
+    <div class= "d-flex justify-content-center" style="margin-bottom: -25px; margin-top: 20px;">
+      <%= f.input :destination, placeholder: "Destination", label: false, input_html:
+                  { data: { mapbox_target: "destination" } ,class: "d-none"},
+                  wrapper_html: { data: { controller: "mapbox",
+                  mapbox_api_key_value: ENV['MAPBOX_API_KEY'] } ,
+                  } %>
     </div>
     <div class= "d-flex justify-content-center">
-      <%= f.input :start_date, as: :date, html5: true, value: "Start date", label: false %>
+      <%= f.input :start_date, as: :date, html5: true, value: "Start date", label: false%>
     </div>
     <div class= "d-flex justify-content-center">
       <%= f.input :end_date, as: :date, html5: true, placeholder: "End date", label: false %>

@@ -7,10 +7,15 @@ Rails.application.routes.draw do
   get "all_stories", to: 'stories#all'
 
   resources :trips do
+
+    resources :stories
+    resources :guides
+
     resources :stories do
       resources :liikes
     end
     resources :survival_articles
+
     resources :activities
     resources :budgets, only: [:new, :create, :show]
     member do
@@ -20,7 +25,7 @@ Rails.application.routes.draw do
       get :equipments
     end
   end
-
+  resources :guides
   resources :equipments
   resources :devise
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

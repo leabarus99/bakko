@@ -1,1 +1,22 @@
-<h1>Here is the Bakko survival kit</h1>
+<body class="guide-background">
+
+<div class="survival-container">
+
+<div class="survival-title">
+<h1>Survival Kit</h1>
+</div>
+
+<%= form_tag guides_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an article"
+  %>
+<% end %>
+
+<div class="sub-title">
+<h2>Bakko Guides</h2>
+</div>
+
+</div>
+</body>
