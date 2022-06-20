@@ -4,17 +4,26 @@
   font-family: $body-font;
 }
 
+.gif-background {
+  background: url("https://media0.giphy.com/media/f9M4voTOfD6hz8kd1T/giphy.gif?cid=ecf05e471zn8t3zsski9panf9fk0unks0wqbftkyzmvkhonp&rid=giphy.gif&ct=g");
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
 .welcome-title {
-  font-family: $headers-font;
   margin: 20px;
   text-align: center;
   font-family: $headers-font;
-  margin-top: 40px
+  margin-top: 353px;
+  font-size: calc(2.0rem + 1.5vw);
+  margin-bottom: 40px;
 }
 
 .welcome-paragraph {
-  margin: 20px;
   text-align: center;
+  font-size: larger;
 }
 
 .trip-index-image {

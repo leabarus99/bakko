@@ -33,7 +33,8 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
-
+gem 'pg_search'
+gem "geocoder"
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

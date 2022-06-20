@@ -8,14 +8,14 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :stories
-    resources :survival_articles
+    resources :guides
     resources :activities
     resources :budgets, only: [:new, :create, :show]
     member do
       get :equipments
     end
   end
-
+  resources :guides
   resources :equipments
   resources :devise
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

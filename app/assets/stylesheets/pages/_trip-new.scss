@@ -4,11 +4,12 @@ body {
   font-family: $body-font;
 }
 
-.welcome-title h1 {
+.welcome-t {
   font-family: $headers-font;
   margin: 20px;
   text-align: center;
   font-family: $headers-font;
+  margin-top: 30px
 }
 
 .welcome-paragraph {
@@ -29,6 +30,8 @@ body {
   padding: 30px;
 }
 
+// search box
+
 .form-buttons {
   margin: auto;
   text-align: center;
@@ -36,16 +39,83 @@ body {
 }
 
 .form-buttons input {
-border-radius: 10px;
-padding: 13px;
-background-color: #282828;
-border-color: white;
-width: 270px;
-border-width: thin;
-text-align: center;
-color: #6c757d;
-border-width: thin
+  border-radius: 10px;
+  color: grey;
+  padding: 13px;
+  background-color: #282828;
+  border-color: white;
+  width: 270px;
+  border-width: thin;
+  text-align: center;
+  margin-right: 20px;
+  border-width: thin
 }
+
+#trip_destination:focus {
+  background-color: grey !important;
+}
+#trip_destination::placeholder {
+  color: #878787;
+  font-family: $body-font;
+}
+
+#trip_start_date {
+  color: #878787 !important;
+}
+
+#trip_end_date {
+  color: #878787 !important;
+}
+
+.mapboxgl-ctrl-geocoder {
+  max-width: none;
+  width: 100%;
+  margin-bottom: 24px;
+  position: relative;
+  left: 10px;
+  box-shadow: none;
+}
+
+.mapboxgl-ctrl-geocoder button {
+  display: none;
+}
+
+.mapboxgl-ctrl-geocoder :focus {
+  margin-bottom: 10px;
+  overflow: hidden ;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+-webkit-box-orient: vertical;
+
+}
+
+#setInputValue {
+  list-style-type: none;
+}
+// search box
+
+.mapboxgl-ctrl-geocoder--icon .mapboxgl-ctrl-geocoder--icon-loading {
+  display: none;
+}
+
+svg {
+  display: none;
+}
+
+
+.mapboxgl-ctrl-geocoder--pin-right {
+  min-height: 26px;
+  display: none;
+}
+
+.suggestions li {
+  list-style: none;
+}
+
+
+
+//activity tags
 
 .group-button {
   display: flex;
@@ -82,3 +152,5 @@ border-width: thin
   background-color: #708598b8;
   color: white;
 }
+
+//activity tags
