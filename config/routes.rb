@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :stories do
-
+      resources :liikes
     end
     resources :survival_articles
     resources :activities

@@ -24,5 +24,3 @@ modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
 function toggleModal(){
   modalContainer.classList.toggle("active")
 }
-
-

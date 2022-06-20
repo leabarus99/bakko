@@ -67,6 +67,7 @@
           <%= cl_image_tag story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
         <% end %>
         <div class="carousel-caption  d-md-block">
+<<<<<<< HEAD
 
       <%= link_to trip_story_path(story.trip, story), method: :delete, data: { confirm: "Delete #{story.title}?" } do %>
         Delete
@@ -74,6 +75,9 @@
 
 
         <button class="modal-btn-read modal-trigger">Read</button>
+=======
+        <button class= "modal-btn modal-trigger">Read</button>
+>>>>>>> 2530560fa92592722dc9d1161d701d16d68b562e
           <div class= "new-article">
             <div>
               <h5><%= story.location %></h5>
@@ -88,6 +92,7 @@
 <div class="modal-container">
         <div class="overlayy modal-trigger"></div>
         <div class="modall">
+<<<<<<< HEAD
           <button class="close-modal modal-trigger">X</button>
 
             <h1 class= "title-story"><%= story.title %></h1>
@@ -119,6 +124,29 @@
       </div>
 
 
+=======
+          <button class="close-modal modal-trigger"><ion-icon name="arrow-back-outline"></ion-icon></button>
+          <div class= 'line3'></div>
+              <h1 class= "title-story"><%= story.title %></h1>
+
+          <div class = "infos-user-story">
+            <div class= "sous-infos">
+              <% if current_user.photo.attached? %>
+                <div ><%= image_tag "user-profil.jpg" %></div>
+              <% end %>
+              <div class= "user-story">@<%= current_user.first_name %></div>
+              <div class= "location-story"><%= story.location%></div>
+            </div>
+            <div><button class= "btn-follow">Follow</button></div>
+          </div>
+
+            <% if story.photo.attached? %>
+              <div class= "img-story"><%= cl_image_tag story.photo.key %></div>
+            <% end %>
+             <div class= "intro-story"><%= story.introduction %></div>
+            <div class= "description-story"><%= story.description %></div>
+        </div>
+>>>>>>> 2530560fa92592722dc9d1161d701d16d68b562e
 
   <% end %>
     </div>
@@ -139,8 +167,14 @@
     };
       new Glide('.glide', config).mount()
   </script>
+<<<<<<< HEAD
 
  <%# <% @stories.each_with_index do |story, index| %>
 
 <%# <% end %>
 <%# </div> %>
+=======
+</div>
+
+      </div>
+>>>>>>> 2530560fa92592722dc9d1161d701d16d68b562e

@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_06_19_214051) do
+=======
+ActiveRecord::Schema.define(version: 2022_06_20_085517) do
+>>>>>>> 2530560fa92592722dc9d1161d701d16d68b562e
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +83,7 @@ ActiveRecord::Schema.define(version: 2022_06_19_214051) do
   end
 
   create_table "liikes", force: :cascade do |t|
+<<<<<<< HEAD
     t.bigint "user_id", null: false
     t.bigint "story_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -89,13 +94,21 @@ ActiveRecord::Schema.define(version: 2022_06_19_214051) do
 
   create_table "likes", force: :cascade do |t|
     t.bigint "guide_id", null: false
+=======
+>>>>>>> 2530560fa92592722dc9d1161d701d16d68b562e
     t.bigint "user_id", null: false
+    t.bigint "story_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< HEAD
     t.bigint "story_id", null: false
     t.index ["guide_id"], name: "index_likes_on_guide_id"
     t.index ["story_id"], name: "index_likes_on_story_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+=======
+    t.index ["story_id"], name: "index_liikes_on_story_id"
+    t.index ["user_id"], name: "index_liikes_on_user_id"
+>>>>>>> 2530560fa92592722dc9d1161d701d16d68b562e
   end
 
   create_table "materials", force: :cascade do |t|
@@ -167,9 +180,12 @@ ActiveRecord::Schema.define(version: 2022_06_19_214051) do
   add_foreign_key "budgets", "trips"
   add_foreign_key "liikes", "stories"
   add_foreign_key "liikes", "users"
+<<<<<<< HEAD
   add_foreign_key "likes", "guides"
   add_foreign_key "likes", "stories"
   add_foreign_key "likes", "users"
+=======
+>>>>>>> 2530560fa92592722dc9d1161d701d16d68b562e
   add_foreign_key "materials", "activities"
   add_foreign_key "materials", "equipment"
   add_foreign_key "stories", "trips"
