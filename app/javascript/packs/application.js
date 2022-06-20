@@ -18,6 +18,23 @@ import "bootstrap"
 
 
 
+
 document.addEventListener("turbolinks:load", event => {
 
 })
+
+import { moveIndicatorPrice } from "../plugins/listener"
+
+document.addEventListener("turbolinks:load", event => {
+  moveIndicatorPrice();
+})
+
+const modalContainer = document.querySelector(".modal-container");
+const modalTriggers = document.querySelectorAll(".modal-trigger");
+
+modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
+
+function toggleModal(){
+  modalContainer.classList.toggle("active")
+}
+

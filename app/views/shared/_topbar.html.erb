@@ -1,23 +1,21 @@
-<div class="bakko-container">
-  <div class="topbar-content">
-    <div id="bakko-logo"><%= image_tag asset_path("bakko-white-logo.png") %></div>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="<%= image_path('bakko-white-logo.png')%>">
+</a>
+    <button class="navbar-toggler"id="navbarSupportedContent" >
+          <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= image_path('user-profil.jpg')%>">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/profil">Profil</a>
+              <a class="dropdown-item profil-settings" href="#">Settings</a>
+              <a class="dropdown-item" href="<%= link_to "Log out", destroy_user_session_path, method: :delete %>"></a>
+            </div>
+          </li>
+          <!--li class="nav-item"-->
+          <!--/li-->
+    </button>
 
-    <div class="logout">
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    </div>
-
-
-
-
-
-
-    <div class="avatar-img">
-      <%# <% if current_user.photo.attached? %>
-      <%# <%= cl_image_tag @user.photo.key %>
-      <%# <% else %>
-      <%= image_tag('user-profil.jpg') %>
-      <%# <% end %>
-    </div>
 
   </div>
 </div>
