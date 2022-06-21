@@ -13,8 +13,15 @@
 
     <%# <div class="drag-price">
       <%= simple_form_for([@trip, @budget]) do |f| %>
-        <%# <%= f.input :price, label: false, as: :range, input_html:{ min:"0", max:"5000" } %>
+        <%# <%= f.input :price, label: false, as: :range, input_html:{ min:"0", max:"5000", step:"10", oninput:"updateTextInput(this.value)" } %>
+        <%# <input type="text" id="textInput" value=""> %>
       <%# <% end %>
+
+      <%# <script>
+        function updateTextInput(val) {
+          document.getElementById('textInput').value=val;
+        }
+      </script> %>
     <%# </div> %>
 
 

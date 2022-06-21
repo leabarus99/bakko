@@ -52,13 +52,49 @@ Trip.all.each do |t|
 end
 
 puts "SEED EQUIPMENTS"
-equipment1 = Equipment.create!(name: "Tools", details: "Compas", benefits: "Precise direction", price_estimation: 35)
-equipment2 = Equipment.create!(name: "Shoes", details: "Hiking shoes", benefits: "Stamina", price_estimation: 109)
-equipment3 = Equipment.create!(name: "Night", details: "Tent", benefits: "Solid", price_estimation: 82)
-equipment3 = Equipment.create!(name: "Bags", details: "Backpack", benefits: "Organisation", price_estimation: 230)
-equipment3 = Equipment.create!(name: "Clothes", details: "Lycra", benefits: "Water resistant", price_estimation: 45)
+# equipment1 = Equipment.create!(name: "Tools", details: "Compas", benefits: "Precise direction", price_estimation: 35)
+# equipment2 = Equipment.create!(name: "Shoes", details: "Hiking shoes", benefits: "Stamina", price_estimation: 109)
+# equipment3 = Equipment.create!(name: "Night", details: "Tent", benefits: "Solid", price_estimation: 82)
+# equipment4 = Equipment.create!(name: "Bags", details: "Backpack", benefits: "Organisation", price_estimation: 230)
+# equipment5 = Equipment.create!(name: "Clothes", details: "Lycra", benefits: "Water resistant", price_estimation: 45)
+# equipment6 = Equipment.create!(name: "Accessories", details: "Plus", benefits: "Water resistant", price_estimation: 145)
 
-puts "SEED MATERIALS"
+hiking_shoes = Equipment.create!(name: "Shoes", details: "Intermediate", benefits: "Comfort & Stamina", price_estimation: 42)
+hiking_night = Equipment.create!(name: "Tent", details: "3 seats", benefits: "Isolation & Comfort", price_estimation: 94)
+hiking_bags = Equipment.create!(name: "Bag", details: "Intermediate", benefits: "Compartmented & waterproof", price_estimation: 39)
+hiking_clothes = Equipment.create!(name: "Jacket", details: "Waterproof jacket", benefits: "lightness & Waterproof", price_estimation: 139)
+
+climbing_tools = Equipment.create!(name: "Rope", details: "15m", benefits: "High support", price_estimation: 32)
+climbing_night = Equipment.create!(name: "Tent", details: "3 seats", benefits: "Isolation & Comfort", price_estimation: 94)
+climbing_clothes = Equipment.create!(name: "Jacket", details: "Resistant Jacket", benefits: "Resistant & Flexible", price_estimation: 150)
+
+surf_bag = Equipment.create!(name: "Bag", details: "Soft bag", benefits: "Big storage space", price_estimation: 69)
+surf_clothes = Equipment.create!(name: "Wetsuit", details: "Surf suit", benefits: "Resistant & Flexible", price_estimation: 269)
+
+scuba_tools = Equipment.create!(name: "Palm", details: "Scuba Diving Palm", benefits: "lightness & Flexible", price_estimation: 55)
+scuba_clothes = Equipment.create!(name: "Clothes", details: "Waterproof", benefits: "lightness & Flexible", price_estimation: 59)
+scuba_accessories = Equipment.create!(name: "Camera", details: "Camera water housing", benefits: "Water resistant & solid ", price_estimation: 437)
+
+sightseeing_shoes = Equipment.create!(name: "Shoes", details: "Newbie", benefits: "lightness & Comfort", price_estimation: 32)
+sightseeing_bags = Equipment.create!(name: "Bag", details: "Intermediate", benefits: "Compartmented & lightness", price_estimation: 45)
+sightseeing_clothes = Equipment.create!(name: "Clothes", details: "Basic", benefits: "Comfort & Flexible", price_estimation: 21)
+
+biking_shoes = Equipment.create!(name: "Shoes", details: "Expert", benefits: "Solid & Stamina", price_estimation: 65)
+biking_bags = Equipment.create!(name: "Bag", details: "Intermadiate", benefits: "Comfort & Lightness", price_estimation: 46)
+biking_clothes = Equipment.create!(name: "Clothes", details: "Intermadiate", benefits: "Comfort & Flexible", price_estimation: 19)
+biking_tools = Equipment.create!(name: "Helmet", details: "Intermadiate", benefits: "Solid & Lightness", price_estimation: 70)
+
+
+# puts "SEED MATERIALS"
+
+# material1 = Material.create!(equipment_id: [hiking_shoes, hiking_night, hiking_bags, hiking_clothes], activity_id: 169)
+# material2 = Material.create!(equipment_id: [climbing_tools, climbing_night, climbing_clothes], activity_id: 170)
+# material3 = Material.create!(equipment_id: [surf_bag, surf_clothes], activity_id: 171)
+# material4 = Material.create!(equipment_id: [scuba_tools, scuba_clothes, scuba_accessories], activity_id: 172)
+# material5 = Material.create!(equipment_id: [sightseeing_shoes, sightseeing_bags, sightseeing_clothes], activity_id: 173)
+# material6 = Material.create!(equipment_id: [biking_shoes, biking_bags, biking_clothes, biking_tools], activity_id: 174)
+
+
 Activity.all.each do |a|
   Material.create!(activity: a, equipment: Equipment.all.sample)
 end
