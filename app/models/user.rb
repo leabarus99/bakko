@@ -5,8 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many_attached :photo
   has_many :trips, dependent: :destroy
-  has_many :liikes
+  has_many :likes, dependent: :destroy
   # def full_name
   #   slef.first_name.cap
   # end
+
+  def stories
+    self.trips.map { |trip| trip.stories }.flatten
+  end
 end

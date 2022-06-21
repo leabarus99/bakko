@@ -1,0 +1,18 @@
+<div class ="likes" id="likes-story-<%= story.id %>">
+  <div>
+    <button class="close-modal modal-trigger"><ion-icon name="arrow-back-outline"></ion-icon></button>
+  </div>
+  <div>
+    <p><%= story.liikes.count %> <%= (story.liikes.count) == 1 ? "Like" : "Likes"%></p>
+    <% pre_like = story.like_from_user(current_user) %>
+    <% if pre_like %>
+      <%= link_to liike_path(pre_like), method: :delete, class: "btn btn-secondary", remote: true do %>
+        Unlike
+      <% end %>
+    <% else %>
+      <%= link_to story_liikes_path(story), method: :post, class: "btn btn-secondary", remote: true  do %>
+        Like super
+      <% end %>
+    <% end %>
+  </div>
+</div>

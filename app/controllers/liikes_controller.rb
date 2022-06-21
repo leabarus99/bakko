@@ -1,46 +1,38 @@
 class LiikesController < ApplicationController
-<<<<<<< HEAD
-
+  before_action :find_story, except: [:destroy]
 
   def create
-    @liike = current_user.liikes.new(liike_params)
-    @story = Story.find(params[:story_id])
-    @story = @liike.story
-    if @liike.save
-      redirect_to root_path
+    if already_liked?
+      flash[:notice] = "You can't like more than once"
+    else
+      @story.liikes.create(user_id: current_user.id)
     end
-    render @story
-=======
-before_action :set_story
+    after_like_action
+  end
 
-  def create
-    @story.liikes.create(user_id: current_user.id)
-    redirect_to journal_path
->>>>>>> 2530560fa92592722dc9d1161d701d16d68b562e
+  def already_liked?
+    Liike.where(user: current_user, story_id: params[:story_id].to_i).exists?
+  end
+
+  def after_like_action
+    @div_content = render_to_string partial: 'like_header', locals: {story: @story}
+    respond_to do |format|
+      format.html { redirect_to journal_path }
+      format.js
+    end
   end
 
   def destroy
-    # @liike = Liike.find(params[:id])
-    @liike = current_user.liikes.find(params[:id])
+    @liike = Liike.find(params[:id])
     @story = @liike.story
     @liike.destroy
-    redirect_to @story
+    after_like_action
   end
 
-  private
+ private
 
-  def story_params
-    params.require(:story).permit(:content, :photo, :title, :video, :location, :trip, :description, :introduction, :part_number)
-  end
+ def find_story
+   @story = Story.find(params[:story_id])
+ end
 
-  def liike_params
-    params.require(:liike).permit(:story_id, :user_id)
-  end
-<<<<<<< HEAD
-=======
-
-  def set_story
-    @story = Story.find(params[:story_id])
-  end
->>>>>>> 2530560fa92592722dc9d1161d701d16d68b562e
 end

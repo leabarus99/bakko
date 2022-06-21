@@ -3,14 +3,15 @@ class PagesController < ApplicationController
   end
 
   def profil
-    @user = current_user
-  end
-
-  def journal
     @story = Story.new
     @story.trip = @trip
     @user = current_user
-    @user_story = @story.trip
+    # @user_story = @trip.current_user.story
+    @stories = Story.all
+  end
+
+  def journal
+    @user_stories = current_user.stories
     @stories = Story.all
   end
 

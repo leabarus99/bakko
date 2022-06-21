@@ -1,57 +1,49 @@
+<div class= "container-profil">
 
-<div class="container-profil" >
-
-  <%# <% if user_signed_in? %>
-    <%# <% if @user.photo.attached? %>
-    <%# <%= cl_image_tag @user.photo.key %>
-    <%# <% end %>
-  <%# <% end %>
-
-  <div class= 'en-tête-profil'>
-    <%= image_tag 'bakko-logo.svg'%>
-    <%= link_to "Edit", edit_user_registration_path %></p>
+<div class= "header-profil">
+  <div>
+    <div class= "name-user"><%= current_user.first_name %></div>
+    <div class="date-profil">Today, February 23rd</div>
   </div>
-
- <div class="lien-back"> <%= link_to "< Back", profil_path %></div>
-
-  <div class="pdp"><%= image_tag('default.jpg') %></div>
-
-
-  <%# <h2 class="user-name"><%= @user.first_name</h2> %>
-  <h2 class="user-name"> User Name</h2>
-
-
-  <div class= 'line'></div>
-
-  <div class= "infos-follow d-flex justify-content-center align-items-center">
-    <div class="d-flex">
-
-      <div class= "d-flex flex-column justify-content-center align-items-center mx-2">
-        <p>34</p>
-        <p>Followers</p>
-      </div>
-      <div class= "d-flex flex-column justify-content-center align-items-center mx-2">
-        <p>88</p>
-        <p>Following</p>
-      </div>
-      <div class= "d-flex flex-column justify-content-center align-items-center mx-2">
-        <p>4</p>
-        <p>Trips</p>
-      </div>
-
-    </div>
+  <div class= "icon-notif"><ion-icon name="notifications-outline"></ion-icon></div>
 </div>
 
-  <div class = "lien-infos-profil">
-    <%= link_to "Setting", profil_path  %>
-    <%= link_to "Information", profil_path %>
-    <%= link_to "Account", profil_path %>
+<div class = "story-tendance" ><%= image_tag "images4.jpg" %></div>
 
-    <div class= 'line'></div>
+<div class="story-title-tendance"><%=  @stories.first.title %></div>
+<div class="trending">Trending</div>
 
-    <%= link_to "Confidentiality", profil_path %>
-    <%= link_to "Aide", profil_path %>
-    <%= link_to "À propos", profil_path  %>
-
-
+<div class= "infos-story-tendance">
+  <div>World</div>
+  <div class= "date-like-story">
+    <div class= "hour-story"><ion-icon name="time-outline"></ion-icon><div>12h ago</div></div>
+    <div class= "likes"><ion-icon name="heart-outline"></ion-icon><div class="number-likes">5</div></div>
   </div>
+</div>
+
+<div class ="show-follow">
+  <div class="title-follow">Following</div>
+  <div class= "btn-view-follow"><button>View more</button></div>
+</div>
+
+<div class ="show-stories">
+  <div class="title-follow">Lasted</div>
+  <div class= "btn-view-follow"><button>View more</button></div>
+</div>
+
+
+ <% @stories.each_with_index do |story, index| %>
+      <div class= "card-article2">
+        <div class= "infos-article">
+          <div class= "title-article"> <h5><%= story.title %></h5> </div>
+          <div class= "content-article"> <h5><%= story.content %></h5> </div>
+        </div>
+        <div class= "img-article">
+          <% if story.photo.attached? %>
+            <%= cl_image_tag story.photo.key %>
+          <% end %>
+        </div>
+      </div>
+<% end %>
+
+</div>
