@@ -22,7 +22,13 @@ body {
 .card-activity {
   padding: 15px 0px;
   border-radius: 20px;
+}
 
+.card-activity a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
 }
 
 .activity-img {
@@ -34,10 +40,11 @@ body {
 
 .card-activity-infos {
   padding: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: left;
+
+}
+
+.card-activity-infos a {
+  color: white;
 }
 
 .card-activity-infos h2 {
@@ -58,4 +65,8 @@ body {
   float: right;
   margin: 20px 10px;
   text-decoration: underline;
+}
+
+.equipment-direct ion-icon {
+  color: white;
 }
