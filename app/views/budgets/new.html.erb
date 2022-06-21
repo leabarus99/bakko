@@ -11,19 +11,12 @@
     </div>
 
 
-    <div class="drag-price">
-      <div class="budget-line">
-      </div>
+    <%# <div class="drag-price">
+      <%= simple_form_for([@trip, @budget]) do |f| %>
+        <%# <%= f.input :price, label: false, as: :range, input_html:{ min:"0", max:"5000" } %>
+      <%# <% end %>
+    <%# </div> %>
 
-      <div id="price-indicator">
-      </div>
-    </div>
-
-
-
-
-
-  </div>
 
   <div class="budget-input">
 
@@ -37,6 +30,11 @@
 
 
   </div>
+
+
+
+  </div>
+
 
 
 </div>
