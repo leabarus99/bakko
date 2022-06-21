@@ -16,6 +16,7 @@ TripActivity.destroy_all
 Trip.destroy_all
 Activity.destroy_all
 User.destroy_all
+Guide.destroy_all
 
 puts "SEED USER"
 user1= User.create!(first_name: 'Luke', last_name: 'Dumont', username: 'Lulu Dumont', email: 'lea@gmail.com', password: 'lololo', password_confirmation: 'lololo', phone_number: '0678682514', followers: '37', following: '63')
@@ -42,9 +43,16 @@ trip3= Trip.create!(destination: 'Sri Lanka', start_date: '20/12/21', end_date: 
 
 puts "SEED ACTIVITIES"
 
-Activity::ACTIVITIES.each do |name|
-  Activity.create!(name: name)
-end
+# Activity::ACTIVITIES.each do |name|
+#   Activity.create!(name: name)
+# end
+
+hiking = Activity.create!(name: "hiking")
+climbing = Activity.create!(name: "climbing")
+surf = Activity.create!(name: "surf")
+scuba = Activity.create!(name: "scuba diving")
+sightseeing = Activity.create!(name: "sightseeing")
+biking = Activity.create!(name: "biking")
 
 puts "SEED TRIP ACTIVITIES"
 Trip.all.each do |t|
@@ -59,45 +67,63 @@ puts "SEED EQUIPMENTS"
 # equipment5 = Equipment.create!(name: "Clothes", details: "Lycra", benefits: "Water resistant", price_estimation: 45)
 # equipment6 = Equipment.create!(name: "Accessories", details: "Plus", benefits: "Water resistant", price_estimation: 145)
 
-hiking_shoes = Equipment.create!(name: "Shoes", details: "Intermediate", benefits: "Comfort & Stamina", price_estimation: 42)
-hiking_night = Equipment.create!(name: "Tent", details: "3 seats", benefits: "Isolation & Comfort", price_estimation: 94)
-hiking_bags = Equipment.create!(name: "Bag", details: "Intermediate", benefits: "Compartmented & waterproof", price_estimation: 39)
-hiking_clothes = Equipment.create!(name: "Jacket", details: "Waterproof jacket", benefits: "lightness & Waterproof", price_estimation: 139)
+hiking_shoes = Equipment.create!(name: "Shoes", details: "Intermediate", benefits: "Comfortable & Stamina", price_estimation: 42)
+hiking_night = Equipment.create!(name: "Tent", details: "3 seats", benefits: "Isolation & Comfortable", price_estimation: 94)
+hiking_bags = Equipment.create!(name: "Bag", details: "Intermediate", benefits: "Compartmented & Waterproof", price_estimation: 39)
+hiking_clothes = Equipment.create!(name: "Jacket", details: "Waterproof jacket", benefits: "Light & Waterproof", price_estimation: 139)
 
 climbing_tools = Equipment.create!(name: "Rope", details: "15m", benefits: "High support", price_estimation: 32)
-climbing_night = Equipment.create!(name: "Tent", details: "3 seats", benefits: "Isolation & Comfort", price_estimation: 94)
+climbing_night = Equipment.create!(name: "Tent", details: "3 seats", benefits: "Isolation & Comfortable", price_estimation: 94)
 climbing_clothes = Equipment.create!(name: "Jacket", details: "Resistant Jacket", benefits: "Resistant & Flexible", price_estimation: 150)
 
 surf_bag = Equipment.create!(name: "Bag", details: "Soft bag", benefits: "Big storage space", price_estimation: 69)
 surf_clothes = Equipment.create!(name: "Wetsuit", details: "Surf suit", benefits: "Resistant & Flexible", price_estimation: 269)
 
-scuba_tools = Equipment.create!(name: "Palm", details: "Scuba Diving Palm", benefits: "lightness & Flexible", price_estimation: 55)
-scuba_clothes = Equipment.create!(name: "Clothes", details: "Waterproof", benefits: "lightness & Flexible", price_estimation: 59)
-scuba_accessories = Equipment.create!(name: "Camera", details: "Camera water housing", benefits: "Water resistant & solid ", price_estimation: 437)
+scuba_tools = Equipment.create!(name: "Diving fins", details: "The Volo race fin is a very flexible fin. Fiery in the pool, flexible and Comfortable in the sea, it can be used everywhere: diving, snorkeling, swimming, hiking, etc.", benefits: "Light & Flexible", price_estimation: 55)
+scuba_clothes = Equipment.create!(name: "Clothes", details: "Waterproof", benefits: "Light & Flexible", price_estimation: 59)
+scuba_accessories = Equipment.create!(name: "Camera", details: "Camera water housing", benefits: "Water resistant & Solid ", price_estimation: 437)
 
-sightseeing_shoes = Equipment.create!(name: "Shoes", details: "Newbie", benefits: "lightness & Comfort", price_estimation: 32)
-sightseeing_bags = Equipment.create!(name: "Bag", details: "Intermediate", benefits: "Compartmented & lightness", price_estimation: 45)
-sightseeing_clothes = Equipment.create!(name: "Clothes", details: "Basic", benefits: "Comfort & Flexible", price_estimation: 21)
+sightseeing_shoes = Equipment.create!(name: "Shoes", details: "Newbie", benefits: "Lightness & Comfortable", price_estimation: 32)
+sightseeing_bags = Equipment.create!(name: "Bag", details: "Intermediate", benefits: "Compartmented & Light", price_estimation: 45)
+sightseeing_clothes = Equipment.create!(name: "Clothes", details: "Basic", benefits: "Comfortable & Flexible", price_estimation: 21)
 
-biking_shoes = Equipment.create!(name: "Shoes", details: "Expert", benefits: "Solid & Stamina", price_estimation: 65)
-biking_bags = Equipment.create!(name: "Bag", details: "Intermadiate", benefits: "Comfort & Lightness", price_estimation: 46)
-biking_clothes = Equipment.create!(name: "Clothes", details: "Intermadiate", benefits: "Comfort & Flexible", price_estimation: 19)
-biking_tools = Equipment.create!(name: "Helmet", details: "Intermadiate", benefits: "Solid & Lightness", price_estimation: 70)
-
-
-# puts "SEED MATERIALS"
-
-# material1 = Material.create!(equipment_id: [hiking_shoes, hiking_night, hiking_bags, hiking_clothes], activity_id: 169)
-# material2 = Material.create!(equipment_id: [climbing_tools, climbing_night, climbing_clothes], activity_id: 170)
-# material3 = Material.create!(equipment_id: [surf_bag, surf_clothes], activity_id: 171)
-# material4 = Material.create!(equipment_id: [scuba_tools, scuba_clothes, scuba_accessories], activity_id: 172)
-# material5 = Material.create!(equipment_id: [sightseeing_shoes, sightseeing_bags, sightseeing_clothes], activity_id: 173)
-# material6 = Material.create!(equipment_id: [biking_shoes, biking_bags, biking_clothes, biking_tools], activity_id: 174)
+biking_shoes = Equipment.create!(name: "Shoes", details: "Expert", benefits: "Solidity & Stamina", price_estimation: 65)
+biking_bags = Equipment.create!(name: "Bag", details: "Intermadiate", benefits: "Comfortable & Light", price_estimation: 46)
+biking_clothes = Equipment.create!(name: "Clothes", details: "Intermadiate", benefits: "Comfortable & Flexible", price_estimation: 19)
+biking_tools = Equipment.create!(name: "Helmet", details: "Intermadiate", benefits: "Solid & Light", price_estimation: 70)
 
 
-Activity.all.each do |a|
-  Material.create!(activity: a, equipment: Equipment.all.sample)
-end
+puts "SEED MATERIALS"
+
+material_hiking1 = Material.create!(equipment: hiking_shoes, activity: hiking)
+material_hiking2 = Material.create!(equipment: hiking_night, activity: hiking)
+material_hiking3 = Material.create!(equipment: hiking_bags, activity: hiking)
+material_hiking4 = Material.create!(equipment: hiking_clothes, activity: hiking)
+
+material_climbing1 = Material.create!(equipment: climbing_tools, activity: climbing)
+material_climbing2 = Material.create!(equipment: climbing_night, activity: climbing)
+material_climbing3 = Material.create!(equipment: climbing_clothes, activity: climbing)
+
+material_surf1 = Material.create!(equipment: surf_bag, activity: surf)
+material_surf2 = Material.create!(equipment: surf_clothes, activity: surf)
+
+material_scuba1 = Material.create!(equipment: scuba_tools, activity: scuba)
+material_scuba2 = Material.create!(equipment: scuba_clothes, activity: scuba)
+material_scuba3 = Material.create!(equipment: scuba_accessories, activity: scuba)
+
+material_sightseeing1 = Material.create!(equipment: sightseeing_shoes, activity: sightseeing)
+material_sightseeing2 = Material.create!(equipment: sightseeing_bags, activity: sightseeing)
+material_sightseeing3 = Material.create!(equipment: sightseeing_clothes, activity: sightseeing)
+
+material_biking1 = Material.create!(equipment: biking_shoes, activity: biking)
+material_biking2 = Material.create!(equipment: biking_bags, activity: biking)
+material_biking3 = Material.create!(equipment: biking_clothes, activity: biking)
+material_biking4 = Material.create!(equipment: biking_tools, activity: biking)
+
+
+# Activity.all.each do |a|
+#   Material.create!(activity: a, equipment: Equipment.all.sample)
+# end
 
 story1= Story.create!(title: "The best of Island ", content: "The discovery of the western fjords as well as the caldera of Aska...", location: 'Islande', trip: trip1, introduction: "Un voyage en Islande, terre des extrêmes et des contrastes, à la limite du cercle polaire, voilà l’occasion d’une fabuleuse leçon de géologie.", description:"Sa nature sauvage, ses phénomènes volcaniques, ses chutes d’eau indomptables et ses paysages sans bornes sont sa meilleure publicité. À l’extrémité de l’Europe, l’Islande est un fantasme pour amateurs de grands espaces. On y respire un air frais et volontiers humide qui renvoie à l’origine d’un monde plus propre, puissant et prenant.
   Sous les abords austères de ses immenses champs de lave et ses déserts de pierre intérieurs, l’Islande empile les sites remarquables : fjords grandioses, glaciers colossaux, piscines thermales naturelles délicieuses, falaises piquetées de macareux, fulmars et guillemots… sans oublier tous ces lieux qui renvoient à la colonisation viking, avec leurs murs de tourbe et leurs maisonnettes aux toits nappés d’herbe.
@@ -143,17 +169,18 @@ story7.photo.attach(io: file10, filename: 'article7', content_type: 'image/jpg')
 
 puts "SEEDS SURVIVAL GUIDE"
 
-guide1 = Guide.create!(title: "Purify your water", content: "Water in the wild often contains harmful microorganisms,
-  bacteria, and parasites that can cause a variety of ailments, such as giardia, dysentery, hepatitis, and hookworms.
-  Luckily, however, we are going to learn a few simple ways how to purify water to make it safe for consumption.",
+guide1 = Guide.create!(title: "Purify your water", content: "Water in the wild often contains harmful,
+  bacteria, and parasites that can cause a variety of ailments...",
   author: "Léa Barus", category: "Water", difficulty: 3)
+photo_guide1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655816666/njrmooud8swh2e9djdjc.jpg")
+guide1.photo.attach(io: photo_guide1, filename: 'water', content_type: 'image/jpg')
 
-guide2 = Guide.create!(title: "Wilderness wound care", content: " When we travel to a distant country,  we can easily find
-  ourselves with limited or delayed access to medical care. It is important to know some basic first aid techniques.
-  The general steps covered here will help you care for injuries in an emergency, but this column is no substitute for
-  proper first aid training.", author: "Valeria Pineda", category: "Wounds", difficulty: 2)
+guide2 = Guide.create!(title: "Wilderness wound care", content: "When we travel to a distant country,  we can easily find
+  ourselves with limited access to medical care....", author: "Valeria Pineda", category: "Wounds", difficulty: 2)
+photo_guide2 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655816680/tfaikgbiiq8yvdqd8cgh.jpg")
+guide2.photo.attach(io: photo_guide2, filename: 'wound', content_type: 'image/jpg')
 
 guide3 = Guide.create!(title: "Build a campire", content: "Lorem Ipsum is simply dummy text of the printing and typesetting
-  industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-  galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-  the leap into electronic typesetting, remaining essentially unchanged. ", author: "Lina", category: "Fire", difficulty: 4)
+  industry. Lorem Ipsum has been...", author: "Lina El Amrani", category: "Fire", difficulty: 4)
+photo_guide3 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655816638/xnl5zfxzuegk4rojz0vu.jpg")
+guide3.photo.attach(io: photo_guide3, filename: 'wound', content_type: 'image/jpg')

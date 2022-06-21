@@ -1,3 +1,6 @@
+<%= render 'shared/navbar' %>
+<%= render 'shared/topbar' %>
+
 <div class="bakko-container">
   <div class="equipment-text">
     <h1 class="equipment-title">BEST EQUIPMENT FOR YOU!</h1>
@@ -7,16 +10,18 @@
     <% @activities.each do |activity| %>
       <% activity.equipments.each do |equipment| %>
       <div class="card-activity">
-
-        <div class="activity-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-        url(https://images.unsplash.com/photo-1601224748193-d24f166b5c77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80)">
-
-        <div class="card-activity-infos">
-          <div class="activity-text">
-            <h2> <%= equipment.name %></h2>
-            <p>Number of articles</p>
+          <div class="equipment-direct">
+            <%= link_to equipment_path(equipment) do %>
+            <div class="activity-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+            url(https://images.unsplash.com/photo-1601224748193-d24f166b5c77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80)">
+            <div class="card-activity-infos">
+              <div class="activity-text">
+                <h2> <%= equipment.name %></h2>
+                <p>Number of articles</p>
+              </div>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            <% end %>
           </div>
-          <ion-icon name="chevron-forward-outline"></ion-icon>
         </div>
       </div>
     </div>

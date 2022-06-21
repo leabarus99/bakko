@@ -4,6 +4,7 @@ body {
   font-family: $body-font;
 }
 
+
 .guide-background {
   background: url("https://images.unsplash.com/photo-1500220959218-81a28e9292d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
   background-position: center center;
@@ -11,6 +12,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 
 .survival-container {
   margin: 20px;
@@ -26,7 +28,6 @@ body {
 
 
 // search bar
-
 .form-control {
   background-color: transparent;
   border-right: none;
@@ -43,11 +44,50 @@ body {
   color: white;
   font-family: $body-font;
 }
-
 // search bar
+
  .sub-title {
   font-size: calc(1.1rem + 0.9vw);
   margin: 20px;
   text-align: center;
   font-family: $headers-font;
+  margin-bottom: 43px;
+  margin-top: 45px;
  }
+
+
+ //cards
+ .card-survival {
+  overflow: hidden;
+  height: 120px;
+  background: #00000042;
+  box-shadow: 0 0 15px rgba(0,0,0,0.28);
+  display: flex;
+  align-items: top;
+  margin-bottom: 45px;
+}
+
+.card-survival img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-survival h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-survival p {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.preview-margins {
+  margin-left: 20px;
+  align-items: baseline;
+}
+ //cards
