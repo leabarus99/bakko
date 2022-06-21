@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many_attached :photo
   has_many :trips, dependent: :destroy
-  has_many :likes, dependent: :destroy
+  has_many :liikes, dependent: :destroy
   # def full_name
   #   slef.first_name.cap
   # end
