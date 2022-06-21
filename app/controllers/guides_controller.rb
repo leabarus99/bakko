@@ -12,4 +12,8 @@ class GuidesController < ApplicationController
   def show
     @guide = Guide.find(params[:id])
   end
+
+  def guide_params
+    params.require(:guide).permit(:title, :content, :author, :category, :difficulty, :photo)
+  end
 end
