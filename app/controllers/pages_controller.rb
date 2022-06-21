@@ -19,6 +19,7 @@ class PagesController < ApplicationController
     @story = Story.create
   end
 
+
   def destroy
     @story= Story.find(params[:id])
     @story.destroy
@@ -52,6 +53,14 @@ class PagesController < ApplicationController
 
   def liike_params
     params.require(:liike).permit(:story_id, :user_id)
+  end
+
+
+  def detailedbudget
+    @budgets = Budget.all
+    @user = current_user
+    @budget = Budget.find(params[:id])
+    @budget_by_category = Budget.by_category(@budget.trip.activities, @budget.price)
   end
 
 end

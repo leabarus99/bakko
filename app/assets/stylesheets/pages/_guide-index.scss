@@ -1,0 +1,53 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: $body-font;
+}
+
+.guide-background {
+  background: url("https://images.unsplash.com/photo-1500220959218-81a28e9292d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.survival-container {
+  margin: 20px;
+}
+
+.survival-title h1 {
+  margin: 20px;
+  text-align: center;
+  font-family: $headers-font;
+  font-size: revert;
+  margin-top: -32px;
+}
+
+
+// search bar
+
+.form-control {
+  background-color: transparent;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  color: white !important;
+}
+
+.form-control:focus {
+  background-color: transparent;
+}
+
+.form-control::placeholder {
+  color: white;
+  font-family: $body-font;
+}
+
+// search bar
+ .sub-title {
+  font-size: calc(1.1rem + 0.9vw);
+  margin: 20px;
+  text-align: center;
+  font-family: $headers-font;
+ }

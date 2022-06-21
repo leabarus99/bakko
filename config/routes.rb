@@ -11,9 +11,14 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :stories
+    resources :guides
     resources :survival_articles
+
     resources :activities
     resources :budgets, only: [:new, :create, :show]
+    member do
+      get "detailedbudget", to: 'pages#detailedbudget'
+    end
     member do
       get :equipments
     end
@@ -22,8 +27,9 @@ Rails.application.routes.draw do
   resources :stories, only: [] do
     resources :liikes, only: [:create]
   end
+  
   resources :liikes, only: :destroy
-
+  resources :guides
   resources :equipments
   resources :devise
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_20_085517) do
+ActiveRecord::Schema.define(version: 2022_06_21_075220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,6 +140,8 @@ ActiveRecord::Schema.define(version: 2022_06_20_085517) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.float "budget"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
@@ -166,11 +168,13 @@ ActiveRecord::Schema.define(version: 2022_06_20_085517) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "budgets", "trips"
+
   add_foreign_key "liikes", "stories"
   add_foreign_key "liikes", "users"
   add_foreign_key "likes", "guides"
   add_foreign_key "likes", "stories"
   add_foreign_key "likes", "users"
+
   add_foreign_key "materials", "activities"
   add_foreign_key "materials", "equipment"
   add_foreign_key "stories", "trips"

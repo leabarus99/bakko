@@ -23,15 +23,25 @@
   margin: 0px auto;
 }
 
+.drag-price {
+  margin-bottom: 60px;
+}
 
 .slide-budget {
-  margin: 80px auto;
+  margin: 50px auto;
 }
 
 .budget-line {
   border: 1.5px solid gray;
   margin: 0px auto;
   width: 90%;
+}
+
+#price-indicator {
+  background-color: $dark-orange;
+  height: 30px;
+  width: 15px;
+  border-radius: 20px;
 }
 
 .price-range {

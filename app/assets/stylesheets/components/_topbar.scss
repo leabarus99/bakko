@@ -1,18 +1,52 @@
-#bakko-logo img {
-  height: 90px;
-}
-
-.avatar-img img {
-  border-radius: 50%;
-  height: 80px;
-  width: 80px;
-  object-fit: cover;
-  // margin: 80px 20px;
-}
-
-.topbar-content {
-  display: flex;
+.navbar-lewagon {
   justify-content: space-between;
+  // background: rgb(221, 221, 221) !important;
   align-items: center;
-  padding-bottom: 40px;
+  padding: 10px;
+  position: sticky;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+}
+
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  height: 80px;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: transparent !important;
+}
+
+#navbarDropdown {
+  height: 65px;
+  width: 65px;
+}
+
+
+.dropdown-menu.show {
+  background-color: black !important;
+  border-radius: 15px;
+  border: 1px solid rgb(30, 30, 30);
+  padding: 10px;
+}
+
+.dropdown::marker {
+  color: transparent;
+}
+
+.dropdown-menu.show  a {
+  color: white !important;
+  padding: 10px;
+
+}
+
+.profil-settings {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  margin-bottom: 6px;
 }
