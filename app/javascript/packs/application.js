@@ -19,5 +19,5 @@ import "bootstrap"
 import { moveIndicatorPrice } from "../plugins/listener"
 
 document.addEventListener("turbolinks:load", event => {
-  moveIndicatorPrice();
+
 })
