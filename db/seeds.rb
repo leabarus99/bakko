@@ -36,8 +36,8 @@ user4.photo.attach(io: file4, filename: 'pdp4', content_type: 'image/jpg')
 
 
 puts "SEED TRIPS"
-trip1= Trip.create!(destination: 'Islande', start_date: '20/06/21', end_date: '20/08/21', budget: 200000 , user: user1)
-trip2= Trip.create!(destination: 'Thailande', start_date: '20/08/21', end_date: '20/09/21', budget: 100000, user: user2)
+trip1= Trip.create!(destination: 'Iceland', start_date: '20/06/21', end_date: '20/08/21', budget: 200000 , user: user1)
+trip2= Trip.create!(destination: 'Mexico', start_date: '20/08/21', end_date: '20/09/21', budget: 100000, user: user2)
 trip3= Trip.create!(destination: 'Sri Lanka', start_date: '20/12/21', end_date: '20/05/22', budget: 90000, user: user3)
 
 puts "SEED ACTIVITIES"
@@ -104,3 +104,20 @@ story7= Story.create!(title: "The best of Island ", content: "The discovery of t
   Si certains visiteurs décident de s’offrir le tour complet de l’île en 10 ou 15 jours par la Route 1, il faudrait le double, au moins, pour faire justice au pays — mieux encore, explorer différents secteurs en plusieurs voyages." )
 file10 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655297252/ncmbm3g9hv8e8wsskyjl.jpg")
 story7.photo.attach(io: file10, filename: 'article7', content_type: 'image/jpg')
+
+puts "SEEDS SURVIVAL GUIDE"
+
+guide1 = Guide.create!(title: "Purify your water", content: "Water in the wild often contains harmful microorganisms,
+  bacteria, and parasites that can cause a variety of ailments, such as giardia, dysentery, hepatitis, and hookworms.
+  Luckily, however, we are going to learn a few simple ways how to purify water to make it safe for consumption.",
+  author: "Léa Barus", category: "Water", difficulty: 3)
+
+guide2 = Guide.create!(title: "Wilderness wound care", content: " When we travel to a distant country,  we can easily find
+  ourselves with limited or delayed access to medical care. It is important to know some basic first aid techniques.
+  The general steps covered here will help you care for injuries in an emergency, but this column is no substitute for
+  proper first aid training.", author: "Valeria Pineda", category: "Wounds", difficulty: 2)
+
+guide3 = Guide.create!(title: "Build a campire", content: "Lorem Ipsum is simply dummy text of the printing and typesetting
+  industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+  galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+  the leap into electronic typesetting, remaining essentially unchanged. ", author: "Lina", category: "Fire", difficulty: 4)
