@@ -8,13 +8,13 @@ export default class extends Controller {
   static targets = ["destination"]
 
   connect() {
-    this.khbjhbkjhb = new MapboxGeocoder({
+    this.geocoder = new MapboxGeocoder({
       accessToken: this.apiKeyValue,
       types: "country,region"
     });
-    this.khbjhbkjhb.addTo(this.element)
-    this.khbjhbkjhb.on("result", event => this.#setInputValue(event))
-    this.khbjhbkjhb.on("clear", () => this.#clearInputValue())
+    this.geocoder.addTo(this.element)
+    this.geocoder.on("result", event => this.#setInputValue(event))
+    this.geocoder.on("clear", () => this.#clearInputValue())
   }
     #setInputValue(event) {
       this.destinationTarget.value = event.result["place_name"]
