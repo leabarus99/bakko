@@ -16,6 +16,7 @@ TripActivity.destroy_all
 Trip.destroy_all
 Activity.destroy_all
 User.destroy_all
+Guide.destroy_all
 
 puts "SEED USER"
 user1= User.create!(first_name: 'Luke', last_name: 'Dumont', username: 'Lulu Dumont', email: 'lea@gmail.com', password: 'lololo', password_confirmation: 'lololo', phone_number: '0678682514', followers: '37', following: '63')
@@ -143,17 +144,18 @@ story7.photo.attach(io: file10, filename: 'article7', content_type: 'image/jpg')
 
 puts "SEEDS SURVIVAL GUIDE"
 
-guide1 = Guide.create!(title: "Purify your water", content: "Water in the wild often contains harmful microorganisms,
-  bacteria, and parasites that can cause a variety of ailments, such as giardia, dysentery, hepatitis, and hookworms.
-  Luckily, however, we are going to learn a few simple ways how to purify water to make it safe for consumption.",
+guide1 = Guide.create!(title: "Purify your water", content: "Water in the wild often contains harmful,
+  bacteria, and parasites that can cause a variety of ailments...",
   author: "Léa Barus", category: "Water", difficulty: 3)
+photo_guide1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655816666/njrmooud8swh2e9djdjc.jpg")
+guide1.photo.attach(io: photo_guide1, filename: 'water', content_type: 'image/jpg')
 
-guide2 = Guide.create!(title: "Wilderness wound care", content: " When we travel to a distant country,  we can easily find
-  ourselves with limited or delayed access to medical care. It is important to know some basic first aid techniques.
-  The general steps covered here will help you care for injuries in an emergency, but this column is no substitute for
-  proper first aid training.", author: "Valeria Pineda", category: "Wounds", difficulty: 2)
+guide2 = Guide.create!(title: "Wilderness wound care", content: "When we travel to a distant country,  we can easily find
+  ourselves with limited access to medical care....", author: "Valeria Pineda", category: "Wounds", difficulty: 2)
+photo_guide2 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655816680/tfaikgbiiq8yvdqd8cgh.jpg")
+guide2.photo.attach(io: photo_guide2, filename: 'wound', content_type: 'image/jpg')
 
 guide3 = Guide.create!(title: "Build a campire", content: "Lorem Ipsum is simply dummy text of the printing and typesetting
-  industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-  galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-  the leap into electronic typesetting, remaining essentially unchanged. ", author: "Lina", category: "Fire", difficulty: 4)
+  industry. Lorem Ipsum has been...", author: "Lina El Amrani", category: "Fire", difficulty: 4)
+photo_guide3 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655816638/xnl5zfxzuegk4rojz0vu.jpg")
+guide3.photo.attach(io: photo_guide3, filename: 'wound', content_type: 'image/jpg')

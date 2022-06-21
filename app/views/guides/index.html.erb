@@ -18,5 +18,18 @@
 <h2>Bakko Guides</h2>
 </div>
 
+
+  <% @guides.each do |guide| %>
+  <div class="card-survival">
+  <%= cl_image_tag guide.photo.key %>
+    <div class="preview-margins">
+        <%= guide.title %>
+        <br>
+        <%= guide.content %>
+    </div>
+  </div>
+  <% end %>
+
+
 </div>
 </body>
