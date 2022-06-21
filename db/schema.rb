@@ -78,6 +78,27 @@ ActiveRecord::Schema.define(version: 2022_06_21_075220) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "liikes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "story_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["story_id"], name: "index_liikes_on_story_id"
+    t.index ["user_id"], name: "index_liikes_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "guide_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "story_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "story_id", null: false
+    t.index ["guide_id"], name: "index_likes_on_guide_id"
+    t.index ["story_id"], name: "index_likes_on_story_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "materials", force: :cascade do |t|
     t.bigint "equipment_id", null: false
     t.bigint "activity_id", null: false
@@ -147,6 +168,13 @@ ActiveRecord::Schema.define(version: 2022_06_21_075220) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "budgets", "trips"
+
+  add_foreign_key "liikes", "stories"
+  add_foreign_key "liikes", "users"
+  add_foreign_key "likes", "guides"
+  add_foreign_key "likes", "stories"
+  add_foreign_key "likes", "users"
+
   add_foreign_key "materials", "activities"
   add_foreign_key "materials", "equipment"
   add_foreign_key "stories", "trips"

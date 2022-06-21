@@ -16,14 +16,21 @@ class StoriesController < ApplicationController
   end
 
   def create
+    @trip = Trip.find(params[:trip_id])
     @story = Story.new(story_params)
-    @stories = Story.all
+    @story.trip = @trip
+    @user = @story.trip.user
     if @story.save
-      redirect_to story_path(@story)
+      redirect_to journal_path(@story)
     else
       render :new
     end
-    authorize @story
+  end
+
+  def destroy
+    @story= Story.find(params[:id])
+    @story.destroy
+    redirect_to journal_path
   end
 
   def all
@@ -33,6 +40,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:budget).permit(:content, :photo, :title, :video, :location, :trip)
+    params.require(:story).permit(:content, :photo, :title, :video, :location, :trip, :description, :introduction, :part_number)
   end
 end

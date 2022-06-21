@@ -81,15 +81,6 @@ body{
   position: relative;
 }
 
-.btn-read a {
-  background-color: #55555591;
-  padding: 16px;
-  border-radius: 8px;
-  position: absolute;
-  margin: -77px 86px;
-  color: white;
-  font-weight: 700;
-}
 
 .new-article h5{
   margin-bottom: 12px;
@@ -105,7 +96,6 @@ body{
   font-weight: 500;
   margin-left: 136px;
 }
-
 .modal-btn{
   padding: 10px 14px;
   font-size: 18px;
@@ -267,4 +257,8 @@ body{
   width: 85%;
   margin: 20px auto;
   margin-top: 0px;
+}
+
+.likes{
+  display: flex;
 }

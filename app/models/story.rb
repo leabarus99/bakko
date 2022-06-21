@@ -6,4 +6,8 @@ class Story < ApplicationRecord
   def author
     trip.user.full_name
   end
+
+  def like_from_user(user)
+    self.liikes.find { |like| like.user == user}
+  end
 end

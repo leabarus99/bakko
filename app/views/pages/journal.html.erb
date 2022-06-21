@@ -10,6 +10,7 @@
   <div class="container">
   <div class = "add-story">
   </div>
+
     <div class="glide">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
@@ -66,22 +67,22 @@
           <%= cl_image_tag story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
         <% end %>
         <div class="carousel-caption  d-md-block">
-        <button class= "modal-btn modal-trigger">Read</button>
+          <button class= "modal-btn modal-trigger">Read</button>
           <div class= "new-article">
             <div>
               <h5><%= story.location %></h5>
-              <h5>@<%= @user.first_name %></h5>
+              <h5>@<%= current_user.first_name %></h5>
             </div>
           </div>
           <div class= "description-article"><%= story.content %></div>
           </div>
-      </div>
+        </div>
 
 
-<div class="modal-container">
+      <div class="modal-container">
         <div class="overlayy modal-trigger"></div>
         <div class="modall">
-          <button class="close-modal modal-trigger"><ion-icon name="arrow-back-outline"></ion-icon></button>
+        <%= render 'liikes/like_header', story: story %>
           <div class= 'line3'></div>
               <h1 class= "title-story"><%= story.title %></h1>
 
@@ -123,5 +124,4 @@
       new Glide('.glide', config).mount()
   </script>
 </div>
-
-      </div>
+</div>

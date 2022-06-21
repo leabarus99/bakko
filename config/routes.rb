@@ -5,15 +5,13 @@ Rails.application.routes.draw do
   get "profil", to: 'pages#profil'
   get "journal", to: 'pages#journal'
   get "all_stories", to: 'stories#all'
+  get "journal", to: 'pages#destroy'
+  get "journal", to: 'pages#destroyy'
+  get "journal", to: 'pages#create'
 
   resources :trips do
-
     resources :stories
     resources :guides
-
-    resources :stories do
-      resources :liikes
-    end
     resources :survival_articles
 
     resources :activities
@@ -25,6 +23,12 @@ Rails.application.routes.draw do
       get :equipments
     end
   end
+
+  resources :stories, only: [] do
+    resources :liikes, only: [:create]
+  end
+  
+  resources :liikes, only: :destroy
   resources :guides
   resources :equipments
   resources :devise
