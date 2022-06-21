@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_21_075220) do
+ActiveRecord::Schema.define(version: 2022_06_21_154939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,11 @@ ActiveRecord::Schema.define(version: 2022_06_21_075220) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "follows", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "guides", force: :cascade do |t|
     t.string "content"
     t.string "title"
@@ -87,18 +92,6 @@ ActiveRecord::Schema.define(version: 2022_06_21_075220) do
     t.index ["user_id"], name: "index_liikes_on_user_id"
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.bigint "guide_id", null: false
-    t.bigint "user_id", null: false
-    t.bigint "story_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "story_id", null: false
-    t.index ["guide_id"], name: "index_likes_on_guide_id"
-    t.index ["story_id"], name: "index_likes_on_story_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "materials", force: :cascade do |t|
     t.bigint "equipment_id", null: false
     t.bigint "activity_id", null: false
@@ -106,6 +99,16 @@ ActiveRecord::Schema.define(version: 2022_06_21_075220) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["activity_id"], name: "index_materials_on_activity_id"
     t.index ["equipment_id"], name: "index_materials_on_equipment_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "follow_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follow_id"], name: "index_relationships_on_follow_id"
+    t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "stories", force: :cascade do |t|
@@ -168,15 +171,12 @@ ActiveRecord::Schema.define(version: 2022_06_21_075220) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "budgets", "trips"
-
   add_foreign_key "liikes", "stories"
   add_foreign_key "liikes", "users"
-  add_foreign_key "likes", "guides"
-  add_foreign_key "likes", "stories"
-  add_foreign_key "likes", "users"
-
   add_foreign_key "materials", "activities"
   add_foreign_key "materials", "equipment"
+  add_foreign_key "relationships", "users"
+  add_foreign_key "relationships", "users", column: "follow_id"
   add_foreign_key "stories", "trips"
   add_foreign_key "trip_activities", "activities"
   add_foreign_key "trip_activities", "trips"

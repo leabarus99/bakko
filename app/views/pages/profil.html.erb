@@ -46,4 +46,21 @@
       </div>
 <% end %>
 
+<%= render 'profil/follower_count' user: user %>
+<div> <%= user.followings.count  %> following </div>
+
+<% if user == current_user %>
+  <%= link_to "Edit profil", edit_user_registration_path %>
+<% elsif current_user %>
+  <%= render :partial => 'profil/follow_button', :user: @user %>
+<% end %>
+
+
+
+
+
+
+
+
+
 </div>
