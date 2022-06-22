@@ -232,10 +232,10 @@ guide1.photo.attach(io: photo_guide1, filename: 'water', content_type: 'image/jp
 
 guide2 = Guide.create!(title: "Wilderness wound care", content: "When we travel to a distant country,  we can easily find
   ourselves with limited access to medical care....", author: "Valeria Pineda", category: "Wounds", difficulty: 2)
-photo_guide2 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655816680/tfaikgbiiq8yvdqd8cgh.jpg")
+photo_guide2 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655852402/nchv3hksz0nztm9ysghy.jpg")
 guide2.photo.attach(io: photo_guide2, filename: 'wound', content_type: 'image/jpg')
 
-guide3 = Guide.create!(title: "Build a campire", content: "Lorem Ipsum is simply dummy text of the printing and typesetting
-  industry. Lorem Ipsum has been...", author: "Lina El Amrani", category: "Fire", difficulty: 4)
+guide3 = Guide.create!(title: "Build a campfire", content: "This article explains the key steps for building a successful
+  campfire, as well as fire etiquette tips...", author: "Lina El Amrani", category: "Fire", difficulty: 4)
 photo_guide3 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655816638/xnl5zfxzuegk4rojz0vu.jpg")
 guide3.photo.attach(io: photo_guide3, filename: 'wound', content_type: 'image/jpg')
