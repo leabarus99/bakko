@@ -23,12 +23,17 @@
   margin: 0px auto;
 }
 
-.drag-price {
-  margin-bottom: 60px;
+.slide-budget {
+  margin-top: 60px;
+  padding: 0px 10px;
 }
 
-.slide-budget {
-  margin: 50px auto;
+.drag-price {
+  margin-bottom: 80px;
+}
+
+.slider-price {
+  margin-bottom: 70px;
 }
 
 .budget-line {
@@ -51,26 +56,17 @@
   margin: 0px 10px;
 }
 
-// .submit-button {
-//   padding: 15px;
-//   border-radius: 20px;
-//   text-align: center;
-//   margin: 40px auto;
-//   width: 40%;
-//   background-color: rgb(176, 176, 176);
-//   color: rgb(0, 0, 0);
-// }
-
-// .submit-button a {
-//   color: white;
-// }
-
-#submit-budget input {
+#submit-budget input[type="submit" i] {
   padding: 15px;
   border-radius: 20px;
   text-align: center;
   margin: 20px auto;
+  border: none !important;
   width: 40%;
-  background-color: rgb(176, 176, 176);
+  background-color: white;
   color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
 }
