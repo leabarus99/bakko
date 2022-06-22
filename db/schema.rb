@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_21_075220) do
+ActiveRecord::Schema.define(version: 2022_06_21_202202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,11 @@ ActiveRecord::Schema.define(version: 2022_06_21_075220) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "follows", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "guides", force: :cascade do |t|
     t.string "content"
     t.string "title"
@@ -94,6 +99,23 @@ ActiveRecord::Schema.define(version: 2022_06_21_075220) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["activity_id"], name: "index_materials_on_activity_id"
     t.index ["equipment_id"], name: "index_materials_on_equipment_id"
+  end
+
+  create_table "relationnships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followee_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "follow_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follow_id"], name: "index_relationships_on_follow_id"
+    t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "stories", force: :cascade do |t|
@@ -160,6 +182,8 @@ ActiveRecord::Schema.define(version: 2022_06_21_075220) do
   add_foreign_key "liikes", "users"
   add_foreign_key "materials", "activities"
   add_foreign_key "materials", "equipment"
+  add_foreign_key "relationships", "users"
+  add_foreign_key "relationships", "users", column: "follow_id"
   add_foreign_key "stories", "trips"
   add_foreign_key "trip_activities", "activities"
   add_foreign_key "trip_activities", "trips"

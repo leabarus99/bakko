@@ -1,21 +1,24 @@
-<%= render 'shared/navbar' %>
-<%= render 'shared/topbar' %>
 
 <div class ="likes" id="likes-story-<%= story.id %>">
   <div>
     <button class="close-modal modal-trigger"><ion-icon name="arrow-back-outline"></ion-icon></button>
   </div>
   <div>
-    <p><%= story.liikes.count %> <%= (story.liikes.count) == 1 ? "Like" : "Likes"%></p>
+    <%# <p><%= story.liikes.count %>
+    <%# <%= (story.liikes.count) == 1 ? "Like" : "Likes"</p> %>
     <% pre_like = story.like_from_user(current_user) %>
     <% if pre_like %>
-      <%= link_to liike_path(pre_like), method: :delete, class: "btn btn-secondary", remote: true do %>
-        Unlike
+    <%# <div class="btn-save2"> %>
+      <%= link_to liike_path(pre_like), method: :delete, class: "btn-save2", remote: true do %>
+        <ion-icon name="bookmark-outline"></ion-icon>
       <% end %>
+    <%# </div> %>
     <% else %>
+    <div class="btn-save">
       <%= link_to story_liikes_path(story), method: :post, class: "btn btn-secondary", remote: true  do %>
-        Like super
+        <ion-icon name="bookmark-outline"></ion-icon>
       <% end %>
+    </div>
     <% end %>
   </div>
 </div>

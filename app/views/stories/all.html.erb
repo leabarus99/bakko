@@ -4,12 +4,13 @@
   <div class = "back-lien"><%= link_to "Back", journal_path %></div>
   <div class="search"> <ion-icon name="search-outline"> </ion-icon><p>Search</p></div>
 
+
  <% @stories.each_with_index do |story, index| %>
+ <%= link_to story do %>
       <div class= "card-article">
         <div class= "infos-article">
           <div class= "title-article"> <h5><%= story.title %></h5> </div>
           <div class= "content-article"> <h5><%= story.content %></h5> </div>
-          <button class="modal-btn modal-trigger">Open</button>
         </div>
         <div class= "img-article">
           <% if story.photo.attached? %>
@@ -18,20 +19,7 @@
         </div>
       </div>
 
-      <div class="modal-container">
-        <div class="overlayy modal-trigger"></div>
-        <div class="modall">
-          <button class="close-modal modal-trigger">X</button>
-
-            <h1 class= "title-story"><%= story.title %></h1>
-            <div class= "intro-story"><%= story.introduction %></div>
-            <% if story.photo.attached? %>
-              <div class= "img-story"><%= cl_image_tag story.photo.key %></div>
-            <% end %>
-            <div class= "description-story"><%= story.description %></div>
-        </div>
-      </div>
-
+    <% end %>
     <div class= 'line'></div>
 
  <% end %>

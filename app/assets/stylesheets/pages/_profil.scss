@@ -17,13 +17,13 @@
   margin-top: -50px;
 }
 
-.show-follow{
+.show-follow {
   display: flex;
   justify-content: space-between;
-  margin-top: 23px;
+  margin-top: 20px;
 }
 
-.md{
+.hour-story ion-icon{
   display: block;
   height: 21px;
   width: 34px;
@@ -31,9 +31,9 @@
   margin-left: -2px;
 }
 
-.icon-notif{
-  width: 33px;
-  height: 32px;
+.icon-notif ion-icon{
+  width: 23px;
+  height: 22px;
   border: 2px solid grey;
   margin: -1px;
   border-radius: 50%;
@@ -105,8 +105,8 @@
 .show-stories {
   display: flex;
   justify-content: space-between;
-  margin-top: 18px;
-  margin-bottom: 16px;
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 
 .line {

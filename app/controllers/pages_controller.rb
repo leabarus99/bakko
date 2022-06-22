@@ -11,21 +11,21 @@ class PagesController < ApplicationController
   end
 
   def journal
-    @user_stories = current_user.stories
+    # @trip = Trip.find(params[:trip_id])
+    @story = Story.new
     @stories = Story.all
+    @user_stories = current_user.stories
   end
 
   def story
     @story = Story.create
   end
 
-
   def destroy
     @story= Story.find(params[:id])
     @story.destroy
     redirect_to journal_path
   end
-
 
   def create
     @liike = current_user.liikes.new(liike_params)
