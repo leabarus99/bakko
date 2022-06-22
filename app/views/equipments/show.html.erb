@@ -2,16 +2,21 @@
 <%= render 'shared/topbar' %>
 
 <%# <%= link_to "< Back", equipments_trip_path %>
-
   <h1 class="name-equi"><%= @equipment.name %></h1>
 
-  <div class="equipment-img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,1)),
-  url(https://images.unsplash.com/photo-1628630500614-1c8924c99c3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80)">
-  </div>
-
+  <% @equipment.materials.each do |material|  %>
+    <div class="equipment-img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,1)),
+    url(<%= cl_image_path material.photo.key %>)">
+    </div>
+  <% end %>
+  <a href="#benefits">
+    <div class="arrow-details">
+      <ion-icon name="chevron-down-outline"></ion-icon>
+    </div>
+  </a>
 <div class="bakko-container equipment-show">
   <p><%= @equipment.details %></p>
-  <div class="benefits">
+  <div id="benefits">
     <ion-icon name="add-circle-outline"></ion-icon>
   </div>
   <p><%= @equipment.benefits.upcase %></p>
