@@ -3,7 +3,7 @@ class GuidesController < ApplicationController
     @guide = Guide.all
 
     if params[:query].present?
-      @guides = @guides.search_by_title_and_category(params[:query])
+      @guides = @guide.search_by_title_and_category(params[:query])
     else
       @guides = Guide.all
     end
