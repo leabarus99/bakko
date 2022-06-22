@@ -36,7 +36,7 @@ background-repeat: no-repeat;
   padding: 5px;
 }
 
-//tabs
+// js tabs
 .survival-tabs {
 margin: 20px;
 }
@@ -74,7 +74,7 @@ margin: 20px;
   margin: 20px;
   margin-top: 20px;
 }
-//tabs
+//js tabs
 
 .water-article-title {
   margin-left: 20px;
@@ -116,6 +116,17 @@ margin: 20px;
 }
 
 .safety-part {
-  display: flex;
-  justify-content: space-between;
+  display: inline-block;
+}
+
+.fa-circle-exclamation:before {
+  content: "\f06d";
+  font-size: 23px;
+  padding: 4px;
+}
+
+.fa-caret-right:before {
+  content: "\f06d";
+  font-size: 23px;
+  padding: 4px;
 }
