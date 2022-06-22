@@ -5,7 +5,9 @@ const articleModal = () => {
   modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
 
   function toggleModal(){
-    modalContainer.classList.toggle("active")
+    if (modalContainer) {
+      modalContainer.classList.toggle("active")
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/topbar' %>
 
-<div class="container-journal" >
+<div class="container-journal" data-controller="caroussel" >
 
   <div class= 'line'></div>
 
@@ -14,7 +14,7 @@
   <div class = "add-story">
   </div>
 
-    <div class="glide">
+    <div class="glide" data-caroussel-target="glide">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           <li class="glide__slide">
@@ -85,6 +85,9 @@
       <div class="modal-container">
         <div class="overlayy modal-trigger"></div>
         <div class="modall">
+          <div>
+             <button class="close-modal modal-trigger"><ion-icon name="arrow-back-outline"></ion-icon></button>
+         </div>
         <%= render 'liikes/like_header', story: story %>
           <div class= 'line3'></div>
               <h1 class= "title-story"><%= story.title %></h1>
@@ -118,13 +121,5 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"> </script>
-  <script>
-    const config = {
-      type: "carousel",
-      perView: 2.3
-    };
-      new Glide('.glide', config).mount()
-  </script>
 </div>
 </div>

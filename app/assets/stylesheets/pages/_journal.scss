@@ -96,18 +96,16 @@ body{
   font-weight: 500;
   margin-left: 136px;
 }
-.modal-btn{
-  padding: 10px 14px;
-  font-size: 18px;
+.modal-btn {
+  padding: 11px 5px;
+  font-size: 17px;
   margin: 100px auto;
   display: block;
-  min-width: 150px;
+  min-width: 80px;
   cursor: pointer;
-  background-color: #55555591;
-  // padding: 16px;
-  //border-radius: 8px;
+  background-color: #3f3b3b91;;
   position: absolute;
-  margin: -77px 86px;
+  margin: -75px 213px;
   color: white;
   font-weight: 700;
 }
@@ -222,13 +220,13 @@ body{
 }
 
 .img-story img {
-  height: 201px;
+  height: 160px;
   margin: 0 auto;
   display: block;
-  margin: 0px 17px;
-  border-radius: 16px;
-  width: 95%;
-  display: block;
+  margin: 0px auto;
+  border-radius: 8px;
+  margin-left: 19px;
+  width: 95%,
 }
 
 .location-story{
@@ -290,4 +288,29 @@ body{
   margin-left: 243px;
   margin-top: 7px;
   height: 36px;
+}
+
+.btnn-save2 {
+  color: white;
+  background-color: #609b99d4;
+  border-radius: 4px;
+  padding: 4px 17px;
+  width: 51px;
+  margin-bottom: 13px;
+  display: block;
+  margin-left: 243px;
+  margin-top: 7px;
+  height: 36px;
+}
+
+.btnn-save a{
+  color: white;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 4px 17px;
+  width: 51px;
+  margin-bottom: 13px;
+  display: block;
+  margin-left: 243px;
+  margin-top: 7px;
 }

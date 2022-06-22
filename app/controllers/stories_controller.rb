@@ -12,6 +12,7 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
+    @trip = Trip.find(params[:trip_id])
   end
 
   def create

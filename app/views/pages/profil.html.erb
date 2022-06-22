@@ -34,9 +34,8 @@
   <div class= "btn-view-follow"><button>View more</button></div>
 </div>
 
-
- <% @stories.each_with_index do |story, index| %>
-  <%= link_to story do %>
+ <% @stories.each do |story|%>
+    <%= link_to story do %>
       <div class= "card-article2">
         <div class= "infos-article">
           <div class= "title-article"> <h5><%= story.title %></h5> </div>
@@ -44,12 +43,13 @@
         </div>
         <div class= "img-article">
           <% if story.photo.attached? %>
-            <%= cl_image_tag story.photo.key %>
-          <% end %>
+          <%= cl_image_tag story.photo.key %>
+           <% end %>
         </div>
       </div>
+    <% end %>
   <% end %>
-<% end %>
+
 
 
 </div>
