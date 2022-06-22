@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: "trips#index"
-
   get "profil", to: 'pages#profil'
   get "journal", to: 'pages#journal'
   post "profil/follow", to: "pages#follow"

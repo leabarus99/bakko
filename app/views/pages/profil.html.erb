@@ -5,7 +5,7 @@
 
 <div class= "header-profil">
   <div>
-    <div class= "name-user"><%= current_user.first_name %></div>
+     <div class= "name-user"><%= current_user.first_name %></div>
     <div class="date-profil">Today, February 23rd</div>
   </div>
   <div class= "icon-notif"><ion-icon name="notifications-outline"></ion-icon></div>
@@ -13,7 +13,7 @@
 
 <div class = "story-tendance" ><%= image_tag "images4.jpg" %></div>
 
-<div class="story-title-tendance"><%=  @stories.first.title %></div>
+ <div class="story-title-tendance"><%=  @stories.first.title %> </div>
 <div class="trending">Trending</div>
 
 <div class= "infos-story-tendance">
@@ -25,7 +25,7 @@
 </div>
 
 <div class ="show-follow">
-  <div class="title-follow">Following</div>
+  <div class="title-follow">My trips</div>
   <div class= "btn-view-follow"><button>View more</button></div>
 </div>
 
@@ -36,6 +36,7 @@
 
 
  <% @stories.each_with_index do |story, index| %>
+  <%= link_to story do %>
       <div class= "card-article2">
         <div class= "infos-article">
           <div class= "title-article"> <h5><%= story.title %></h5> </div>
@@ -47,23 +48,8 @@
           <% end %>
         </div>
       </div>
+  <% end %>
 <% end %>
-
-<%= render 'profil/follower_count' user: user %>
-<div> <%= user.followings.count  %> following </div>
-
-<% if user == current_user %>
-  <%= link_to "Edit profil", edit_user_registration_path %>
-<% elsif current_user %>
-  <%= render :partial => 'profil/follow_button', :user: @user %>
-<% end %>
-
-
-
-
-
-
-
 
 
 </div>

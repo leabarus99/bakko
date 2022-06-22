@@ -1,3 +1,6 @@
+<%= render 'shared/navbar' %>
+<%= render 'shared/topbar' %>
+
 <div class="container-journal" >
 
   <div class= 'line'></div>
@@ -6,7 +9,7 @@
    <div class= "title-myjournal"> <%= link_to "Your journal", journal_path, class: "journal-titles" %></div>
    <div class= "button-see-all2">  <%= link_to "See all...", journal_path, class: "journal-titles" %></p></div>
   </div>
-    <div class= "add-story"><%= link_to "New Story", new_trip_story_path(current_user.trips.first) %></div>
+     <div class= "add-story"><%= link_to "New Story", new_trip_story_path(current_user.trips.first) %></div>
   <div class="container">
   <div class = "add-story">
   </div>
@@ -58,8 +61,8 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
 
-
-<%# <%= link_to "New story", new_trip_story_path(@story.trip) %>
+<%#
+ <%= link_to "New story", new_trip_story_path(@story.trip, @story) %>
 
  <% @stories.each_with_index do |story, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : ''  %>">

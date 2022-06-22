@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  before_action :set_user, only: :show
   def home
   end
 
@@ -12,23 +11,21 @@ class PagesController < ApplicationController
   end
 
   def journal
+    # @trip = Trip.find(params[:trip_id])
     @story = Story.new
-    @story.trip = @trip
-    @user_stories = current_user.stories
     @stories = Story.all
+    @user_stories = current_user.stories
   end
 
   def story
     @story = Story.create
   end
 
-
   def destroy
     @story= Story.find(params[:id])
     @story.destroy
     redirect_to journal_path
   end
-
 
   def create
     @liike = current_user.liikes.new(liike_params)
@@ -48,8 +45,6 @@ class PagesController < ApplicationController
     @authenticity_token = form_authenticity_token
   end
 
-  def show
-  end
   private
 
   def story_params
@@ -58,10 +53,6 @@ class PagesController < ApplicationController
 
   def liike_params
     params.require(:liike).permit(:story_id, :user_id)
-  end
-
-  def set_user
-    @user = User.find(params[:id])
   end
 
 

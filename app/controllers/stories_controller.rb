@@ -11,7 +11,6 @@ class StoriesController < ApplicationController
   end
 
   def new
-    @trip = Trip.find(params[:trip_id])
     @story = Story.new
   end
 

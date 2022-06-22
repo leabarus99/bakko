@@ -121,7 +121,7 @@ body{
   height: 100vh;
   transition: visibility 0.4s;
 }
-.modal-container.active{
+.modal-container.active {
   // display: block;
   visibility: visible;
   transition: visibility 0s;
@@ -180,6 +180,7 @@ body{
   top: 10px;
   right: 10px;
   color: #fff;
+  margin-left: 21px;
 }
 
 .title-story {
@@ -243,10 +244,9 @@ body{
 
 .btn-follow{
     color: white;
-    background-color: #3aaf9d;
+    background-color: #609b99d4;;
     border-radius: 20px;
     left: 10;
-    /* right: 41px; */
     margin-right: 8px;
     padding: 4px 17px;
     margin-top: 4px;
@@ -265,4 +265,29 @@ body{
 
 .container-journal{
   margin-top: -50px;
+}
+
+.btn-save a{
+  color: white;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 4px 17px;
+  width: 51px;
+  margin-bottom: 13px;
+  display: block;
+  margin-left: 243px;
+  margin-top: 7px;
+}
+
+.btn-save2 {
+  color: white;
+  background-color: #609b99d4;
+  border-radius: 4px;
+  padding: 4px 17px;
+  width: 51px;
+  margin-bottom: 13px;
+  display: block;
+  margin-left: 243px;
+  margin-top: 7px;
+  height: 36px;
 }
