@@ -9,7 +9,7 @@
     url(<%= cl_image_path material.photo.key %>)">
     </div>
   <% end %>
-  <a href="#benefits">
+  <a href="#price-estimation">
     <div class="arrow-details">
       <ion-icon name="chevron-down-outline"></ion-icon>
     </div>
@@ -20,6 +20,6 @@
     <ion-icon name="add-circle-outline"></ion-icon>
   </div>
   <p><%= @equipment.benefits.upcase %></p>
-  <p class="price-estimation">$<%= @equipment.price_estimation %></p>
+  <p id="price-estimation">$<%= @equipment.price_estimation %></p>
 
 </div>
