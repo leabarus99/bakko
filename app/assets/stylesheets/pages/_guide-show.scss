@@ -1,0 +1,64 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: $body-font;
+}
+
+.water-article-image {
+background: url("waterfall.jpg");
+background-position: center center;
+background-attachment: fixed;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.water-title {
+  margin: 20px;
+  text-align: center;
+  font-family: $headers-font;
+  font-size: revert;
+  margin-top: -32px;
+}
+
+.difficulty-level {
+  font-size: 18px;
+  text-align: center
+}
+
+.fire-icons {
+  text-align: center;
+  margin-top: -5px;
+}
+
+.fa-fire:before {
+  content: "\f06d";
+  font-size: 23px;
+  padding: 5px;
+}
+
+//tabs
+.survival-tabs {
+margin: 20px;
+}
+
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.tabs-underlined .tab-underlined {
+  color: white;
+  padding: 8px;
+  margin: 8px;
+  opacity: .5;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+.tabs-underlined .tab-underlined.active {
+  opacity: 1;
+  border-bottom: 3px solid white;
+}
+//tabs

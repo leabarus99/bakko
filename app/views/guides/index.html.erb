@@ -20,14 +20,16 @@
 
 
   <% @guides.each do |guide| %>
-  <div class="card-survival">
-  <%= cl_image_tag guide.photo.key %>
-    <div class="preview-margins">
-        <%= guide.title %>
-        <br>
-        <%= guide.content %>
-    </div>
-  </div>
+    <%= link_to guide_path(guide) do %>
+      <div class="card-survival">
+        <%= cl_image_tag guide.photo.key %>
+        <div class="preview-margins">
+          <p class= "guide-title"> <%= guide.title %></p>
+            <br>
+          <p class= "guide-content"><%= guide.content %> </p>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 
 

@@ -27,9 +27,9 @@ Rails.application.routes.draw do
   resources :stories, only: [] do
     resources :liikes, only: [:create]
   end
-  
+
   resources :liikes, only: :destroy
-  resources :guides
+  resources :guides, only: [:index, :show]
   resources :equipments
   resources :devise
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
