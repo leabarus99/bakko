@@ -43,9 +43,16 @@ trip3= Trip.create!(destination: 'Sri Lanka', start_date: '20/12/21', end_date: 
 
 puts "SEED ACTIVITIES"
 
-Activity::ACTIVITIES.each do |name|
-  Activity.create!(name: name)
-end
+# Activity::ACTIVITIES.each do |name|
+#   Activity.create!(name: name)
+# end
+
+hiking = Activity.create!(name: "hiking")
+climbing = Activity.create!(name: "climbing")
+surf = Activity.create!(name: "surf")
+scuba = Activity.create!(name: "scuba diving")
+sightseeing = Activity.create!(name: "sightseeing")
+biking = Activity.create!(name: "biking")
 
 puts "SEED TRIP ACTIVITIES"
 Trip.all.each do |t|
@@ -61,9 +68,12 @@ puts "SEED EQUIPMENTS"
 # equipment6 = Equipment.create!(name: "Accessories", details: "Plus", benefits: "Water resistant", price_estimation: 145)
 
 hiking_shoes = Equipment.create!(name: "Shoes", details: "Intermediate", benefits: "Comfort & Stamina", price_estimation: 42)
+# hiking1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655820343/wmbdmkqhizab5xw8oh0n.jpg")
+# hiking_shoes.photo.attach(io: hiking1, filename: 'hiking-shoes', content_type: 'image/jpg')
+
 hiking_night = Equipment.create!(name: "Tent", details: "3 seats", benefits: "Isolation & Comfort", price_estimation: 94)
-hiking_bags = Equipment.create!(name: "Bag", details: "Intermediate", benefits: "Compartmented & waterproof", price_estimation: 39)
-hiking_clothes = Equipment.create!(name: "Jacket", details: "Waterproof jacket", benefits: "lightness & Waterproof", price_estimation: 139)
+hiking_bags = Equipment.create!(name: "Bag", details: "Intermediate", benefits: "Compartmented & Waterproof", price_estimation: 39)
+hiking_clothes = Equipment.create!(name: "Jacket", details: "Waterproof jacket", benefits: "Light & Waterproof", price_estimation: 139)
 
 climbing_tools = Equipment.create!(name: "Rope", details: "15m", benefits: "High support", price_estimation: 32)
 climbing_night = Equipment.create!(name: "Tent", details: "3 seats", benefits: "Isolation & Comfort", price_estimation: 94)
@@ -72,33 +82,103 @@ climbing_clothes = Equipment.create!(name: "Jacket", details: "Resistant Jacket"
 surf_bag = Equipment.create!(name: "Bag", details: "Soft bag", benefits: "Big storage space", price_estimation: 69)
 surf_clothes = Equipment.create!(name: "Wetsuit", details: "Surf suit", benefits: "Resistant & Flexible", price_estimation: 269)
 
-scuba_tools = Equipment.create!(name: "Palm", details: "Scuba Diving Palm", benefits: "lightness & Flexible", price_estimation: 55)
-scuba_clothes = Equipment.create!(name: "Clothes", details: "Waterproof", benefits: "lightness & Flexible", price_estimation: 59)
-scuba_accessories = Equipment.create!(name: "Camera", details: "Camera water housing", benefits: "Water resistant & solid ", price_estimation: 437)
+scuba_tools = Equipment.create!(name: "Diving fins", details: "The Volo race fin is a very flexible fin. Fiery in the pool, flexible and Comfort in the sea, it can be used everywhere: diving, snorkeling, swimming, hiking, etc.", benefits: "Light & Flexible", price_estimation: 55)
+scuba_clothes = Equipment.create!(name: "Clothes", details: "Waterproof", benefits: "Light & Flexible", price_estimation: 59)
+scuba_accessories = Equipment.create!(name: "Camera", details: "Camera water housing", benefits: "Water resistant & Solid ", price_estimation: 437)
 
-sightseeing_shoes = Equipment.create!(name: "Shoes", details: "Newbie", benefits: "lightness & Comfort", price_estimation: 32)
-sightseeing_bags = Equipment.create!(name: "Bag", details: "Intermediate", benefits: "Compartmented & lightness", price_estimation: 45)
+sightseeing_shoes = Equipment.create!(name: "Shoes", details: "Newbie", benefits: "Lightness & Comfort", price_estimation: 32)
+sightseeing_bags = Equipment.create!(name: "Bag", details: "Intermediate", benefits: "Compartmented & Light", price_estimation: 45)
 sightseeing_clothes = Equipment.create!(name: "Clothes", details: "Basic", benefits: "Comfort & Flexible", price_estimation: 21)
 
-biking_shoes = Equipment.create!(name: "Shoes", details: "Expert", benefits: "Solid & Stamina", price_estimation: 65)
-biking_bags = Equipment.create!(name: "Bag", details: "Intermadiate", benefits: "Comfort & Lightness", price_estimation: 46)
+biking_shoes = Equipment.create!(name: "Shoes", details: "Expert", benefits: "Solidity & Stamina", price_estimation: 65)
+biking_bags = Equipment.create!(name: "Bag", details: "Intermadiate", benefits: "Comfort & Light", price_estimation: 46)
 biking_clothes = Equipment.create!(name: "Clothes", details: "Intermadiate", benefits: "Comfort & Flexible", price_estimation: 19)
-biking_tools = Equipment.create!(name: "Helmet", details: "Intermadiate", benefits: "Solid & Lightness", price_estimation: 70)
+biking_tools = Equipment.create!(name: "Helmet", details: "Intermadiate", benefits: "Solid & Light", price_estimation: 70)
 
 
-# puts "SEED MATERIALS"
+puts "SEED MATERIALS"
 
-# material1 = Material.create!(equipment_id: [hiking_shoes, hiking_night, hiking_bags, hiking_clothes], activity_id: 169)
-# material2 = Material.create!(equipment_id: [climbing_tools, climbing_night, climbing_clothes], activity_id: 170)
-# material3 = Material.create!(equipment_id: [surf_bag, surf_clothes], activity_id: 171)
-# material4 = Material.create!(equipment_id: [scuba_tools, scuba_clothes, scuba_accessories], activity_id: 172)
-# material5 = Material.create!(equipment_id: [sightseeing_shoes, sightseeing_bags, sightseeing_clothes], activity_id: 173)
-# material6 = Material.create!(equipment_id: [biking_shoes, biking_bags, biking_clothes, biking_tools], activity_id: 174)
+material_hiking1 = Material.create!(equipment: hiking_shoes, activity: hiking)
+hiking1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655820343/wmbdmkqhizab5xw8oh0n.jpg")
+material_hiking1.photo.attach(io: hiking1, filename: 'hiking-shoes', content_type: 'image/jpg')
+
+material_hiking2 = Material.create!(equipment: hiking_night, activity: hiking)
+hiking2 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655820378/n51pfqvf2ez7b7rkc5d3.jpg")
+material_hiking2.photo.attach(io: hiking2, filename: 'hiking-night', content_type: 'image/jpg')
+
+material_hiking3 = Material.create!(equipment: hiking_bags, activity: hiking)
+hiking3 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655820410/quago7r9sbkpkg33eqlm.jpg")
+material_hiking3.photo.attach(io: hiking3, filename: 'hiking-bags', content_type: 'image/jpg')
+
+material_hiking4 = Material.create!(equipment: hiking_clothes, activity: hiking)
+hiking4 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655820644/njbxz5u0oxjmo03eragp.jpg")
+material_hiking4.photo.attach(io: hiking4, filename: 'hiking-clothes', content_type: 'image/jpg')
+
+material_climbing1 = Material.create!(equipment: climbing_tools, activity: climbing)
+climbing1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655851679/be2ogcx94hfkxb4matxz.jpg")
+material_climbing1.photo.attach(io: climbing1, filename: 'climbing-tools', content_type: 'image/jpg')
+
+material_climbing2 = Material.create!(equipment: climbing_night, activity: climbing)
+climbing2 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655820378/n51pfqvf2ez7b7rkc5d3.jpg")
+material_climbing2.photo.attach(io: climbing2, filename: 'climbing-night', content_type: 'image/jpg')
+
+material_climbing3 = Material.create!(equipment: climbing_clothes, activity: climbing)
+climbing3 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655851771/oialbiunhpahdztorprk.jpg")
+material_climbing3.photo.attach(io: climbing3, filename: 'climbing-clothes', content_type: 'image/jpg')
+
+material_surf1 = Material.create!(equipment: surf_bag, activity: surf)
+surf1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655851834/pt7oyp8ialrj9zzf68yd.jpg")
+material_surf1.photo.attach(io: surf1, filename: 'surf-bags', content_type: 'image/jpg')
+
+material_surf2 = Material.create!(equipment: surf_clothes, activity: surf)
+surf2 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655851861/z7xroeyxv5fnqcfyfzjy.jpg")
+material_surf2.photo.attach(io: surf2, filename: 'surf-clothes', content_type: 'image/jpg')
+
+material_scuba1 = Material.create!(equipment: scuba_tools, activity: scuba)
+scuba1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655851942/y6axxkrlwzs7sgruobse.jpg")
+material_scuba1.photo.attach(io: scuba1, filename: 'scuba-tools', content_type: 'image/jpg')
+
+material_scuba2 = Material.create!(equipment: scuba_clothes, activity: scuba)
+scuba2 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655851959/pfa4k5vheavsib7kvefx.jpg")
+material_scuba2.photo.attach(io: scuba2, filename: 'scuba-clothes', content_type: 'image/jpg')
+
+material_scuba3 = Material.create!(equipment: scuba_accessories, activity: scuba)
+scuba3 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655851984/efnsale8r7j0gcpzijao.jpg")
+material_scuba3.photo.attach(io: scuba3, filename: 'scuba-accessories', content_type: 'image/jpg')
+
+material_sightseeing1 = Material.create!(equipment: sightseeing_shoes, activity: sightseeing)
+sightseeing1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655852027/qxktz0wjfbgbv6zoo5pc.jpg")
+material_sightseeing1.photo.attach(io: sightseeing1, filename: 'sightseeing-shoes', content_type: 'image/jpg')
+
+material_sightseeing2 = Material.create!(equipment: sightseeing_bags, activity: sightseeing)
+sightseeing2 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655852067/wgsmkyixfswy30no1rhp.jpg")
+material_sightseeing2.photo.attach(io: sightseeing2, filename: 'sightseeing-bags', content_type: 'image/jpg')
+
+material_sightseeing3 = Material.create!(equipment: sightseeing_clothes, activity: sightseeing)
+sightseeing3 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655852037/ybzbmj5qux7ofeara0s8.jpg")
+material_sightseeing3.photo.attach(io: sightseeing3, filename: 'sightseeing-clothes', content_type: 'image/jpg')
 
 
-Activity.all.each do |a|
-  Material.create!(activity: a, equipment: Equipment.all.sample)
-end
+material_biking1 = Material.create!(equipment: biking_tools, activity: biking)
+biking1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655852100/rmr3eepmzunmseqvfhgh.jpg")
+material_biking1.photo.attach(io: biking1, filename: 'biking-tools', content_type: 'image/jpg')
+
+material_biking2 = Material.create!(equipment: biking_shoes, activity: biking)
+biking2 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655852193/rf7ucysigbppttbyoitn.jpg")
+material_biking2.photo.attach(io: biking2, filename: 'biking-shoes', content_type: 'image/jpg')
+
+material_biking3 = Material.create!(equipment: biking_bags, activity: biking)
+biking3 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655852260/bsjyrkdq0b6vvu61kwmu.jpg")
+material_biking3.photo.attach(io: biking3, filename: 'biking-bags', content_type: 'image/jpg')
+
+material_biking4 = Material.create!(equipment: biking_clothes, activity: biking)
+biking4 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655852280/yrkqsjdemgc2xzfa46o6.jpg")
+material_biking4.photo.attach(io: biking4, filename: 'biking-clothes', content_type: 'image/jpg')
+
+
+# Activity.all.each do |a|
+#   Material.create!(activity: a, equipment: Equipment.all.sample)
+# end
 
 story1= Story.create!(title: "The best of Island ", content: "The discovery of the western fjords as well as the caldera of Aska...", location: 'Islande', trip: trip1, introduction: "Un voyage en Islande, terre des extrêmes et des contrastes, à la limite du cercle polaire, voilà l’occasion d’une fabuleuse leçon de géologie.", description:"Sa nature sauvage, ses phénomènes volcaniques, ses chutes d’eau indomptables et ses paysages sans bornes sont sa meilleure publicité. À l’extrémité de l’Europe, l’Islande est un fantasme pour amateurs de grands espaces. On y respire un air frais et volontiers humide qui renvoie à l’origine d’un monde plus propre, puissant et prenant.
   Sous les abords austères de ses immenses champs de lave et ses déserts de pierre intérieurs, l’Islande empile les sites remarquables : fjords grandioses, glaciers colossaux, piscines thermales naturelles délicieuses, falaises piquetées de macareux, fulmars et guillemots… sans oublier tous ces lieux qui renvoient à la colonisation viking, avec leurs murs de tourbe et leurs maisonnettes aux toits nappés d’herbe.
