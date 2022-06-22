@@ -55,10 +55,67 @@ margin: 20px;
   cursor: pointer;
   text-decoration: none;
   border-bottom: 4px solid transparent;
+  font-family: $body-font;
+  font-size: 20px;
 }
 
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
   border-bottom: 3px solid white;
 }
+
+.no_show {
+  display: none!important;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tabs-toggle {
+  margin: 20px;
+  margin-top: 20px;
+}
 //tabs
+
+.water-article-title {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-family: $body-font;
+  font-size: 1.23rem;
+}
+
+.purify-article {
+  margin: 20px;
+  text-align: justify;
+}
+
+.guide-author {
+  margin: 20px;
+  margin-top: -2px;
+  font-weight: bold;
+}
+
+
+.guide-paragraph {
+  margin: 20px;
+  margin-top: -13px;
+}
+
+.guide-paragraph2 {
+  margin: 20px;
+  margin-top: -36px;
+}
+
+.purify-article-extra {
+  margin: 20px;
+  font-size: 1.23rem;
+  font-family: $body-font;
+}
+
+.guide-space {
+  margin-top: 30px;
+}
+
+.safety-part {
+  display: flex;
+  justify-content: space-between;
+}

@@ -15,16 +15,73 @@
     <div class="survival-tabs">
       <ul class="list-inline tabs-underlined">
         <li>
-          <a href="#" class="tab-underlined active">Methods</a>
+          <h3 class="tab-underlined" onClick="toggleContent()" data-class="methods-description">Methods</h3>
         </li>
         <li>
-          <a href="#" class="tab-underlined">Supplies</a>
+          <h3 class="tab-underlined" onClick="toggleContent()" data-class="supplies-description">Supplies</h3>
         </li>
         <li>
-          <a href="#" class="tab-underlined">Safety</a>
+          <h3 class="tab-underlined" onClick="toggleContent()" data-class="safety-description">Safety</h3>
         </li>
       </ul>
     </div>
 
+ <%# Tab content for Methods %>
+ <div class= "tabs-toggle">
+    <div id="methods" class="tab_content">
+      <h5 class= "water-article-title">How to Purify Water without <br>commercial filters</h5>
+        <p class= "purify-article">Water in the wild often contains harmful microorganisms, bacteria, and parasites that can cause a variety of ailments, such as giardia, dysentery, hepatitis, and hookworms. Luckily, however, we’re going to learn a few simple ways how to purify water to make it safe for consumption. <br> <br>
+          <strong>Boiling</strong> <br>
+          The simplest method to purify water. <br>
+          You need to bring the water to a full, rolling boil for at least five minutes to be safe. Boiling your drinking water will remove the oxygen and the water ends up tasting flat. You can improve its quality by pouring it back and forth between two containers to put oxygen back in, or simply shake it up. <br> <br>
+          <strong>Primitive Methods</strong> <br>
+          Beyond these common methods, there are more primitive techniques for the serious survivalists (or the unlucky person who was caught unprepared). <br> <br>
+          One is <strong>primitive filtering</strong> through soil or, preferably, sand. Keep rinsing the water repeatedly through the sand until it is looking clear. A variation of this is to dig a hole near where the source is and use the water that filters through into the hole. Be aware, that although soil is a good filter for sediment and other particles, it is not a guarantee for things like bacteria. This is even true for spring water, which many people assume is safe to drink without treatment. <br> <br>
+          Distilling is a method that can be used for either collecting water or gathering freshwater out of saltwater. To collect water from the ground, dig a deep hole, and place a collecting container or water bottle in the center. Cover the hole with a clear sheet of plastic. The plastic needs to be weighted in the center with a rock or heavy object so that it points down into the container. <br> <br>
+          Then, secure the sides of the plastic tightly around the hole, such as by covering with dirt. The clear plastic acts like a greenhouse. The water in the soil evaporates as it heats up. When it hits the plastic it runs down to the point and drips off into the container. If all you have is saltwater, you can distill it by placing a small pot inside a larger pot. The salty water goes in the larger pot but not the smaller one. <br> <br>
+          Invert a lid over the pots that will point down into the smaller pot, then bring the water to a boil. As the water boils, freshwater will evaporate, hit the lid and drip down into the smaller pot, leaving the salt, or other minerals behind. <br> <br>
+          An alternative if you don’t have a smaller pot is to put a cloth over the pot the will absorb the steam. Use caution when removing it to wring it out so you don’t get burned.</p>
+      <p class= "guide-author">Author: Léa Barus </p>
+    </div>
+
+
+      <div id="supplies" class="tab_content no_show">
+          <h5 class= "purify-article-extra"> For primitive method: </h5>
+          <p class= "guide-paragraph">None</p>
+        <div class="guide-space">
+          <h5 class= "purify-article-extra"> For boiling and distilling: </h5>
+          <p class= "guide-paragraph2"> <br> Collecting container <br>Sheet of plastic <br>Rock or heavy object <br> Small pot, alternative: cloth <br> Large pot <br>Lid</p>
+        </div>
+    </div>
+
+    <div class="safety-part">
+        <div id="safety" class="tab_content no_show">
+          <ion-icon name="warning-outline"></ion-icon><p class= "purify-article"> 80% safe but <strong> primitive method doesn’t get rid of all bacteria</strong>. Be cautious when handling pot of boiling water. </p>
+      </div>
+    </div>
+  </div>
+
   </div>
 </body>
+
+
+<script>
+  const toggleContent = () => {
+    const toggleTitle = event.currentTarget.innerHTML.toLowerCase()
+    console.log(toggleTitle)
+    const headers = document.querySelectorAll('.tab_content')
+    const titles = document.querySelectorAll('.tab-underlined')
+
+    headers.forEach((header) => {
+      header.classList.add('no_show')
+      titles.forEach((title) => {
+        title.classList.remove('active')
+      })
+      event.currentTarget.classList.add('active')
+    })
+
+    const toShow = document.getElementById(toggleTitle)
+      toShow.classList.remove('no_show')
+
+    }
+</script>
