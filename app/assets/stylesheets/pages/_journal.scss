@@ -110,6 +110,9 @@ body{
   font-weight: 700;
   border-radius: 14px;
 }
+.modal-container.active .modal-btn {
+  display: none;
+}
 
 .modal-container{
   // display: none;
@@ -258,25 +261,22 @@ body{
   margin-top: 0px;
 }
 
-.likes{
-  display: flex;
-}
-
 .container-journal{
   margin-top: -50px;
 }
 
-.btn-save a{
-  color: white;
-  background-color: transparent;
-  border-radius: 4px;
-  padding: 4px 17px;
-  width: 51px;
-  margin-bottom: 13px;
-  display: block;
-  margin-left: 243px;
-  margin-top: 7px;
-}
+// .btn-save a{
+//   color: white;
+//   background-color: transparent;
+//   border-radius: 4px;
+//   padding: 4px 17px;
+//   width: 51px;
+//   margin-bottom: 13px;
+//   display: block;
+//   margin-left: 243px;
+//   margin-top: -141px;
+// }
+
 
 .btn-save2 {
   color: white;
@@ -286,35 +286,67 @@ body{
   width: 51px;
   margin-bottom: 13px;
   display: block;
-  margin-left: 243px;
-  margin-top: 7px;
+  margin-left: 302px;
   height: 36px;
+  margin-top: -141px;
 }
 
-.btn-save2 {
+.btn-save a {
   color: white;
-  background-color: #609b99d4;
+   background-color: grey ;
   border-radius: 4px;
   padding: 4px 17px;
   width: 51px;
   margin-bottom: 13px;
   display: block;
-  margin-left: 308px;
-  margin-top: -47px;
-  height: 36px;
+  margin-left: 304px;
+  margin-top: -126px;
 }
 
-.btnn-save a{
+// .btnn-save a{
+//   color: white;
+//   background-color: transparent;
+//   border-radius: 4px;
+//   padding: 4px 17px;
+//   width: 51px;
+//   margin-bottom: 13px;
+//   display: block;
+//   margin-left: 302px;
+//   margin-top: -131px;
+// }
+
+.btnn-save3{
   color: white;
-  background-color: transparent;
+
   border-radius: 4px;
   padding: 4px 17px;
   width: 51px;
   margin-bottom: 13px;
   display: block;
-  margin-left: 243px;
-  margin-top: 7px;
+  margin-left: 302px;
+  margin-top: -121px;
+  height: 36px;
+  }
+
+.likes {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+
 }
+
+.btnn-save1 {
+  color: white;
+  background-color: grey;
+  border-radius: 4px;
+  padding: 4px 17px;
+  width: 51px;
+  border-radius: 0 9px 0 4px;
+  &.liked {
+    background-color: #609b99d4;
+  }
+}
+
 
 .container-articles {
   display: flex;
@@ -333,11 +365,13 @@ body{
   color: #609b99d4;
 }
 
-
 .global-container {
   margin: 30px;
-  border: 1px solid;
+  border: 1px solid #3c3b3b;
   padding: 22px;
+  background-position: center;
+  background-blend-mode: darken;
+  border-radius: 17px;
 }
 
 
@@ -345,4 +379,16 @@ body{
   margin-top: 17px;
   margin-top: 20px;
   margin-bottom: 29px;
+}
+
+.back-lien a{
+  background-color: #80808082;
+  padding: 8px 19px;
+  padding: 8px 19px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  position: absolute;
+  margin-top: -8px;
 }

@@ -1,13 +1,17 @@
 class PagesController < ApplicationController
+  before_action :authenticate_user!, only: [:journal, :destroy, :create, :profil]
   def home
   end
 
   def profil
     @story = Story.new
     @story.trip = @trip
-    @stories = Story.where(liikes: current_user)
+    @stories = current_user.stories
+    @most_liked_story = @stories.max do |story_a, story_b|
+      story_a.liikes.count <=> story_b.liikes.count
+    end
     @user = current_user
-    # @user_story = @trip.current_user.story
+    @like_stories = Liike.where(user: current_user).map(&:story)
   end
 
   def journal
@@ -64,7 +68,6 @@ class PagesController < ApplicationController
     @budget_by_category = Budget.by_category(@budget.trip.activities, @budget.price)
   end
 
-  def all
-   s
-  end
+
+
 end

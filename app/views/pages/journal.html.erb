@@ -64,12 +64,12 @@
 <%#
  <%= link_to "New story", new_trip_story_path(@story.trip, @story) %>
 
- <% @stories.each_with_index do |story, index| %>
-      <div class="carousel-item <%= index == 0 ? 'active' : ''  %>">
-      <div class= "global-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-              url(<%= cl_image_tag story.photo.key %>)">
+ <% @stories.each do |story| %>
+        <% if story.photo.attached? %>
+          <div class="global-container" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path story.photo.key, crop: :fill %>')">
+        <% end %>
         <div class="container-articles">
-          <h5>@<%= current_user.first_name %></h5>
+          <h5>@<%= story.user.first_name %></h5>
           <% if current_user.photo.attached? %>
             <%= cl_image_tag story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
           <% end %>
@@ -82,10 +82,7 @@
           <h5><%= story.location %></h5>
           <button class= "modal-btn modal-trigger">Read</button>
         </div>
-        </div>
-          <div class="carousel-caption  d-md-block"></div>
-  </div>
-
+</div>
 
       <div class="modal-container">
         <div class="overlayy modal-trigger"></div>

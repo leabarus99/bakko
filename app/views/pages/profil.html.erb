@@ -13,7 +13,7 @@
 
 <div class = "story-tendance" ><%= image_tag "images4.jpg" %></div>
 
- <div class="story-title-tendance"><%=  @stories.first.title %> </div>
+ <div class="story-title-tendance"><%=  @most_liked_story.title %> </div>
 <div class="trending">Trending</div>
 
 <div class= "infos-story-tendance">
@@ -34,7 +34,7 @@
   <div class= "btn-view-follow"><button>View more</button></div>
 </div>
 
- <% @stories.each do |story|%>
+ <% @like_stories.each do |story|%>
     <%= link_to story do %>
       <div class= "card-article2">
         <div class= "infos-article">
