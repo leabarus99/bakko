@@ -15,7 +15,7 @@ class LiikesController < ApplicationController
   end
 
   def after_like_action
-    @div_content = render_to_string partial: 'like_header', locals: {story: @story}
+    @div_content = render_to_string partial: 'all_header', locals: { story: @story }
     respond_to do |format|
       format.html { redirect_to journal_path }
       format.js

@@ -6,14 +6,14 @@ Rails.application.routes.draw do
   get "journal", to: 'pages#journal'
   post "profil/follow", to: "pages#follow"
   delete "profil/unfollow", to: "pages#unfollow"
-  get "all_stories", to: 'stories#all'
+  get "all_stories", to: 'stories#index'
   get "journal", to: 'pages#destroy'
   get "journal", to: 'pages#destroyy'
   get "journal", to: 'pages#create'
   get "dashboard", to: 'pages#dashboard'
 
   resources :trips do
-    resources :stories, except: :show
+    resources :stories, except: [:show, :index]
     resources :guides
     resources :survival_articles
 
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :stories, only: [:show] do
+  resources :stories, only: [:show, :index] do
     resources :liikes, only: [:create]
   end
 

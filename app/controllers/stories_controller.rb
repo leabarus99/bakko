@@ -1,8 +1,5 @@
 class StoriesController < ApplicationController
   before_action :authenticate_user!
-  def index
-    @stories = Story.all
-  end
 
   def show
     @story = Story.find(params[:id])
@@ -33,8 +30,11 @@ class StoriesController < ApplicationController
     redirect_to journal_path
   end
 
-  def all
-    @stories = Story.all
+  def index
+    @stories = Story.all.order(created_at: :desc)
+    if params[:query].present?
+      @stories = @stories.search_by_title_and_location(params[:query])
+    end
   end
 
   private

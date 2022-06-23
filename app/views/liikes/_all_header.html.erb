@@ -1,21 +1,11 @@
-
-<div class ="likes" id="likes-story-<%= story.id %>">
-  <div>
-    <%# <p><%= story.liikes.count %>
-    <%# <%= (story.liikes.count) == 1 ? "Like" : "Likes"</p> %>
-    <% pre_like = story.like_from_user(current_user) %>
-    <% if pre_like %>
-    <%# <div class="btn-save2"> %>
-      <%= link_to liike_path(pre_like), method: :delete, class: "btnn-save2", remote: true do %>
-        <ion-icon name="bookmark-outline"></ion-icon>
-      <% end %>
-    <%# </div> %>
-    <% else %>
-    <div class="btn-save">
-      <%= link_to story_liikes_path(story), method: :post, class: "btnn-save a", remote: true  do %>
-        <ion-icon name="bookmark-outline"></ion-icon>
-      <% end %>
-    </div>
+<div class="likes" id="likes-story-<%= story.id %>">
+  <% if story.like_from_user(current_user) %>
+    <%= link_to liike_path(story.like_from_user(current_user)), method: :delete, class: "btnn-save1 liked", remote: true do %>
+      <ion-icon name="bookmark-outline"></ion-icon>
     <% end %>
-  </div>
+  <% else %>
+    <%= link_to story_liikes_path(story), method: :post, class: "btnn-save1", remote: true  do %>
+      <ion-icon name="bookmark-outline"></ion-icon>
+    <% end %>
+  <% end %>
 </div>
