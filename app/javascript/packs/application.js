@@ -7,16 +7,15 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import "swiper/swiper-bundle.min.css"
+import "controllers"
+import "bootstrap"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import "controllers"
-import "bootstrap"
-import { articleModal } from "../plugins/modal"
 
+import { articleModal } from "../plugins/modal"
 
 document.addEventListener("turbolinks:load", () => {
   articleModal()

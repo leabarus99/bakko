@@ -113,7 +113,6 @@ body {
 }
 
 
-
 //activity tags
 
 .group-button {
@@ -151,5 +150,29 @@ body {
   background-color: #708598b8;
   color: white;
 }
-
 //activity tags
+
+
+.mapboxgl-ctrl-geocoder--input {
+  border: 1px solid white;
+  &:focus{
+    color: #878787;
+  }
+}
+
+.mapboxgl-ctrl-geocoder .suggestions {
+  background-color: black;
+  // border: 1px solid white;
+  box-shadow: 0px 0px 5px white;
+  border-radius: 8px;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions > li > a {
+  color: rgba($color: #878787, $alpha: 1.0);
+  text-decoration: none;
+  cursor: pointer;
+}
+.mapboxgl-ctrl-geocoder .suggestions > .active > a {
+  background-color: black;
+  color: rgba($color: #f1f1f1, $alpha: 1.0);
+}

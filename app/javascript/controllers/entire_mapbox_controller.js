@@ -8,7 +8,6 @@ export default class extends Controller {
     marker: Object
   }
 
-
   connect() {
     // map
     mapboxgl.accessToken = this.apiKeyValue
@@ -21,8 +20,6 @@ export default class extends Controller {
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
 
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl }))
 
     }
 
@@ -40,7 +37,4 @@ export default class extends Controller {
       bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
       this.map.fitBounds(bounds, { padding: 40, maxZoom: 7, duration: 0 })
     }
-
-
-
 };
