@@ -1,0 +1,54 @@
+.trip-img {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  width: 95%;
+  margin: 30px auto;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.trip-info {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.budget-preview {
+  background-color: #fa782144;
+  color: #fa7821;
+  width: 95%;
+  padding: 20px;
+  margin: 0px auto;
+  border-radius: 10px;
+}
+
+.preview-price-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-price-line ion-icon {
+  background-color: #fa78214c;
+  color: #fa7821;
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid #fa7821;
+}
+
+.price-budget-view {
+  font-size: 24px;
+}
+
+.instagram-img img {
+  height: 180px;
+}
+
+.instagram-at {
+  padding-left: 6px !important;
+  color: rgb(169, 169, 169);
+  font-size: 14px;
+  margin-bottom: 0px !important;
+  background-color: transparent !important;
+}

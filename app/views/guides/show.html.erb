@@ -1,3 +1,24 @@
+<%= render 'shared/navbar' %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon special-topbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/dashboard">
+      <img src="<%= image_path('bakko-white-logo.png')%>">
+    </a>
+    <button class="navbar-toggler"id="navbarSupportedContent" >
+          <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= image_path('user-profil.jpg')%>">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/profil">Profil</a>
+              <a class="dropdown-item profil-settings" href="#">Settings</a>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+          <!--li class="nav-item"-->
+          <!--/li-->
+    </button>
+  </div>
+</div>
+
 <body class="water-article-image">
 
 
@@ -46,10 +67,10 @@
 
 
       <div id="supplies" class="tab_content no_show">
-          <h5 class= "purify-article-extra"> For primitive method: </h5>
+          <h5 class= "purify-article-extra"> <i class="fa-solid fa-wrench"></i> For primitive method: </h5>
           <p class= "guide-paragraph"><i class="fa-solid fa-caret-right"></i> None</p>
         <div class="guide-space">
-          <h5 class= "purify-article-extra"> For boiling and distilling: </h5>
+          <h5 class= "purify-article-extra"> <i class="fa-solid fa-wrench"></i> For boiling and distilling: </h5>
           <p class= "guide-paragraph2"> <br> <i class="fa-solid fa-caret-right"></i> Collecting container <br> <i class="fa-solid fa-caret-right"></i> Sheet of plastic <br> <i class="fa-solid fa-caret-right"></i> Rock or heavy object <br> <i class="fa-solid fa-caret-right"></i> Small pot, alternative: cloth <br> <i class="fa-solid fa-caret-right"></i> Large pot <br> <i class="fa-solid fa-caret-right"></i> Lid</p>
         </div>
     </div>
