@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/topbar' %>
 
-<div class="container-journal" >
+<div class="container-journal" data-controller="caroussel" >
 
   <div class= 'line'></div>
 
@@ -14,7 +14,7 @@
   <div class = "add-story">
   </div>
 
-    <div class="glide">
+    <div class="glide" data-caroussel-target="glide">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           <li class="glide__slide">
@@ -66,25 +66,33 @@
 
  <% @stories.each_with_index do |story, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : ''  %>">
-        <% if story.photo.attached? %>
-          <%= cl_image_tag story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
-        <% end %>
-        <div class="carousel-caption  d-md-block">
-          <button class= "modal-btn modal-trigger">Read</button>
-          <div class= "new-article">
-            <div>
-              <h5><%= story.location %></h5>
-              <h5>@<%= current_user.first_name %></h5>
-            </div>
-          </div>
-          <div class= "description-article"><%= story.content %></div>
-          </div>
+      <div class= "global-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+              url(<%= cl_image_tag story.photo.key %>)">
+        <div class="container-articles">
+          <h5>@<%= current_user.first_name %></h5>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
+          <% end %>
         </div>
+        <div class= "content-article">
+           <h1><%= story.title %></h1>
+            <%= story.content %>
+        </div>
+        <div class= "footer-article">
+          <h5><%= story.location %></h5>
+          <button class= "modal-btn modal-trigger">Read</button>
+        </div>
+        </div>
+          <div class="carousel-caption  d-md-block"></div>
+  </div>
 
 
       <div class="modal-container">
         <div class="overlayy modal-trigger"></div>
         <div class="modall">
+          <div>
+             <button class="close-modal modal-trigger"><ion-icon name="arrow-back-outline"></ion-icon></button>
+         </div>
         <%= render 'liikes/like_header', story: story %>
           <div class= 'line3'></div>
               <h1 class= "title-story"><%= story.title %></h1>
@@ -118,13 +126,5 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"> </script>
-  <script>
-    const config = {
-      type: "carousel",
-      perView: 2.3
-    };
-      new Glide('.glide', config).mount()
-  </script>
 </div>
 </div>
