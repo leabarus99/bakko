@@ -17,9 +17,9 @@
 
     <div class= "d-flex justify-content-center" style="margin-bottom: -25px; margin-top: 20px;">
       <%= f.input :destination, placeholder: "Destination", label: false, input_html:
-                  { data: { mapbox_target: "destination" } ,class: "d-none"},
-                  wrapper_html: { data: { controller: "mapbox",
-                  mapbox_api_key_value: ENV["MAPBOX_API_KEY"] } ,
+                  { data: { geocoder_target: "destination" } ,class: "d-none"},
+                  wrapper_html: { data: { controller: "geocoder",
+                  geocoder_api_key_value: ENV["MAPBOX_API_KEY"] } ,
                   } %>
     </div>
     <div class= "d-flex justify-content-center">
