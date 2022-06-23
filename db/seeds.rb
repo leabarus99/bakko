@@ -159,3 +159,28 @@ guide3 = Guide.create!(title: "Build a campfire", content: "This article explain
   campfire, as well as fire etiquette tips...", author: "Lina El Amrani", category: "Fire", difficulty: 4)
 photo_guide3 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655816638/xnl5zfxzuegk4rojz0vu.jpg")
 guide3.photo.attach(io: photo_guide3, filename: 'wound', content_type: 'image/jpg')
+
+guide4 = Guide.create!(title: "Useful knots", content: "Every true adventurer needs a couple of rope tying tricks up their
+  sleeves...", author: "Raphaël Girin", category: "knots", difficulty: 3)
+photo_guide4 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655973665/htqsn3qbmapvvr3bpxnq.jpg")
+guide4.photo.attach(io: photo_guide4, filename: 'knot', content_type: 'image/jpg')
+
+guide5 = Guide.create!(title: "Build a shelter", content: "Building an effective shelter can help protect you from
+  hypothermia and the elements...", author: "Gwen Blond", category: "shelters", difficulty: 5)
+photo_guide5 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655973676/slekokef2gslioue532b.jpg")
+guide5.photo.attach(io: photo_guide5, filename: 'shelter', content_type: 'image/jpg')
+
+guide6 = Guide.create!(title: "Make a spear", content: "With a simple spear, you can improve your odds of catching
+  fish or other small creatures...", author: "Aurore Rey", category: "spears", difficulty: 3)
+photo_guide6 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655973683/jhlo91fxk1ahypippaxe.jpg")
+guide6.photo.attach(io: photo_guide6, filename: 'spear', content_type: 'image/jpg')
+
+guide7 = Guide.create!(title: "Survival essentials", content: "Not sure what to include on your survival gear list?
+  here are some helpful tips...", author: "Anthony Jebrayel", category: "essentials", difficulty: 1)
+photo_guide7 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655973703/xusvdjzpthllmx8akmvj.jpg")
+guide7.photo.attach(io: photo_guide7, filename: 'essentials', content_type: 'image/jpg')
+
+guide8 = Guide.create!(title: "Reading a compass", content: "There are a few important things you should know
+  about how a compass works....", author: "Florent Page", category: "compass", difficulty: 1)
+photo_guide8 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655973694/ecmnwkvjdvazxzgpka5y.jpg")
+guide8.photo.attach(io: photo_guide8, filename: 'compass', content_type: 'image/jpg')
