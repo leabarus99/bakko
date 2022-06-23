@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    @story= Story.find(params[:id])
+    @story = Story.find(params[:id])
     @story.destroy
     redirect_to journal_path
   end
@@ -46,6 +46,18 @@ class PagesController < ApplicationController
     @authenticity_token = form_authenticity_token
   end
 
+  def dashboard
+    @trip = current_user.trips.last
+    @budget = @trip.budgets
+
+    @marker = {
+      lat: @trip.latitude,
+      lng: @trip.longitude,
+      info_window: render_to_string(partial: "trips/info_window", locals: { trip: @trip })
+    }
+
+  end
+
   private
 
   def story_params
@@ -56,6 +68,9 @@ class PagesController < ApplicationController
     params.require(:liike).permit(:story_id, :user_id)
   end
 
+  def budget_params
+    params.require(:budget).permit(:price, :category, :trip)
+  end
 
   def detailedbudget
     @budgets = Budget.all
@@ -64,7 +79,4 @@ class PagesController < ApplicationController
     @budget_by_category = Budget.by_category(@budget.trip.activities, @budget.price)
   end
 
-  def all
-   s
-  end
 end

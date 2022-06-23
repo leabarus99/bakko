@@ -20,10 +20,11 @@ body {
 }
 
 
-.icon-world {
+.icon-world  {
   text-align: center;
-  margin-bottom: -18px;
-  margin-top: -86px;
+  margin-bottom: 18px;
+  margin-top: -61px;
+  z-index: 20;
 }
 
 .new-container {
@@ -74,6 +75,7 @@ body {
   position: relative;
   left: 10px;
   box-shadow: none;
+  background: black;
 }
 
 .mapboxgl-ctrl-geocoder button {
@@ -99,9 +101,6 @@ body {
   display: none;
 }
 
-svg {
-  display: none;
-}
 
 
 .mapboxgl-ctrl-geocoder--pin-right {

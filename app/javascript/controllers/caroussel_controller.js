@@ -4,6 +4,7 @@ import Glide from '@glidejs/glide'
 export default class extends Controller {
   static targets = [ "glide" ]
 
+
   connect() {
     let config = {
       type: "carousel",

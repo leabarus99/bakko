@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "journal", to: 'pages#destroy'
   get "journal", to: 'pages#destroyy'
   get "journal", to: 'pages#create'
+  get "dashboard", to: 'pages#dashboard'
 
   resources :trips do
     resources :stories, except: :show

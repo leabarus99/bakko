@@ -1,0 +1,27 @@
+.trip-img {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  width: 95%;
+  margin: 30px auto;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.trip-info {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.instagram-img img {
+  height: 180px;
+}
+
+.instagram-at {
+  padding-left: 6px !important;
+  color: rgb(169, 169, 169);
+  font-size: 14px;
+  margin-bottom: 0px !important;
+  background-color: transparent !important;
+}

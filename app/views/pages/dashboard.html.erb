@@ -1,0 +1,107 @@
+<%= render 'shared/navbar' %>
+<%= render 'shared/topbar' %>
+
+<div class="bakko-container">
+  <h1>Dashboard</h1>
+
+    <div class="current-trip">
+      <% current_user.trips.each do |trip| %>
+        <div class="trip-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+        url(https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80)">
+          <div class="trip-info">
+            <h3><%= trip.destination %></h3>
+            <p><%= (trip.end_date - trip.start_date).to_i %> days</p>
+          </div>
+        </div>
+
+        <% @budget.each do |b| %>
+        <%= b.price %>
+        <% end %>
+
+
+    <div class="map-show">
+      <div style="width: 95%; height: 300px; border-radius: 10px; margin: 0px auto;"
+        data-controller="entire-mapbox"
+        data-entire-mapbox-marker-value="<%= @marker.to_json %>"
+        data-entire-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+
+      <% end %>
+
+
+      <div class="glide instagram-img">
+        <div class="glide__track instagram-slider" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <div class= 'glides-infos'>
+                <%= image_tag('columbia_eu.jpg') %>
+                <p class="instagram-at">@columbia_eu</p>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class= 'glides-infos'>
+                <%= image_tag('coldswitzerland_givres_gruyere.jpg') %>
+                <p class="instagram-at">@coldswitzerland</p>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class= 'glides-infos'>
+                <%= image_tag('the_8000ers.jpg') %>
+                <p class="instagram-at">@the_8000ers</p>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class= 'glides-infos'>
+                <%= image_tag('victorgcb.jpg') %>
+                <p class="instagram-at">@victorgcb</p>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class= 'glides-infos'>
+                <%= image_tag('simpel_lif.jpg') %>
+                <p class="instagram-at">@simpel_lif</p>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class= 'glides-infos'>
+                <%= image_tag('leerichardson33.jpg') %>
+                <p class="instagram-at">@leerichardson33</p>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class= 'glides-infos'>
+                <%= image_tag('mike-horn.jpg') %>
+                <p class="instagram-at">@mike-horn</p>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class= 'glides-infos'>
+                <%= image_tag('nicolas-vanier.jpg') %>
+                <p class="instagram-at">@nicolas-vanier</p>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class= 'glides-infos'>
+                <%= image_tag('freya-hoffmeister.jpg') %>
+                <p class="instagram-at">@freya-hoffmeister</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls"></div>
+      </div>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"> </script>
+        <script>
+          const config = {
+            type: "carousel",
+            perView: 2.3
+          };
+            new Glide('.glide', config).mount()
+        </script>
+
+
+    </div>
+</div>
