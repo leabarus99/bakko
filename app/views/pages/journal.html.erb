@@ -66,20 +66,25 @@
 
  <% @stories.each_with_index do |story, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : ''  %>">
-        <% if story.photo.attached? %>
-          <%= cl_image_tag story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
-        <% end %>
-        <div class="carousel-caption  d-md-block">
-          <button class= "modal-btn modal-trigger">Read</button>
-          <div class= "new-article">
-            <div>
-              <h5><%= story.location %></h5>
-              <h5>@<%= current_user.first_name %></h5>
-            </div>
-          </div>
-          <div class= "description-article"><%= story.content %></div>
-          </div>
+      <div class= "global-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+              url(<%= cl_image_tag story.photo.key %>)">
+        <div class="container-articles">
+          <h5>@<%= current_user.first_name %></h5>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag story.photo.key, class: "carousel-img d-block w-100", crop: :fill %>
+          <% end %>
         </div>
+        <div class= "content-article">
+           <h1><%= story.title %></h1>
+            <%= story.content %>
+        </div>
+        <div class= "footer-article">
+          <h5><%= story.location %></h5>
+          <button class= "modal-btn modal-trigger">Read</button>
+        </div>
+        </div>
+          <div class="carousel-caption  d-md-block"></div>
+  </div>
 
 
       <div class="modal-container">

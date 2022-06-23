@@ -7,7 +7,7 @@
 
  <% @stories.each_with_index do |story, index| %>
  <%= link_to story do %>
-      <div class= "card-article2">
+      <div class= "card-article3">
         <div class= "infos-article">
           <div class= "title-article"> <h5><%= story.title %></h5> </div>
             <div class= "content-article"> <h5><%= story.content %></h5> </div>
@@ -19,5 +19,6 @@
         </div>
       </div>
    <%= render 'liikes/all_header', story: story %>
+    <div class= 'line3'></div>
   <% end %>
 <% end %>

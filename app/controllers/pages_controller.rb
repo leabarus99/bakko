@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def profil
     @story = Story.new
     @story.trip = @trip
-    @stories = Story.where(liikes: current_user )
+    @stories = Story.where(liikes: current_user)
     @user = current_user
     # @user_story = @trip.current_user.story
   end
@@ -64,4 +64,7 @@ class PagesController < ApplicationController
     @budget_by_category = Budget.by_category(@budget.trip.activities, @budget.price)
   end
 
+  def all
+   s
+  end
 end
