@@ -5,7 +5,7 @@ body {
 }
 
 .water-article-image {
-background: url("waterfall.jpg");
+background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url("waterfall.jpg");
 background-position: center center;
 background-attachment: fixed;
 background-size: cover;

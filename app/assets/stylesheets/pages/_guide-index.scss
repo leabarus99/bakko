@@ -6,7 +6,7 @@ body {
 
 
 .guide-background {
-  background: url("fire.jpg");
+  background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url("fire.jpg");
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
@@ -70,6 +70,7 @@ body {
   height: 100%;
   width: 120px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .card-survival h2 {

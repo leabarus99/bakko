@@ -2,14 +2,17 @@ import { Controller } from "stimulus"
 import Glide from '@glidejs/glide'
 
 export default class extends Controller {
-  static targets = [ "glide" ]
+  static targets = [ "glide"]
 
 
   connect() {
-    let config = {
+    console.log(this.glideDashboardTarget)
+    const conf = {
       type: "carousel",
       perView: 2.3
     };
-    new Glide('.glide', config).mount()
+    this.glideTargets.forEach(item => {
+      new Glide(item, conf).mount()
+    })
   }
 }

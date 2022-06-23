@@ -14,6 +14,33 @@
   text-align: center;
 }
 
+.budget-preview {
+  background-color: #fa782144;
+  color: #fa7821;
+  width: 95%;
+  padding: 20px;
+  margin: 0px auto;
+  border-radius: 10px;
+}
+
+.preview-price-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-price-line ion-icon {
+  background-color: #fa78214c;
+  color: #fa7821;
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid #fa7821;
+}
+
+.price-budget-view {
+  font-size: 24px;
+}
+
 .instagram-img img {
   height: 180px;
 }

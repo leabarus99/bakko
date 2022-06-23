@@ -6,21 +6,27 @@
 
     <div class="current-trip">
       <% current_user.trips.each do |trip| %>
-        <div class="trip-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-        url(https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80)">
+        <div class="trip-img" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
+        url(https://images.unsplash.com/photo-1499363536502-87642509e31b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80)">
           <div class="trip-info">
             <h3><%= trip.destination %></h3>
             <p><%= (trip.end_date - trip.start_date).to_i %> days</p>
           </div>
         </div>
 
-        <% @budget.each do |b| %>
-        <%= b.price %>
-        <% end %>
-
+        <div class="budget-preview">
+          <% @budget.each do |budget| %>
+          <div class="preview-price-line">
+            <p class="m-0">Remaining budget <strong>$<%= budget.price %></strong></p>
+            <%= link_to trip_budget_path(current_user.trips.first, current_user.trips.first.budgets.first) do %>
+              <ion-icon name="trending-down-outline"></ion-icon>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
 
     <div class="map-show">
-      <div style="width: 95%; height: 300px; border-radius: 10px; margin: 0px auto;"
+      <div style="width: 95%; height: 300px; border-radius: 10px; margin: 40px auto;"
         data-controller="entire-mapbox"
         data-entire-mapbox-marker-value="<%= @marker.to_json %>"
         data-entire-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -30,7 +36,7 @@
       <% end %>
 
 
-      <div class="glide instagram-img">
+      <div class="glide instagram-img" data-controller="caroussel" data-caroussel-target="glide">
         <div class="glide__track instagram-slider" data-glide-el="track">
           <ul class="glide__slides">
             <li class="glide__slide">
@@ -93,14 +99,14 @@
       </div>
 
 
-      <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"> </script>
+      <%# <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"> </script>
         <script>
           const config = {
             type: "carousel",
             perView: 2.3
           };
             new Glide('.glide', config).mount()
-        </script>
+        </script> %>
 
 
     </div>

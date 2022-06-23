@@ -32,6 +32,9 @@
 
 .navbar-light .navbar-toggler {
   border-color: transparent !important;
+  &:focus {
+    box-shadow: none !important;
+  }
 }
 
 #navbarDropdown {
