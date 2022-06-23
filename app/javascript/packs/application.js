@@ -15,11 +15,9 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
-import { moveIndicatorPrice } from "../plugins/listener"
 import { articleModal } from "../plugins/modal"
 
 
-
-document.addEventListener("turbolinks:load", event => {
+document.addEventListener("turbolinks:load", () => {
   articleModal()
 })

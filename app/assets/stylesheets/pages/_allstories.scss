@@ -4,11 +4,11 @@
   margin: 20px auto;
 }
 
-.card-article{
+.card-article3 {
   display: flex;
-  margin-right: 29px;
-  margin-left: 29px;
-
+  margin-left: 11px;
+  padding-bottom: 19px;
+  margin-left: 30px;
 }
 
 .img-article img{
@@ -63,7 +63,7 @@
 }
 
 .back-lien{
-  margin-top: 21px;
+  margin-top: -40px;
   padding: 8px 19px;
   border-radius: 8px;
   font-size: 16px;
@@ -80,3 +80,26 @@
   font-weight: 600;
 }
 
+.btnn-save3{
+color: white;
+background-color: #609b99d4;
+border-radius: 4px;
+padding: 4px 17px;
+width: 51px;
+margin-bottom: 13px;
+display: block;
+margin-top: 7px;
+height: 36px;
+}
+
+.btnn-save1{
+  color: white;
+  border-radius: 4px;
+  padding: 4px 17px;
+  width: 51px;
+  margin-bottom: 13px;
+  display: block;
+  margin-top: 7px;
+  height: 36px;
+  background-color: #7a7a7a;
+}

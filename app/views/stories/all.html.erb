@@ -7,19 +7,18 @@
 
  <% @stories.each_with_index do |story, index| %>
  <%= link_to story do %>
-      <div class= "card-article">
+      <div class= "card-article3">
         <div class= "infos-article">
           <div class= "title-article"> <h5><%= story.title %></h5> </div>
-          <div class= "content-article"> <h5><%= story.content %></h5> </div>
-        </div>
+            <div class= "content-article"> <h5><%= story.content %></h5> </div>
+          </div>
         <div class= "img-article">
           <% if story.photo.attached? %>
             <%= cl_image_tag story.photo.key %>
           <% end %>
         </div>
       </div>
-
-    <% end %>
-    <div class= 'line'></div>
-
- <% end %>
+   <%= render 'liikes/all_header', story: story %>
+    <div class= 'line3'></div>
+  <% end %>
+<% end %>
