@@ -224,11 +224,10 @@ story7.photo.attach(io: file10, filename: 'article7', content_type: 'image/jpg')
 
 puts "SEEDS SURVIVAL GUIDE"
 
-guide1 = Guide.create!(title: "Purify your water", content: "Water in the wild often contains harmful,
-  bacteria, and parasites that can cause a variety of ailments...",
-  author: "Léa Barus", category: "Water", difficulty: 3)
-photo_guide1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655816666/njrmooud8swh2e9djdjc.jpg")
-guide1.photo.attach(io: photo_guide1, filename: 'water', content_type: 'image/jpg')
+guide1 = Guide.create!(title: "Reading a compass", content: "There are a few important things you should know
+  about how a compass works....", author: "Florent Page", category: "compass", difficulty: 1)
+photo_guide1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655973694/ecmnwkvjdvazxzgpka5y.jpg")
+guide1.photo.attach(io: photo_guide1, filename: 'compass', content_type: 'image/jpg')
 
 guide2 = Guide.create!(title: "Wilderness wound care", content: "When we travel to a distant country,  we can easily find
   ourselves with limited access to medical care....", author: "Valeria Pineda", category: "Wounds", difficulty: 2)
@@ -260,7 +259,13 @@ guide7 = Guide.create!(title: "Survival essentials", content: "Not sure what to 
 photo_guide7 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655973703/xusvdjzpthllmx8akmvj.jpg")
 guide7.photo.attach(io: photo_guide7, filename: 'essentials', content_type: 'image/jpg')
 
-guide8 = Guide.create!(title: "Reading a compass", content: "There are a few important things you should know
+guide1 = Guide.create!(title: "Reading a compass", content: "There are a few important things you should know
   about how a compass works....", author: "Florent Page", category: "compass", difficulty: 1)
-photo_guide8 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655973694/ecmnwkvjdvazxzgpka5y.jpg")
-guide8.photo.attach(io: photo_guide8, filename: 'compass', content_type: 'image/jpg')
+photo_guide1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655973694/ecmnwkvjdvazxzgpka5y.jpg")
+guide1.photo.attach(io: photo_guide1, filename: 'compass', content_type: 'image/jpg')
+
+guide8 = Guide.create!(title: "Purify your water", content: "Water in the wild often contains harmful,
+  bacteria, and parasites that can cause a variety of ailments...",
+  author: "Léa Barus", category: "Water", difficulty: 3)
+photo_guide8 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655816666/njrmooud8swh2e9djdjc.jpg")
+guide8.photo.attach(io: photo_guide8, filename: 'water', content_type: 'image/jpg')
