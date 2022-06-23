@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, only: [:journal, :destroy, :create, :profil]
+  before_action :authenticate_user!, only: [:journal, :destroy, :create, :profil, :dashboard]
   def home
   end
 
