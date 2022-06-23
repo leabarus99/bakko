@@ -9,7 +9,7 @@
           </a>
         </li>
 
-        <li class="list <%= "active" if current_page?(trips_path) || current_page?(new_trip_budget_path(current_user.trips.first)) || current_page?(trip_budget_path(current_user.trips.first, current_user.trips.first.budgets.first))  %>" id="second">
+        <li class="list <%= "active" if current_page?(trips_path) && current_page?(new_trip_budget_path(current_user.trips.first)) && current_page?(trip_budget_path(current_user.trips.first, current_user.trips.first.budgets.first))  %>" id="second">
           <%# <a href="/trips/:id/budgets/new"> %>
           <% if user_signed_in? && !current_user.trips.blank? %>
             <% if current_user.trips.first.budgets.first.blank? %>
