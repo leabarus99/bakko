@@ -9,7 +9,9 @@
    <div class= "title-myjournal"> <%= link_to "Your journal", journal_path, class: "journal-titles" %></div>
    <div class= "button-see-all2">  <%= link_to "See all...", journal_path, class: "journal-titles" %></p></div>
   </div>
+     <% if current_user.trips.first %>
      <div class= "add-story"><%= link_to "New Story", new_trip_story_path(current_user.trips.first) %></div>
+     <% end %>
   <div class="container">
   <div class = "add-story">
   </div>

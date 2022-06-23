@@ -71,7 +71,8 @@ hiking_shoes = Equipment.create!(name: "Shoes", details: "Intermediate", benefit
 # hiking1 = URI.open("https://res.cloudinary.com/du6ejgggh/image/upload/v1655820343/wmbdmkqhizab5xw8oh0n.jpg")
 # hiking_shoes.photo.attach(io: hiking1, filename: 'hiking-shoes', content_type: 'image/jpg')
 
-hiking_night = Equipment.create!(name: "Tent", details: "3 seats", benefits: "Isolation & Comfort", price_estimation: 94)
+hiking_night = Equipment.create!(name: "Tent", details: "The new generation of 2 Seconds is the ultimate in immediacy.
+  An eco-designed tent for 2 people, as quick to set up as it is to pack up, with Fresh&Black technology that brings you coolness and darkness for a peaceful sleep.", benefits: "Isolation & Comfort", price_estimation: 94)
 hiking_bags = Equipment.create!(name: "Bag", details: "Intermediate", benefits: "Compartmented & Waterproof", price_estimation: 39)
 hiking_clothes = Equipment.create!(name: "Jacket", details: "Waterproof jacket", benefits: "Light & Waterproof", price_estimation: 139)
 
